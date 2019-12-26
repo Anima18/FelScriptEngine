@@ -12,7 +12,7 @@ public class FelScriptEngineTest {
                 .setScript(new File(""))
                 .setDataSource(null)
                 .build();*/
-        ScriptParser parser = new ScriptParser(new File("/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt"));
+        ScriptParser parser = new ScriptParser(new File("E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt"));
         try {
             parser.parse();
         } catch (FelScriptException e) {

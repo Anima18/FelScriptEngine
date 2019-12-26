@@ -6,7 +6,9 @@ import com.chris.fel.util.TextUtil;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ScriptParser {
     private File script;
@@ -40,7 +42,7 @@ public class ScriptParser {
 
         List<ScriptParam> params = parseParam(paramBlock);
         List<ScriptVar> vars = parseVar(varBlock);
-        List<ScriptExec> execs = parseExec(execBlock);
+        List<ScriptExec> execs = parseExec(vars, execBlock);
 
 
 
@@ -52,7 +54,7 @@ public class ScriptParser {
         String[] paramStrArray = paramBlock.split("\n");
         for(String paramStr : paramStrArray) {
             if(!TextUtil.isEmpty(paramStr.trim())) {
-                paramStr = paramStr.replaceFirst("\t", "|").replaceAll("\\s*", "");
+                paramStr = paramStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
                 String[] paramSplitArray = paramStr.split("\\|");
                 String fieldType = paramSplitArray[0];
                 String[] nameSplitArray = paramSplitArray[1].split("\\(");
@@ -64,11 +66,40 @@ public class ScriptParser {
         return params;
     }
 
-    private List<ScriptVar> parseVar(String varBlock) {
-        return null;
+    private List<ScriptVar> parseVar(String varBlock) throws FelScriptException {
+        List<ScriptVar> vars = new ArrayList<>();
+        String[] varStrArray = varBlock.split("\n");
+        for(String varStr : varStrArray) {
+            if(!TextUtil.isEmpty(varStr.trim())) {
+                varStr = varStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
+                String[] varSplitArray = varStr.split("\\|");
+                String fieldType = varSplitArray[0];
+                String name = varSplitArray[1];
+                vars.add(new ScriptVar(name, FieldType.to(fieldType)));
+            }
+        }
+        return vars;
     }
 
-    private List<ScriptExec> parseExec(String execBlock) {
-        return null;
+    private List<ScriptExec> parseExec(List<ScriptVar> vars, String execBlock) throws FelScriptException {
+        Map<String, ScriptVar> varMap = new HashMap<>();
+        for(ScriptVar var : vars) {
+            varMap.put(var.getName(), var);
+        }
+
+        List<ScriptExec> execs = new ArrayList<>();
+        String[] execStrArray = execBlock.split("\n");
+        for(String execStr : execStrArray) {
+            if(!TextUtil.isEmpty(execStr.trim())) {
+                execStr = execStr.replaceAll(";", "").replaceAll("\\s*", "");
+                int index = execStr.indexOf("=");
+                String name = execStr.substring(0, index);
+                String expression = execStr.substring(index+1);
+
+                ScriptVar var = varMap.get(name);
+                execs.add(new ScriptExec(var, expression));
+            }
+        }
+        return execs;
     }
 }
