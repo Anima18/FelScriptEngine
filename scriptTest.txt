@@ -1,0 +1,18 @@
+Params
+Numeric 	RiskRatio(1);
+Numeric 	ATRLength(20);
+Bool 		LastProfitableTradeFilter(True);
+
+Vars
+Bool 		isABGrow;
+Numeric 	ema2;
+Numeric 	rsi6;
+Numeric 	bollup;
+String 		result;
+
+Exec
+isABGrow=IF( AND(A>REFL(A, 1), B>REFL(B, 1) ), True, False)
+ema2=IF(REFL(ema2,1) != 0, REFL(ema2,1)*11/13+E*2/13, E)
+rsi6=SUM(E,6)/(SUM(ema2, 6) + SUM(E,6)) * 100
+bollup=AVG(E,20) + STDEV(E, 20)*2
+result=IF(isABGrow, "观察准备入市", "等待")

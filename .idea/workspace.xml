@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VVK1v5pz7JNXbdrWItJ3TrvIyG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+      <recent name="$PROJECT_DIR$/src/com/chris/fel/util" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FelScriptEngineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptEngineTest" />
+      <module name="FelScriptEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chris.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FelScriptEngineTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="" />
+      <created>1577332610750</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577332610750</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2328" y="257" width="686" height="558" key="#com.intellij.ide.util.MemberChooser" timestamp="1577357467254">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2328" y="257" width="686" height="558" key="#com.intellij.ide.util.MemberChooser/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357467254" />
+    <state width="576" height="466" key="DebuggerActiveHint" timestamp="1577357983714">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="576" height="466" key="DebuggerActiveHint/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357983714" />
+    <state x="2239" y="294" key="FileChooserDialogImpl" timestamp="1577349835342">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2239" y="294" key="FileChooserDialogImpl/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349835342" />
+    <state width="1628" height="178" key="GridCell.Tab.0.bottom" timestamp="1577357966985">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.0.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
+    <state width="1628" height="178" key="GridCell.Tab.0.center" timestamp="1577357966985">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.0.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
+    <state width="1628" height="178" key="GridCell.Tab.0.left" timestamp="1577357966985">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.0.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
+    <state width="1628" height="178" key="GridCell.Tab.0.right" timestamp="1577357966985">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.0.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
+    <state width="1628" height="178" key="GridCell.Tab.1.bottom" timestamp="1577357967022">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.1.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
+    <state width="1628" height="178" key="GridCell.Tab.1.center" timestamp="1577357967022">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.1.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
+    <state width="1628" height="178" key="GridCell.Tab.1.left" timestamp="1577357967022">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.1.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
+    <state width="1628" height="178" key="GridCell.Tab.1.right" timestamp="1577357967022">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="178" key="GridCell.Tab.1.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
+    <state x="2003" y="115" width="1024" height="843" key="SettingsEditor" timestamp="1577349840060">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2003" y="115" width="1024" height="843" key="SettingsEditor/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349840060" />
+    <state x="2040" y="277" width="950" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1577356436579">
+      <screen x="1680" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2040" y="277" width="950" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577356436579" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="paramSplitArray[1].split(&quot;\\(&quot;)[1]" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FelScriptEngine$FelScriptEngineTest.ic" NAME="FelScriptEngineTest Coverage Results" MODIFIED="1577352088097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.chris.test.*</FILTER>
+    </SUITE>
+  </component>
+</project>
