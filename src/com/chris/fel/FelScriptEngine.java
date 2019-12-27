@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class FelScriptEngine {
+    public static final String DATASET = "DATASET";
+
     private File script;
     private Map<String, List<String>> dataSource;
 
