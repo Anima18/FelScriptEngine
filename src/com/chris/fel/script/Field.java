@@ -2,10 +2,10 @@ package com.chris.fel.script;
 
 public class Field {
     private String name;
-    private String value;
+    private Object value;
     private FieldType fieldType;
 
-    public Field(String name, String value, FieldType fieldType) {
+    public Field(String name, Object value, FieldType fieldType) {
         this.name = name;
         this.value = value;
         this.fieldType = fieldType;
@@ -24,11 +24,11 @@ public class Field {
         this.name = name;
     }
 
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

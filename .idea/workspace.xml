@@ -2,10 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scriptTest_bat.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/ArithFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/AverageFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/ReflFuction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/StdevFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/SumFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/conditional/IfFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/logical/AndFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/logical/LogicalFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/logical/OrFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/util/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/util/DateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/ScriptParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/ScriptParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/FelScript.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/FieldType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/FieldType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptVar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptVar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/util/TextUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/util/TextUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scriptTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scriptTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/FelScriptException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/FelScriptException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/function/BaseFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/function/BaseFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/function/FunctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/function/FunctionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/function/SumFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/FelScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/FieldType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/util/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/util/TextUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +50,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,14 +74,32 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.chris.fel.function.logical" />
+      <recent name="com.chris.fel.function" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\Idea_workspace\FelScriptEngine" />
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/com/chris/fel/util" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.FelScriptEngineTest">
     <configuration name="FelScriptEngineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptEngineTest" />
+      <module name="FelScriptEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chris.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelTest" />
       <module name="FelScriptEngine" />
       <extension name="coverage">
         <pattern>
@@ -61,6 +114,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.FelScriptEngineTest" />
+        <item itemvalue="Application.FelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -90,88 +144,94 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="527" y="178" width="686" height="558" key="#com.intellij.ide.util.MemberChooser" timestamp="1577371488857">
+    <state x="527" y="93" width="686" height="558" key="#com.intellij.ide.util.MemberChooser" timestamp="1577615868806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="527" y="178" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577371488857" />
+    <state x="527" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577615868806" />
     <state x="2328" y="257" width="686" height="558" key="#com.intellij.ide.util.MemberChooser/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357467254" />
-    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1577372250071">
+    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1577584974014">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1577372250071" />
+    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1577584974014" />
     <state width="576" height="466" key="DebuggerActiveHint/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357983714" />
     <state x="2239" y="294" key="FileChooserDialogImpl" timestamp="1577349835342">
       <screen x="1680" y="0" width="1680" height="1050" />
     </state>
     <state x="2239" y="294" key="FileChooserDialogImpl/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349835342" />
-    <state width="1322" height="278" key="GridCell.Tab.0.bottom" timestamp="1577372235512">
+    <state width="1322" height="253" key="GridCell.Tab.0.bottom" timestamp="1577622167462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577372235512" />
+    <state width="1322" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
     <state width="1628" height="178" key="GridCell.Tab.0.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="278" key="GridCell.Tab.0.center" timestamp="1577372235512">
+    <state width="1322" height="253" key="GridCell.Tab.0.center" timestamp="1577622167462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577372235512" />
+    <state width="1322" height="253" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
     <state width="1628" height="178" key="GridCell.Tab.0.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="278" key="GridCell.Tab.0.left" timestamp="1577372235512">
+    <state width="1322" height="253" key="GridCell.Tab.0.left" timestamp="1577622167462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577372235512" />
+    <state width="1322" height="253" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
     <state width="1628" height="178" key="GridCell.Tab.0.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="278" key="GridCell.Tab.0.right" timestamp="1577372235512">
+    <state width="1322" height="253" key="GridCell.Tab.0.right" timestamp="1577622167462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577372235512" />
+    <state width="1322" height="253" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
     <state width="1628" height="178" key="GridCell.Tab.0.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="278" key="GridCell.Tab.1.bottom" timestamp="1577372235771">
+    <state width="1322" height="278" key="GridCell.Tab.1.bottom" timestamp="1577585242567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577372235771" />
+    <state width="1322" height="278" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577585242567" />
     <state width="1628" height="178" key="GridCell.Tab.1.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="278" key="GridCell.Tab.1.center" timestamp="1577372235771">
+    <state width="1322" height="278" key="GridCell.Tab.1.center" timestamp="1577585242566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577372235771" />
+    <state width="1322" height="278" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577585242566" />
     <state width="1628" height="178" key="GridCell.Tab.1.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="278" key="GridCell.Tab.1.left" timestamp="1577372235771">
+    <state width="1322" height="278" key="GridCell.Tab.1.left" timestamp="1577585242566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577372235771" />
+    <state width="1322" height="278" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577585242566" />
     <state width="1628" height="178" key="GridCell.Tab.1.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="278" key="GridCell.Tab.1.right" timestamp="1577372235771">
+    <state width="1322" height="278" key="GridCell.Tab.1.right" timestamp="1577585242567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577372235771" />
+    <state width="1322" height="278" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577585242567" />
     <state width="1628" height="178" key="GridCell.Tab.1.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
     <state x="-121" y="0" width="916" height="728" key="SettingsEditor" timestamp="1577370908181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-121" y="0" width="916" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1577370908181" />
     <state x="2003" y="115" width="1024" height="843" key="SettingsEditor/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349840060" />
-    <state x="2040" y="277" width="950" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1577356436579">
-      <screen x="1680" y="0" width="1680" height="1050" />
+    <state x="293" y="195" width="773" height="467" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1577516747913">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="293" y="195" width="773" height="467" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1577516747913" />
     <state x="2040" y="277" width="950" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577356436579" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="paramSplitArray[1].split(&quot;\\(&quot;)[1]" language="JAVA" />
+        <watch expression="dataSet.size() &lt;= Integer.parseInt(count.toString())" language="JAVA" />
+        <watch expression="valueList.get(valueList.size()-lastIndex-1)" language="JAVA" />
+        <watch expression="Boolean.valueOf(objects[0].toString())? objects[1] : objects[2]" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FelScriptEngine$FelScriptEngineTest.ic" NAME="FelScriptEngineTest Coverage Results" MODIFIED="1577352088097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.chris.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/FelScriptEngine$FelTest.ic" NAME="FelTest Coverage Results" MODIFIED="1577581359469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.chris.test.*</FILTER>
     </SUITE>
   </component>

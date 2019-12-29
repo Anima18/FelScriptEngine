@@ -19,13 +19,13 @@ public class ScriptParser {
 
     public ScriptNode parse() throws FelScriptException {
         if (script == null || !script.exists()) {
-            throw new FelScriptException("模型脚本不存在!");
+            throw new FelScriptException("模型脚本解析失败，文件不存在!");
         }
 
         String filePath = script.getPath();
         String fileSuffix = FileUtil.getFileSuffix(filePath);
         if (!"txt".equalsIgnoreCase(fileSuffix)) {
-            throw new FelScriptException("模型脚本文件类型不正确,请确保是txt文件!");
+            throw new FelScriptException("模型脚本解析失败，文件类型不正确,请确保是txt文件!");
         }
 
         String fileData = FileUtil.readUTF8Text(filePath);
@@ -37,7 +37,7 @@ public class ScriptParser {
             varBlock = execSplitArray[0];
             execBlock = execSplitArray[1];
         } catch (Exception e) {
-            throw new FelScriptException("模型脚本格式不正确,请检查Params,Vars,Exec代码快!");
+            throw new FelScriptException("模型脚本解析失败,请检查Params,Vars,Exec代码块格式!");
         }
 
         List<ScriptParam> params = parseParam(paramBlock);
@@ -65,8 +65,10 @@ public class ScriptParser {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new FelScriptException("模型脚本Params部分解析失败,请检查!");
+            Log.i(String.format("【×】解析模型脚本Params失败: %s", e.getMessage()));
+            throw new FelScriptException("模型脚本解析失败，Params代码块格式不正确!");
         }
+        Log.i("【√】解析模型脚本Params成功");
         return params;
     }
 
@@ -85,8 +87,10 @@ public class ScriptParser {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new FelScriptException("模型脚本Vars部分解析失败,请检查!");
+            Log.i(String.format("【×】解析模型脚本Vars失败: %s", e.getMessage()));
+            throw new FelScriptException("模型脚本解析失败，Vars代码块格式不正确!");
         }
+        Log.i("【√】解析模型脚本Vars成功");
         return vars;
     }
 
@@ -112,8 +116,10 @@ public class ScriptParser {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new FelScriptException("模型脚本Execs部分解析失败,请检查!");
+            Log.i(String.format("【×】解析模型脚本Execs失败: %s", e.getMessage()));
+            throw new FelScriptException("模型脚本解析失败，Execs代码块格式不正确!");
         }
+        Log.i("【√】解析模型脚本Execs成功");
         return execs;
     }
 }

@@ -26,4 +26,19 @@ public enum FieldType {
             throw new FelScriptException(java.lang.String.format("模型脚本参数不正确,不存在%s类型,请检查!", type));
         }
     }
+
+    public static Object getFieldObject(Field field) {
+        FieldType type = field.getFieldType();
+        java.lang.String value = field.getValue().toString();
+        switch (type) {
+            case Bool:
+                return Boolean.valueOf(value);
+            case String:
+                return value;
+            case Numeric:
+                return Float.parseFloat(value);
+            default:
+                return field.getValue();
+        }
+    }
 }
