@@ -19,12 +19,14 @@ public class ScriptParser {
 
     public ScriptNode parse() throws FelScriptException {
         if (script == null || !script.exists()) {
+            Log.i("【×】解析模型脚本失败, 文件不存在!");
             throw new FelScriptException("模型脚本解析失败，文件不存在!");
         }
 
         String filePath = script.getPath();
         String fileSuffix = FileUtil.getFileSuffix(filePath);
         if (!"txt".equalsIgnoreCase(fileSuffix)) {
+            Log.i("【×】解析模型脚本失败, 文件类型不正确,请确保是txt文件!");
             throw new FelScriptException("模型脚本解析失败，文件类型不正确,请确保是txt文件!");
         }
 
@@ -37,6 +39,7 @@ public class ScriptParser {
             varBlock = execSplitArray[0];
             execBlock = execSplitArray[1];
         } catch (Exception e) {
+            Log.i("【×】解析模型脚本失败, Params,Vars,Exec代码块格式不正确!");
             throw new FelScriptException("模型脚本解析失败,请检查Params,Vars,Exec代码块格式!");
         }
 

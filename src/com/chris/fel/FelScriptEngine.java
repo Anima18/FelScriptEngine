@@ -6,6 +6,7 @@ import com.chris.test.FelTest;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
 import com.greenpineyu.fel.context.FelContext;
+import com.greenpineyu.fel.exception.EvalException;
 
 import java.io.File;
 import java.util.List;
@@ -53,6 +54,9 @@ public class FelScriptEngine {
                 exec.getVar().setValue(value);
                 Log.i(String.format("【√】执行脚本语句 %s 成功", expression));
             } catch (FelScriptException e) {
+                Log.i(String.format("【×】执行脚本语句 %s 失败: %s", expression, e.getMessage()));
+                throw e;
+            } catch (EvalException e) {
                 Log.i(String.format("【×】执行脚本语句 %s 失败: %s", expression, e.getMessage()));
                 throw e;
             }
