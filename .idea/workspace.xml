@@ -2,44 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scriptTest_bat.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/ArithFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/AverageFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/ReflFuction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/StdevFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/arithmetic/SumFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/conditional/IfFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/logical/AndFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/logical/LogicalFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/function/logical/OrFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/util/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/chris/fel/util/DateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine$Builder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptEngine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/FelScriptException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/ScriptParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/ScriptParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/FelScript.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/FieldType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/FieldType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptVar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/script/ScriptVar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/util/TextUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/util/TextUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scriptTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scriptTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/function/FunctionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/function/FunctionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/util/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/fel/util/Constant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/fel/FelScriptException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/FelScriptException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/function/BaseFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/function/BaseFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/fel/function/FunctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/function/FunctionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/function/SumFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/FelScript.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/FieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/util/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/util/TextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/ScriptExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/ScriptExec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/ScriptParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/ScriptParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/script/ScriptVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/script/ScriptVar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/fel/util/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/fel/util/Constant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,59 +122,59 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="527" y="93" width="686" height="558" key="#com.intellij.ide.util.MemberChooser" timestamp="1577615868806">
+    <state x="527" y="93" width="686" height="558" key="#com.intellij.ide.util.MemberChooser" timestamp="1577870781624">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="527" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577615868806" />
+    <state x="527" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577870781624" />
     <state x="2328" y="257" width="686" height="558" key="#com.intellij.ide.util.MemberChooser/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357467254" />
-    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1577584974014">
+    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1577869278347">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1577584974014" />
+    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1577869278347" />
     <state width="576" height="466" key="DebuggerActiveHint/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357983714" />
     <state x="2239" y="294" key="FileChooserDialogImpl" timestamp="1577349835342">
       <screen x="1680" y="0" width="1680" height="1050" />
     </state>
     <state x="2239" y="294" key="FileChooserDialogImpl/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349835342" />
-    <state width="1322" height="253" key="GridCell.Tab.0.bottom" timestamp="1577622167462">
+    <state width="1322" height="305" key="GridCell.Tab.0.bottom" timestamp="1577884486300">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
+    <state width="1322" height="305" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577884486300" />
     <state width="1628" height="178" key="GridCell.Tab.0.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="253" key="GridCell.Tab.0.center" timestamp="1577622167462">
+    <state width="1322" height="305" key="GridCell.Tab.0.center" timestamp="1577884486299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="253" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
+    <state width="1322" height="305" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577884486299" />
     <state width="1628" height="178" key="GridCell.Tab.0.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="253" key="GridCell.Tab.0.left" timestamp="1577622167462">
+    <state width="1322" height="305" key="GridCell.Tab.0.left" timestamp="1577884486299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="253" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
+    <state width="1322" height="305" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577884486299" />
     <state width="1628" height="178" key="GridCell.Tab.0.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="253" key="GridCell.Tab.0.right" timestamp="1577622167462">
+    <state width="1322" height="305" key="GridCell.Tab.0.right" timestamp="1577884486300">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="253" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577622167462" />
+    <state width="1322" height="305" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577884486300" />
     <state width="1628" height="178" key="GridCell.Tab.0.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="278" key="GridCell.Tab.1.bottom" timestamp="1577585242567">
+    <state width="1322" height="278" key="GridCell.Tab.1.bottom" timestamp="1577869287135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577585242567" />
+    <state width="1322" height="278" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577869287135" />
     <state width="1628" height="178" key="GridCell.Tab.1.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="278" key="GridCell.Tab.1.center" timestamp="1577585242566">
+    <state width="1322" height="278" key="GridCell.Tab.1.center" timestamp="1577869287135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577585242566" />
+    <state width="1322" height="278" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577869287135" />
     <state width="1628" height="178" key="GridCell.Tab.1.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="278" key="GridCell.Tab.1.left" timestamp="1577585242566">
+    <state width="1322" height="278" key="GridCell.Tab.1.left" timestamp="1577869287135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577585242566" />
+    <state width="1322" height="278" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577869287135" />
     <state width="1628" height="178" key="GridCell.Tab.1.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="278" key="GridCell.Tab.1.right" timestamp="1577585242567">
+    <state width="1322" height="278" key="GridCell.Tab.1.right" timestamp="1577869287135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="278" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577585242567" />
+    <state width="1322" height="278" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577869287135" />
     <state width="1628" height="178" key="GridCell.Tab.1.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
     <state x="-121" y="0" width="916" height="728" key="SettingsEditor" timestamp="1577370908181">
       <screen x="0" y="0" width="1366" height="728" />
@@ -208,14 +186,36 @@
     </state>
     <state x="293" y="195" width="773" height="467" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1577516747913" />
     <state x="2040" y="277" width="950" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577356436579" />
+    <state x="368" y="25" width="647" height="563" key="find.popup" timestamp="1577870225399">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="368" y="25" width="647" height="563" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577870225399" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1577868903870">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577868903870" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577869464339">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577869464339" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java</url>
-          <line>61</line>
+          <line>39</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/chris/fel/ScriptParser.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/chris/fel/FelScriptEngine.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

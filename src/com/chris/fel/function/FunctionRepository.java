@@ -35,9 +35,12 @@ public class FunctionRepository {
 
     public void initData(Map<String, List<Float>> dataSet) {
         FelContext ctx = engine.getContext();
+        //把数据源加载到context
         ctx.set(Constant.DATA_SET, dataSet);
+        //把变量True、False加载到context
         ctx.set(Constant.TRUE, Constant.TRUE);
         ctx.set(Constant.FALSE, Constant.FALSE);
+        //把数据源列表索引加载到context
         Iterator<String> iterator =dataSet.keySet().iterator();
         while (iterator.hasNext()) {
             String refCode = iterator.next();

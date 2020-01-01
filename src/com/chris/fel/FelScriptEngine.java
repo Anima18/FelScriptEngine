@@ -2,6 +2,7 @@ package com.chris.fel;
 
 import com.chris.fel.function.FunctionRepository;
 import com.chris.fel.script.*;
+import com.chris.fel.util.Constant;
 import com.chris.test.FelTest;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
@@ -33,19 +34,43 @@ public class FelScriptEngine {
 
     public List<ScriptVar> eval() {
         Log.i("========开始执行脚本========");
-        List<ScriptParam> params = scriptNode.getParams();
-        List<ScriptVar> vars = scriptNode.getVars();
-        List<ScriptExec> execs = scriptNode.getExecs();
+        loadParams(scriptNode.getParams());
+        loadVars(scriptNode.getVars());
+        runExecs(scriptNode.getExecs());
+        return scriptNode.getVars();
+    }
 
+    private void loadParams(List<ScriptParam> params) {
         FelContext context = engine.getContext();
         for(ScriptParam param : params) {
-            context.set(param.getName(), FieldType.getFieldObject(param));
+            String paramName = param.getName();
+            if(context.get(paramName) != null) {
+                String message = String.format(Constant.paramRepeatError, paramName);
+                throw FelScriptException.withLog(message, param.getLineNum());
+            }else {
+                context.set(paramName, FieldType.getFieldObject(param));
+            }
         }
         Log.i("【√】加载脚本Params成功");
-        for(ScriptVar var : vars) {
-            context.set(var.getName(), var.getValue());
+    }
+
+    private void loadVars(List<ScriptVar> Vars) {
+        FelContext context = engine.getContext();
+        for(ScriptVar var : Vars) {
+            String varName = var.getName();
+            if(context.get(varName) != null) {
+                String message = String.format(Constant.varRepeatError, varName);
+                //Log.i(message);
+                throw FelScriptException.withLog(message, var.getLineNum());
+            }else {
+                context.set(varName, var.getValue());
+            }
         }
         Log.i("【√】加载脚本Vars成功");
+    }
+
+    private void runExecs(List<ScriptExec> execs) {
+        FelContext context = engine.getContext();
         for(ScriptExec exec : execs) {
             String expression = exec.getExpression();
             try {
@@ -54,16 +79,12 @@ public class FelScriptEngine {
                 exec.getVar().setValue(value);
                 Log.i(String.format("【√】执行脚本语句 %s 成功", expression));
             } catch (FelScriptException e) {
-                Log.i(String.format("【×】执行脚本语句 %s 失败: %s", expression, e.getMessage()));
-                throw e;
+                throw FelScriptException.withLog(String.format(Constant.execRunError, exec.getLineNum(), expression, e.getMessage()));
             } catch (EvalException e) {
-                Log.i(String.format("【×】执行脚本语句 %s 失败: %s", expression, e.getMessage()));
-                throw e;
+                throw FelScriptException.withLog(String.format(Constant.execRunError, exec.getLineNum(), expression, e.getMessage()));
             }
-
         }
         Log.i("========执行脚本完成========");
-        return vars;
     }
 
     public static class Builder {

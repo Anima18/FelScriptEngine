@@ -1,11 +1,17 @@
 package com.chris.fel.script;
 
 public class ScriptParam extends Field {
-    public ScriptParam(String name, String value, FieldType fieldType) {
+    private int lineNum;
+    public ScriptParam(int lineNum, String name, String value, FieldType fieldType) {
         super(name, value, fieldType);
+        this.lineNum = lineNum;
     }
 
-    public ScriptParam(String name, FieldType fieldType) {
-        super(name, fieldType);
+    public int getLineNum() {
+        return lineNum;
+    }
+
+    public void setLineNum(int lineNum) {
+        this.lineNum = lineNum;
     }
 }
