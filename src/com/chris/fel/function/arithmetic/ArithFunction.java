@@ -2,6 +2,7 @@ package com.chris.fel.function.arithmetic;
 
 import com.chris.fel.FelScriptException;
 import com.chris.fel.function.BaseFunction;
+import com.chris.fel.script.Field;
 import com.chris.fel.util.TextUtil;
 import com.greenpineyu.fel.context.FelContext;
 
@@ -18,7 +19,7 @@ public abstract class ArithFunction extends BaseFunction {
         if (objects != null && objects.length == 2) {
             Object refCode = objects[0];
             Object count = objects[1];
-            Map<String, List<Float>> dataSet = getDataSet();
+            Map<String, List<Field>> dataSet = getDataSet();
             if (refCode == null || count == null) {
                 throw new FelScriptException(String.format("%s运算出错，参数不正确！", getName()));
             } else if (!dataSet.containsKey(refCode)) {

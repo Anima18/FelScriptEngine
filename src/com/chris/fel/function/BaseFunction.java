@@ -1,5 +1,6 @@
 package com.chris.fel.function;
 
+import com.chris.fel.script.Field;
 import com.chris.fel.util.Constant;
 import com.greenpineyu.fel.context.FelContext;
 import com.greenpineyu.fel.function.CommonFunction;
@@ -14,8 +15,8 @@ public abstract class BaseFunction extends CommonFunction {
         this.context = context;
     }
 
-    public Map<String, List<Float>> getDataSet() {
-        return (Map<String, List<Float>>) context.get(Constant.DATA_SET);
+    public Map<String, List<Field>> getDataSet() {
+        return (Map<String, List<Field>>) context.get(Constant.DATA_SET);
     }
 
     protected abstract void validateParam(Object[] objects);

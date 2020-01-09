@@ -89,14 +89,14 @@ public class FelScriptEngine {
 
     public static class Builder {
         private File script;
-        private Map<String, List<Float>> dataSource;
+        private Map<String, List<Field>> dataSource;
 
         public Builder setScript(File script) {
             this.script = script;
             return this;
         }
 
-        public Builder setDataSource(Map<String, List<Float>> dataSource) {
+        public Builder setDataSource(Map<String, List<Field>> dataSource) {
             this.dataSource = dataSource;
             return this;
         }

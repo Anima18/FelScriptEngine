@@ -1,6 +1,7 @@
 package com.chris.test;
 
 import com.chris.fel.function.FunctionRepository;
+import com.chris.fel.script.Field;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
 import com.jakewharton.fliptables.FlipTable;
@@ -19,21 +20,21 @@ public class FelTest {
         repository.initData(initData());
 
         Object eval = null;
-        /*System.out.println("============test SUM==============");
-        Object eval = engine.eval("SUM(A, 10)");
+        System.out.println("============test SUM==============");
+        eval = engine.eval("SUM(A, 10)");
         System.out.println(eval);
 
         System.out.println("============test AVG==============");
         eval = engine.eval("AVG(A, 10)");
-        System.out.println(eval);*/
+        System.out.println(eval);
 
         System.out.println("============test IF==============");
         eval = engine.eval("IF(REFL(B,1) != 0, REFL(B,1)*11/13+REFL(E)*2/13, REFL(E))");
         System.out.println(eval);
 
-/*
+
         System.out.println("============test AND==============");
-        eval = engine.eval("AND(AVG(A, 5) > 0, SUM(A, 5) > 0, 1 > 0, 5-4<0)");
+        eval = engine.eval("AND(REFL(A, 5) == 40, SUM(A, 5) > 0)");
         System.out.println(eval);
 
         System.out.println("============test OR==============");
@@ -46,10 +47,10 @@ public class FelTest {
 
         System.out.println("============test STDEV==============");
         eval = engine.eval("STDEV(A, 5)");
-        System.out.println(eval);*/
+        System.out.println(eval);
     }
 
-    public static Map<String, List<Float>> initData() {
+    public static Map<String, List<Field>> initData() {
         String[] headers = new String[26];
         for(int i = 0;i<26;i++){
             headers[i] = String.valueOf(Character.toUpperCase( (char)(97+i)));
@@ -63,12 +64,12 @@ public class FelTest {
         }
 
 
-        Map<String, List<Float>> map = new HashMap<>();
+        Map<String, List<Field>> map = new HashMap<>();
         for(int i = 0;i<26;i++){
             String key = headers[i];
-            List<Float> dataList = new ArrayList<>();
+            List<Field> dataList = new ArrayList<>();
             for(int j = 0; j < 10; j++) {
-                dataList.add((float)(j*10 + i));
+                dataList.add(Field.ofValue((float)(j*10 + i)));
             }
             map.put(key, dataList);
         }

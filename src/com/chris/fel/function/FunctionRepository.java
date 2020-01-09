@@ -7,6 +7,7 @@ import com.chris.fel.function.arithmetic.SumFunction;
 import com.chris.fel.function.conditional.IfFunction;
 import com.chris.fel.function.logical.AndFunction;
 import com.chris.fel.function.logical.OrFunction;
+import com.chris.fel.script.Field;
 import com.chris.fel.util.Constant;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.context.FelContext;
@@ -33,7 +34,7 @@ public class FunctionRepository {
         engine.addFun(new StdevFunction(context));
     }
 
-    public void initData(Map<String, List<Float>> dataSet) {
+    public void initData(Map<String, List<Field>> dataSet) {
         FelContext ctx = engine.getContext();
         //把数据源加载到context
         ctx.set(Constant.DATA_SET, dataSet);
