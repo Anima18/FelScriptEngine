@@ -1,7 +1,7 @@
 package com.chris.test;
 
-import com.chris.fel.function.FunctionRepository;
-import com.chris.fel.script.Field;
+import fel.function.FunctionRepository;
+import fel.script.Field;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
 import com.jakewharton.fliptables.FlipTable;
@@ -59,7 +59,13 @@ public class FelTest {
         String[][] datas = new String[10][26];
         for(int i = 0; i < 10; i++) {
             for(int j = 0; j < 26; j++) {
-                datas[i][j] = String.valueOf(i*10 + j);
+                if(j == 24) {
+                    datas[i][j] = "True";
+                }else if(j == 25) {
+                    datas[i][j] = "等待";
+                }else {
+                    datas[i][j] = String.valueOf(i*10 + j);
+                }
             }
         }
 
@@ -68,9 +74,20 @@ public class FelTest {
         for(int i = 0;i<26;i++){
             String key = headers[i];
             List<Field> dataList = new ArrayList<>();
-            for(int j = 0; j < 10; j++) {
-                dataList.add(Field.ofValue((float)(j*10 + i)));
+            if(i == 24) {
+                for(int j = 0; j < 10; j++) {
+                    dataList.add(Field.ofValue(true));
+                }
+            }else if(i == 25) {
+                for(int j = 0; j < 10; j++) {
+                    dataList.add(Field.ofValue("等待"));
+                }
+            }else {
+                for(int j = 0; j < 10; j++) {
+                    dataList.add(Field.ofValue((float)(j*10 + i)));
+                }
             }
+
             map.put(key, dataList);
         }
         System.out.println(FlipTable.of(headers, datas));

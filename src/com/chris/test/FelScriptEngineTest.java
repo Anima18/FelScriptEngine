@@ -1,9 +1,9 @@
 package com.chris.test;
 
-import com.chris.fel.FelScriptEngine;
-import com.chris.fel.FelScriptException;
-import com.chris.fel.Log;
-import com.chris.fel.script.ScriptVar;
+import fel.FelScriptEngine;
+import fel.FelScriptException;
+import fel.Log;
+import fel.script.ScriptVar;
 import com.jakewharton.fliptables.FlipTable;
 
 import java.io.File;
@@ -27,7 +27,7 @@ public class FelScriptEngineTest {
         }
         long endTime=System.currentTimeMillis();
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
-        System.out.println(Log.getLogs());
+        //System.out.println(Log.getLogs());
     }
 
     private static void showValue(List<ScriptVar> varList) {
