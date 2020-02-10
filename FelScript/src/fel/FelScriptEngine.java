@@ -103,5 +103,10 @@ public class FelScriptEngine {
         public FelScriptEngine build() {
             return new FelScriptEngine(this);
         }
+
+        public List<ScriptVar> eval() {
+            FelScriptEngine engine = build();
+            return engine.eval();
+        }
     }
 }

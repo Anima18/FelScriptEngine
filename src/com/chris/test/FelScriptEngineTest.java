@@ -13,11 +13,10 @@ public class FelScriptEngineTest {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         try {
-            FelScriptEngine engine = new FelScriptEngine.Builder()
+            List<ScriptVar> varList = new FelScriptEngine.Builder()
                     .setScript(new File("E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt"))
                     .setDataSource(FelTest.initData())
-                    .build();
-            List<ScriptVar> varList = engine.eval();
+                    .eval();
 
             showValue(varList);
         } catch (FelScriptException e) {

@@ -11,8 +11,8 @@ Numeric 	bollup;
 String 		result;
 
 Exec
-isABGrow=IF(AND(REFL(A)<REFL(A, 1), REFL(B)>REFL(B, 1) ), True, False)
+isABGrow=IF(AND(REFL(A)>REFL(A, 1), REFL(B)>REFL(B, 1) ), REFL(Y), False)
 ema2=IF(REFL(B,1) != 0, REFL(B,1)*11/13+REFL(E)*2/13, REFL(E))
 rsi6=SUM(E,6)/(SUM(B, 6) + SUM(E,6)) * 100 * ATRLength
 bollup=AVG(E,10) + STDEV(E, 10)*2 + rsi6
-result=IF(OR(isABGrow,LastProfitableTradeFilter), "观察准备入市", "等待")
+result=IF(AND(isABGrow,LastProfitableTradeFilter), "观察准备入市", "等待")
