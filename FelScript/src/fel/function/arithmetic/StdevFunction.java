@@ -32,12 +32,12 @@ public class StdevFunction extends ArithFunction {
     //标准差σ=sqrt(s^2)
     private double standardDiviation(List<Double> x) {
         int m=x.size();
-        float sum=0;
+        double sum=0;
         for(int i=0;i<m;i++){//求和
             sum+=x.get(i);
         }
-        float dAve=sum/m;//求平均值
-        float dVar=0;
+        double dAve=sum/m;//求平均值
+        double dVar=0;
         for(int i=0;i<m;i++){//求方差
             dVar+=(x.get(i)-dAve)*(x.get(i)-dAve);
         }

@@ -36,7 +36,7 @@ public enum FieldType {
             case String:
                 return value;
             case Numeric:
-                return Float.parseFloat(value);
+                return Double.parseDouble(value);
             default:
                 return field.getValue();
         }
