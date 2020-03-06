@@ -21,7 +21,7 @@ public class FelScriptFuncTest {
 
     @Test
     public void testSum(){
-        Object eval = engine.eval("SUM(Y, 10)");
+        Object eval = engine.eval("SUM(A, 10)");
         Assert.assertEquals(eval, 450.0);
     }
 
@@ -38,7 +38,7 @@ public class FelScriptFuncTest {
 
     @Test
     public void testAnd(){
-        Object eval = engine.eval("AND(REFL(A, 5) == 40, SUM(A, 5) > 0)");
+        Object eval = engine.eval("AND(REFL(A, 5) == 40, SUM(A, 5) > 0, REFL(B) == 91)");
         Assert.assertEquals(eval, "True");
     }
 
@@ -50,13 +50,43 @@ public class FelScriptFuncTest {
 
     @Test
     public void testREFL(){
-        Object eval =engine.eval("REFL(A, 1)*3");
-        Assert.assertEquals(eval, 240);
+        Object eval =engine.eval("REFL(A, 1)");
+        Assert.assertEquals(eval, 80.0);
     }
 
     @Test
     public void testSTDEV(){
         Object eval = engine.eval("STDEV(A, 5)");
         Assert.assertEquals(eval, 14.142135623730951);
+    }
+
+    @Test
+    public void testMAX(){
+        Object eval = engine.eval("MAX(1.0, 2.1, 5, 0.0002, 8.8888)");
+        Assert.assertEquals(eval, 8.8888);
+    }
+
+    @Test
+    public void testMIN(){
+        Object eval = engine.eval("MIN(1.0, 2.1, 5, 0.0002, 8.8888)");
+        Assert.assertEquals(eval, 0.0002);
+    }
+
+    @Test
+    public void testMAXCOL(){
+        Object eval = engine.eval("MAXCOL(A, 5)");
+        Assert.assertEquals(eval, 90.0);
+    }
+
+    @Test
+    public void testMINCOL(){
+        Object eval = engine.eval("MINCOL(A, 5)");
+        Assert.assertEquals(eval, 50.0);
+    }
+
+    @Test
+    public void testABS(){
+        Object eval = engine.eval("ABS(-1)");
+        Assert.assertEquals(eval, 1.0);
     }
 }

@@ -16,4 +16,8 @@ public class TextUtil {
         }
         return true;
     }
+
+    public static boolean isDouble(String str) {
+        return str.matches("-?[0-9]+.*[0-9]*");
+    }
 }

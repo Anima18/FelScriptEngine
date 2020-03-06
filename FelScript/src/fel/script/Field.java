@@ -25,16 +25,19 @@ public class Field {
         Field field = new Field();
         if(value instanceof Number) {
             field.setFieldType(FieldType.Numeric);
+            field.setValue(Double.parseDouble(value.toString()));
         }else if(value instanceof String) {
             if(Constant.TRUE.equalsIgnoreCase(value.toString()) || Constant.FALSE.equalsIgnoreCase(value.toString())) {
                 field.setFieldType(FieldType.Bool);
             }else {
                 field.setFieldType(FieldType.String);
             }
+            field.setValue(value.toString());
         }else if(value instanceof Boolean) {
             field.setFieldType(FieldType.Bool);
+            field.setValue(value.toString());
         }
-        field.setValue(value);
+
         return field;
     }
 

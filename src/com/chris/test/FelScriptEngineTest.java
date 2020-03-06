@@ -14,7 +14,7 @@ public class FelScriptEngineTest {
         long startTime = System.currentTimeMillis();
         try {
             List<ScriptVar> varList = new FelScriptEngine.Builder()
-                    .setScript(new File("E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt"))
+                    .setScript(new File("/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt"))
                     .setDataSource(FelTest.initData())
                     .eval();
 

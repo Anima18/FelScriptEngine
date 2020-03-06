@@ -1,9 +1,10 @@
 package fel.function;
 
-import fel.function.arithmetic.AverageFunction;
-import fel.function.arithmetic.ReflFuction;
-import fel.function.arithmetic.StdevFunction;
-import fel.function.arithmetic.SumFunction;
+import fel.function.arithmetic.*;
+import fel.function.collection.MaxColFunction;
+import fel.function.collection.MaxFunction;
+import fel.function.collection.MinColFunction;
+import fel.function.collection.MinFunction;
 import fel.function.conditional.IfFunction;
 import fel.function.logical.AndFunction;
 import fel.function.logical.OrFunction;
@@ -32,6 +33,11 @@ public class FunctionRepository {
         engine.addFun(new OrFunction(context));
         engine.addFun(new ReflFuction(context));
         engine.addFun(new StdevFunction(context));
+        engine.addFun(new MaxFunction(context));
+        engine.addFun(new MinFunction(context));
+        engine.addFun(new MaxColFunction(context));
+        engine.addFun(new MinColFunction(context));
+        engine.addFun(new AbsFuction(context));
     }
 
     public void initData(Map<String, List<Field>> dataSet) {
