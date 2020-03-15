@@ -1,10 +1,9 @@
 package com.chris.test;
 
+import com.jakewharton.fliptables.FlipTable;
 import fel.FelScriptEngine;
 import fel.FelScriptException;
-import fel.Log;
 import fel.script.ScriptVar;
-import com.jakewharton.fliptables.FlipTable;
 
 import java.io.File;
 import java.util.List;
@@ -14,8 +13,8 @@ public class FelScriptEngineTest {
         long startTime = System.currentTimeMillis();
         try {
             List<ScriptVar> varList = new FelScriptEngine.Builder()
-                    .setScript(new File("/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt"))
-                    .setDataSource(FelTest.initData())
+                    .setScript(new File("E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt"))
+                    .setDataSource(FelTest.loadDataFromExcel())
                     .eval();
 
             showValue(varList);
@@ -38,4 +37,6 @@ public class FelScriptEngineTest {
         }
         System.out.println(FlipTable.of(header, dataList));
     }
+
+
 }

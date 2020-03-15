@@ -16,7 +16,7 @@ public abstract class ArithFunction extends BaseFunction {
 
     @Override
     protected void validateParam(Object[] objects) {
-        if (objects != null && objects.length == 2) {
+        if (objects != null && (objects.length == 2 || objects.length == 3)) {
             Object refCode = objects[0];
             Object count = objects[1];
             Map<String, List<Field>> dataSet = getDataSet();

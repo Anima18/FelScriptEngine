@@ -1,53 +1,49 @@
 package com.chris.test;
 
+import com.chris.test.excelUtil.ExcelException;
+import com.chris.test.excelUtil.ExcelSheet;
+import com.chris.test.excelUtil.ExcelWorkbook;
 import fel.function.FunctionRepository;
 import fel.script.Field;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
 import com.jakewharton.fliptables.FlipTable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class FelTest {
-    public static void main(String[] args) {
+    public static Map<String, List<Field>> loadDataFromExcel() {
+        try {
+            ExcelWorkbook workbook = new ExcelWorkbook(new File("E:/code/Idea_workspace/FelScriptEngine/data.xlsx"));
+            ExcelSheet sheet = workbook.getSheetAt(0);
+            Map<String, List<Field>> datas = new HashMap<>();
+            datas.put("time", new ArrayList<>());
+            datas.put("open", new ArrayList<>());
+            datas.put("high", new ArrayList<>());
+            datas.put("low", new ArrayList<>());
+            datas.put("close", new ArrayList<>());
+            datas.put("amount", new ArrayList<>());
+            for(int r = 1; r < sheet.getRowCount(); r++) {
+                List<String> rowDataList = sheet.getRowDataList(r, 6);
+                datas.get("time").add(Field.ofValue(rowDataList.get(0)));
+                datas.get("open").add(Field.ofValue(Double.parseDouble(rowDataList.get(1))));
+                datas.get("high").add(Field.ofValue(Double.parseDouble(rowDataList.get(2))));
+                datas.get("low").add(Field.ofValue(Double.parseDouble(rowDataList.get(3))));
+                datas.get("close").add(Field.ofValue(Double.parseDouble(rowDataList.get(4))));
+                datas.get("amount").add(Field.ofValue(Double.parseDouble(rowDataList.get(5))));
+            }
 
-        FelEngine engine = new FelEngineImpl();
-        FunctionRepository repository = new FunctionRepository(engine);
-        repository.initFunction();
-        repository.initData(initData());
+            workbook.close();
+            return datas;
 
-        Object eval = null;
-        System.out.println("============test SUM==============");
-        eval = engine.eval("SUM(A, 10)");
-        System.out.println(eval);
-
-        System.out.println("============test AVG==============");
-        eval = engine.eval("AVG(A, 10)");
-        System.out.println(eval);
-
-        System.out.println("============test IF==============");
-        eval = engine.eval("IF(REFL(B,1) != 0, REFL(B,1)*11/13+REFL(E)*2/13, REFL(E))");
-        System.out.println(eval);
-
-
-        System.out.println("============test AND==============");
-        eval = engine.eval("AND(REFL(A, 5) == 40, SUM(A, 5) > 0)");
-        System.out.println(eval);
-
-        System.out.println("============test OR==============");
-        eval = engine.eval("OR(AVG(A, 5) > SUM(A, 5), 1 > 0, 5-4<0)");
-        System.out.println(eval);
-
-        System.out.println("============test REFL==============");
-        eval = engine.eval("REFL(A, 1)*3");
-        System.out.println(eval);
-
-        System.out.println("============test STDEV==============");
-        eval = engine.eval("STDEV(A, 5)");
-        System.out.println(eval);
+        } catch (ExcelException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static Map<String, List<Field>> initData() {
