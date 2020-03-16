@@ -8,7 +8,7 @@ public class TextUtil {
         return (str == null || str.length() == 0);
     }
 
-    public static boolean isNumeric(String str){
+    public static boolean isInt(String str){
         Pattern pattern = Pattern.compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
         if( !isNum.matches() ){

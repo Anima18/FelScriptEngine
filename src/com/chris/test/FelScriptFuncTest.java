@@ -17,34 +17,32 @@ public class FelScriptFuncTest {
         engine = new FelEngineImpl();
         FunctionRepository repository = new FunctionRepository(engine);
         repository.initFunction();
-        repository.initData(loadDataFromExcel());
+        repository.initData(initData());
     }
 
-    /*@Test
+    @Test
     public void testSum(){
         Object eval = engine.eval("SUM(A, 10)");
         Assert.assertEquals(eval, 450.0);
     }
-*/
-    /*@Test
+    @Test
     public void testAvg(){
         Assert.assertEquals(engine.eval("AVG(A, 10)"), 45.0);
-    }*/
+    }
 
     @Test
     public void testAvgRang(){
-        Assert.assertEquals(engine.eval("AVG(close, 200, 200)"), 10.0);
+        Assert.assertEquals(engine.eval("AVG(A, 10, 10)"), 45.0);
     }
-/*
     @Test
     public void testIf(){
-        Object eval = engine.eval("IF(REFL(B,1) != 0, REFL(B,1)*11/13+REFL(E)*2/13, REFL(E))");
-        Assert.assertEquals(eval, 83);
+        Object eval = engine.eval("IF(REFL(B,1) == 1, true, false)");
+        Assert.assertEquals(eval, true);
     }
 
     @Test
     public void testAnd(){
-        Object eval = engine.eval("AND(REFL(A, 5) == 40, SUM(A, 5) > 0, REFL(B) == 91)");
+        Object eval = engine.eval("AND(REFL(A, 5) == 40, SUM(A, 5) > 0, REFL(B) == 1)");
         Assert.assertEquals(eval, "True");
     }
 
@@ -57,7 +55,7 @@ public class FelScriptFuncTest {
     @Test
     public void testREFL(){
         Object eval =engine.eval("REFL(A, 1)");
-        Assert.assertEquals(eval, 80.0);
+        Assert.assertEquals(eval, 0.0);
     }
 
     @Test
@@ -94,5 +92,5 @@ public class FelScriptFuncTest {
     public void testABS(){
         Object eval = engine.eval("ABS(-1)");
         Assert.assertEquals(eval, 1.0);
-    }*/
+    }
 }

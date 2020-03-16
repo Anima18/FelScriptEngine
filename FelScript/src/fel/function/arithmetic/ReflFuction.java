@@ -27,7 +27,7 @@ public class ReflFuction extends BaseFunction {
                     throw new FelScriptException(String.format("%s运算出错，参数不正确！", getName()));
                 } else if (!dataSet.containsKey(refCode)) {
                     throw new FelScriptException(String.format("%s运算出错，参数%s不存在！", getName(), refCode));
-                } else if (!TextUtil.isNumeric(count.toString())) {
+                } else if (!TextUtil.isInt(count.toString())) {
                     throw new FelScriptException(String.format("%s运算出错，参数%s不是数值！", getName(), count));
                 }else if(dataSet.get(refCode).size() <= Integer.parseInt(count.toString())) {
                     throw new FelScriptException(String.format("%s运算出错，%s超出了数组长度！", getName(), count.toString()));
@@ -42,11 +42,11 @@ public class ReflFuction extends BaseFunction {
     public Object call(Object[] objects) {
         validateParam(objects);
         List<Field> valueList = getDataSet().get(objects[0]);
-        int lastIndex = 0;
+        int index = 0;
         if(objects.length == 2) {
-            lastIndex = Integer.parseInt(objects[1].toString());
+            index = Integer.parseInt(objects[1].toString())-1;
         }
-        return valueList.get(valueList.size()-lastIndex-1).getValue();
+        return valueList.get(index).getValue();
     }
 
     @Override

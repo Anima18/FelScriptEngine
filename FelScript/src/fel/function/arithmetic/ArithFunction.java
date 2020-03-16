@@ -24,7 +24,7 @@ public abstract class ArithFunction extends BaseFunction {
                 throw new FelScriptException(String.format("%s运算出错，参数不正确！", getName()));
             } else if (!dataSet.containsKey(refCode)) {
                 throw new FelScriptException(String.format("%s运算出错，参数%s不存在！", getName(), refCode));
-            } else if (!TextUtil.isNumeric(count.toString())) {
+            } else if (!TextUtil.isInt(count.toString())) {
                 throw new FelScriptException(String.format("%s运算出错，参数%s不是数值！", getName(), count));
             } else if(dataSet.get(refCode).size() < Integer.parseInt(count.toString())) {
                 throw new FelScriptException(String.format("%s运算出错，%s超出了数组长度！", getName(), count.toString()));

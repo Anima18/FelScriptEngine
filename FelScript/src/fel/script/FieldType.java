@@ -1,6 +1,7 @@
 package fel.script;
 
 import fel.FelScriptException;
+import fel.util.TextUtil;
 
 public enum FieldType {
     Numeric("Numeric"), Bool("Bool"), String("String");
@@ -36,7 +37,11 @@ public enum FieldType {
             case String:
                 return value;
             case Numeric:
-                return Double.parseDouble(value);
+                if(TextUtil.isInt(value)) {
+                    return Integer.parseInt(value);
+                }else {
+                    return Double.parseDouble(value);
+                }
             default:
                 return field.getValue();
         }

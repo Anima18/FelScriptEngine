@@ -7,46 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ExcelUtil.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/activation-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/classmate-1.3.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-codec-1.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-collections4-4.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-compress-1.19.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-math3-3.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/curvesapi-1.06.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fliptables-1.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hibernate-validator-6.1.0.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hibernate-validator-annotation-processor-6.1.0.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hibernate-validator-cdi-6.1.0.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jakarta.el-3.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jakarta.validation-api-2.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxb-api-2.3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxb-core-2.3.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jaxb-impl-2.3.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jboss-logging-3.3.2.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-4.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/log4j-1.2.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-4.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-examples-4.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-excelant-4.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-ooxml-4.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-ooxml-schemas-4.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-scratchpad-4.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/xmlbeans-3.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FelScript/src/fel/FelCollector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/ArithFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/ArithFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/AverageFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/AverageFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FelScriptEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FelScriptEngine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/ReflFuction.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/ReflFuction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/script/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/script/FieldType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/util/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/util/TextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/FunctionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/FunctionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ArithFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ArithFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ReflFuction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ReflFuction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/StdevFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/StdevFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MaxColFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MaxColFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MinColFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MinColFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/FieldType$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/FieldType$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/FieldType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/FieldType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/util/TextUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/util/TextUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/META-INF/FelScriptEngine.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptFuncTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptFuncTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scriptTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scriptTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scriptTest_bat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scriptTest_bat.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptFuncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptFuncTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,33 +75,7 @@
       <recent name="$PROJECT_DIR$/src/com/chris/fel/util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FelScriptEngineTest">
-    <configuration name="FelScriptEngineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptEngineTest" />
-      <module name="FelScriptEngine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chris.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelTest" />
-      <module name="FelScriptEngine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chris.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.FelScriptFuncTest">
     <configuration name="FelScriptFuncTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FelScriptEngine" />
       <extension name="coverage">
@@ -137,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FelScriptFuncTest.testAvg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FelScriptFuncTest.testAnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FelScriptEngine" />
       <extension name="coverage">
         <pattern>
@@ -147,7 +101,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.chris.test" />
       <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptFuncTest" />
-      <option name="METHOD_NAME" value="testAvg" />
+      <option name="METHOD_NAME" value="testAnd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FelScriptFuncTest.testMAX" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FelScriptEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chris.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chris.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptFuncTest" />
+      <option name="METHOD_NAME" value="testMAX" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FelScriptFuncTest.testOr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FelScriptEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chris.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chris.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptFuncTest" />
+      <option name="METHOD_NAME" value="testOr" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FelScriptFuncTest.testSTDEV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FelScriptEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chris.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chris.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptFuncTest" />
+      <option name="METHOD_NAME" value="testSTDEV" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,10 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FelScriptEngineTest" />
         <item itemvalue="JUnit.FelScriptFuncTest" />
-        <item itemvalue="JUnit.FelScriptFuncTest.testAvg" />
-        <item itemvalue="Application.FelTest" />
+        <item itemvalue="JUnit.FelScriptFuncTest.testMAX" />
+        <item itemvalue="JUnit.FelScriptFuncTest.testSTDEV" />
+        <item itemvalue="JUnit.FelScriptFuncTest.testOr" />
+        <item itemvalue="JUnit.FelScriptFuncTest.testAnd" />
       </list>
     </recent_temporary>
   </component>
@@ -205,55 +208,55 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="355" y="287" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1578836068557" />
-    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1578839158732">
+    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1584364180551">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1578839158732" />
+    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1584364180551" />
     <state width="576" height="466" key="DebuggerActiveHint/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357983714" />
     <state x="455" y="204" key="FileChooserDialogImpl" timestamp="1584242769492">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="204" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584242769492" />
     <state x="2239" y="294" key="FileChooserDialogImpl/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349835342" />
-    <state width="1322" height="241" key="GridCell.Tab.0.bottom" timestamp="1584275581708">
+    <state width="1322" height="283" key="GridCell.Tab.0.bottom" timestamp="1584368295768">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="283" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584368295768" />
     <state width="1628" height="178" key="GridCell.Tab.0.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="241" key="GridCell.Tab.0.center" timestamp="1584275581708">
+    <state width="1322" height="283" key="GridCell.Tab.0.center" timestamp="1584368295768">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="283" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584368295768" />
     <state width="1628" height="178" key="GridCell.Tab.0.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="241" key="GridCell.Tab.0.left" timestamp="1584275581708">
+    <state width="1322" height="283" key="GridCell.Tab.0.left" timestamp="1584368295768">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="283" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584368295768" />
     <state width="1628" height="178" key="GridCell.Tab.0.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="241" key="GridCell.Tab.0.right" timestamp="1584275581708">
+    <state width="1322" height="283" key="GridCell.Tab.0.right" timestamp="1584368295768">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="283" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584368295768" />
     <state width="1628" height="178" key="GridCell.Tab.0.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="241" key="GridCell.Tab.1.bottom" timestamp="1584275581709">
+    <state width="1322" height="241" key="GridCell.Tab.1.bottom" timestamp="1584364574345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584275581709" />
+    <state width="1322" height="241" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584364574345" />
     <state width="1628" height="178" key="GridCell.Tab.1.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="241" key="GridCell.Tab.1.center" timestamp="1584275581708">
+    <state width="1322" height="241" key="GridCell.Tab.1.center" timestamp="1584364574345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="241" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1584364574345" />
     <state width="1628" height="178" key="GridCell.Tab.1.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="241" key="GridCell.Tab.1.left" timestamp="1584275581708">
+    <state width="1322" height="241" key="GridCell.Tab.1.left" timestamp="1584364574345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="241" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1584364574345" />
     <state width="1628" height="178" key="GridCell.Tab.1.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="241" key="GridCell.Tab.1.right" timestamp="1584275581708">
+    <state width="1322" height="241" key="GridCell.Tab.1.right" timestamp="1584364574345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584275581708" />
+    <state width="1322" height="241" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584364574345" />
     <state width="1628" height="178" key="GridCell.Tab.1.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
     <state x="160" y="0" width="916" height="728" key="SettingsEditor" timestamp="1584242773543">
       <screen x="0" y="0" width="1366" height="728" />
@@ -281,10 +284,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577868903870" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578579003434">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584364810095">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578579003434" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1584364810095" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -300,34 +303,36 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/SumFunction.java</url>
           <line>16</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/AverageFunction.java</url>
           <line>26</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/AverageFunction.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/AverageFunction.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/arithmetic/ArithFunction.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="dataSet.size() &lt;= Integer.parseInt(count.toString())" language="JAVA" />
-        <watch expression="valueList.get(valueList.size()-lastIndex-1)" language="JAVA" />
-        <watch expression="Boolean.valueOf(objects[0].toString())? objects[1] : objects[2]" language="JAVA" />
-        <watch expression="((HashMap.Node)((HashMap)datas).entrySet().toArray()[0]).getValue()" custom="java.util.HashMap.Node,java.util.HashMap" />
-        <watch expression="((HashMap.Node)((HashMap)datas).entrySet().toArray()[5]).getKey()" custom="java.util.HashMap.Node,java.util.HashMap" />
+        <watch expression="Integer.parseInt(count.toString())" language="JAVA" />
+        <watch expression="count.toString()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
