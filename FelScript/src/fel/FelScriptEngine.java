@@ -9,8 +9,11 @@ import fel.script.*;
 import fel.util.Constant;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static fel.util.Constant.*;
 
 public class FelScriptEngine {
     private FelEngine engine;
@@ -33,9 +36,21 @@ public class FelScriptEngine {
 
     public List<ScriptVar> eval() {
         Log.i("========开始执行脚本========");
+        long startTime1 = System.currentTimeMillis();
         loadParams(scriptNode.getParams());
+        long endTime1 = System.currentTimeMillis();
+        System.out.println("loadParams运行时间： "+(endTime1-startTime1)+"ms");
+
+        long startTime2 = System.currentTimeMillis();
         loadVars(scriptNode.getVars());
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("loadVars运行时间： "+(endTime2-startTime2)+"ms");
+
+        long startTime3 = System.currentTimeMillis();
         runExecs(scriptNode.getExecs());
+        long endTime3 = System.currentTimeMillis();
+        System.out.println("runExecs运行时间： "+(endTime3-startTime3)+"ms");
+
         return scriptNode.getVars();
     }
 
@@ -55,6 +70,10 @@ public class FelScriptEngine {
 
     private void loadVars(List<ScriptVar> Vars) {
         FelContext context = engine.getContext();
+        /*if(context.get(VAR_SET) == null) {
+            context.set(VAR_SET, new HashMap<String, Field>());
+        }*/
+        Map<String, Field> varSet = (Map<String, Field>)context.get(DATA_SET);
         for(ScriptVar var : Vars) {
             String varName = var.getName();
             if(context.get(varName) != null) {
@@ -62,7 +81,14 @@ public class FelScriptEngine {
                 //Log.i(message);
                 throw FelScriptException.withLog(message, var.getLineNum());
             }else {
-                context.set(varName, var.getValue());
+                context.set(varName, varName);
+
+                varSet.put(varName, var);
+                if(var.getFieldType().equals(FieldType.List)) {
+                    for(int i = 0; i < (int)context.get(DATA_SIZE); i++) {
+                        ((List)var.getValue()).add(null);
+                    }
+                }
             }
         }
         Log.i("【√】加载脚本Vars成功");
@@ -74,8 +100,10 @@ public class FelScriptEngine {
             String expression = exec.getExpression();
             try {
                 Object value = engine.eval(expression);
-                context.set(exec.getVar().getName(), value);
-                exec.getVar().setValue(value);
+                if(exec.getType() == ScriptExec.ExecType.assign) {
+                    //context.set(exec.getVar().getName(), value);
+                    exec.getVar().setValue(value);
+                }
                 Log.i(String.format("【√】执行脚本语句 %s 成功", expression));
             } catch (FelScriptException e) {
                 throw FelScriptException.withLog(String.format(Constant.execRunError, exec.getLineNum(), expression, e.getMessage()));
@@ -88,14 +116,14 @@ public class FelScriptEngine {
 
     public static class Builder {
         private File script;
-        private Map<String, List<Field>> dataSource;
+        private Map<String, Field> dataSource;
 
         public Builder setScript(File script) {
             this.script = script;
             return this;
         }
 
-        public Builder setDataSource(Map<String, List<Field>> dataSource) {
+        public Builder setDataSource(Map<String, Field> dataSource) {
             this.dataSource = dataSource;
             return this;
         }

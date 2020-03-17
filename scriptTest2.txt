@@ -1,0 +1,64 @@
+Params
+Numeric 	i(200);
+
+Vars
+List 	G;
+List 	H;
+List 	I;
+List 	J;
+List 	K;
+List 	L;
+List 	M;
+List 	N;
+List 	O;
+List 	P;
+List 	Q;
+List 	R;
+List 	S;
+List 	T;
+List 	U;
+List 	V;
+List 	W;
+List 	X;
+List 	Y;
+List 	Z;
+List 	AA;
+List 	AB;
+
+
+
+Exec
+PUT(G, i, AVG(close, i, i))
+PUT(H, i, REFL(low, i)-REFL(G, i))
+PUT(I, i, REFL(G, i)-REFL(high,i))
+PUT(J, i, (REFL(G, i) - REFL(G, i-1)) / REFL(G, i) * 100)
+PUT(K, i, AVG(J, i, 50))
+PUT(L, i, AVG(close, i, 60))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

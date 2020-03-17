@@ -17,11 +17,11 @@ public class MinColFunction extends ArithFunction {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
         int count = Integer.parseInt(objects[1].toString());
-        List<Field> dataList = getDataSet().get(refCode);
+        List dataList = getDataSetItemValue(refCode);
         int dataSize = dataList.size();
 
-        List<Field> subDataList = dataList.subList(dataSize - count, dataSize);
-        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.getValue().toString())).min().getAsDouble();
+        List subDataList = dataList.subList(dataSize - count, dataSize);
+        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.toString())).min().getAsDouble();
     }
 
     @Override

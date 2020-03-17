@@ -2,9 +2,18 @@ package fel.script;
 
 public class ScriptVar extends Field {
     private int lineNum;
-    public ScriptVar(int lineNum, String name, FieldType fieldType) {
+    private ScriptVar(int lineNum, String name, FieldType fieldType) {
         super(name, fieldType);
         this.lineNum = lineNum;
+        setValue(FieldType.initFiledValue(this));
+    }
+
+    public static ScriptVar parse(int lineNum, String varStr) {
+        varStr = varStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
+        String[] varSplitArray = varStr.split("\\|");
+        String fieldType = varSplitArray[0];
+        String name = varSplitArray[1];
+        return new ScriptVar(lineNum, name, FieldType.to(fieldType));
     }
 
     public int getLineNum() {

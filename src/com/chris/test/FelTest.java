@@ -8,6 +8,7 @@ import fel.script.Field;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
 import com.jakewharton.fliptables.FlipTable;
+import fel.script.FieldType;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -16,25 +17,28 @@ import java.util.List;
 import java.util.Map;
 
 public class FelTest {
-    public static Map<String, List<Field>> loadDataFromExcel() {
+    public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt";
+    //public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest_bat.txt";
+    public static final String DATA_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/data.xlsx";
+    public static Map<String, Field> loadDataFromExcel() {
         try {
-            ExcelWorkbook workbook = new ExcelWorkbook(new File("E:/code/Idea_workspace/FelScriptEngine/data.xlsx"));
+            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
             ExcelSheet sheet = workbook.getSheetAt(0);
-            Map<String, List<Field>> datas = new HashMap<>();
-            datas.put("time", new ArrayList<>());
-            datas.put("open", new ArrayList<>());
-            datas.put("high", new ArrayList<>());
-            datas.put("low", new ArrayList<>());
-            datas.put("close", new ArrayList<>());
-            datas.put("amount", new ArrayList<>());
+            Map<String, Field> datas = new HashMap<>();
+            datas.put("time", new Field("time", FieldType.List));
+            datas.put("open", new Field("open", FieldType.List));
+            datas.put("high", new Field("high", FieldType.List));
+            datas.put("low", new Field("low", FieldType.List));
+            datas.put("close", new Field("close", FieldType.List));
+            datas.put("amount", new Field("amount", FieldType.List));
             for(int r = 1; r < sheet.getRowCount(); r++) {
                 List<String> rowDataList = sheet.getRowDataList(r, 6);
-                datas.get("time").add(Field.ofValue(rowDataList.get(0)));
-                datas.get("open").add(Field.ofValue(Double.parseDouble(rowDataList.get(1))));
-                datas.get("high").add(Field.ofValue(Double.parseDouble(rowDataList.get(2))));
-                datas.get("low").add(Field.ofValue(Double.parseDouble(rowDataList.get(3))));
-                datas.get("close").add(Field.ofValue(Double.parseDouble(rowDataList.get(4))));
-                datas.get("amount").add(Field.ofValue(Double.parseDouble(rowDataList.get(5))));
+                ((List)datas.get("time").getValue()).add(rowDataList.get(0));
+                ((List)datas.get("open").getValue()).add(Double.parseDouble(rowDataList.get(1)));
+                ((List)datas.get("high").getValue()).add(Double.parseDouble(rowDataList.get(2)));
+                ((List)datas.get("low").getValue()).add(Double.parseDouble(rowDataList.get(3)));
+                ((List)datas.get("close").getValue()).add(Double.parseDouble(rowDataList.get(4)));
+                ((List)datas.get("amount").getValue()).add(Double.parseDouble(rowDataList.get(5)));
             }
 
             workbook.close();
@@ -46,7 +50,7 @@ public class FelTest {
         }
     }
 
-    public static Map<String, List<Field>> initData() {
+    public static Map<String, Field> initData() {
         String[] headers = new String[26];
         for(int i = 0;i<26;i++){
             headers[i] = String.valueOf(Character.toUpperCase( (char)(97+i)));
@@ -66,27 +70,27 @@ public class FelTest {
         }
 
 
-        Map<String, List<Field>> map = new HashMap<>();
+        Map<String, Field> map = new HashMap<>();
         for(int i = 0;i<26;i++){
             String key = headers[i];
-            List<Field> dataList = new ArrayList<>();
+            Field field = Field.ofValue(new ArrayList<>());
             if(i == 24) {
                 for(int j = 0; j < 10; j++) {
-                    dataList.add(Field.ofValue(true));
+                    ((List)field.getValue()).add(true);
                 }
             }else if(i == 25) {
                 for(int j = 0; j < 10; j++) {
-                    dataList.add(Field.ofValue("等待"));
+                    ((List)field.getValue()).add("等待");
                 }
             }else {
                 for(int j = 0; j < 10; j++) {
-                    dataList.add(Field.ofValue((float)(j*10 + i)));
+                    ((List)field.getValue()).add(j*10 + i);
                 }
             }
 
-            map.put(key, dataList);
+            map.put(key, field);
         }
-        System.out.println(FlipTable.of(headers, datas));
+        //System.out.println(FlipTable.of(headers, datas));
         return map;
     }
 }

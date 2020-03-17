@@ -38,12 +38,21 @@ public class FunctionRepository {
         engine.addFun(new MaxColFunction(context));
         engine.addFun(new MinColFunction(context));
         engine.addFun(new AbsFuction(context));
+        engine.addFun(new SetFunction(context));
     }
 
-    public void initData(Map<String, List<Field>> dataSet) {
+    public void initData(Map<String, Field> dataSet) {
         FelContext ctx = engine.getContext();
         //把数据源加载到context
         ctx.set(Constant.DATA_SET, dataSet);
+
+        for (Map.Entry<String, Field> entry : dataSet.entrySet()) {
+            Field obj = entry.getValue();
+            if (obj != null) {
+                ctx.set(Constant.DATA_SIZE, ((List)obj.getValue()).size());
+                break;
+            }
+        }
         //把变量True、False加载到context
         ctx.set(Constant.TRUE, Constant.TRUE);
         ctx.set(Constant.FALSE, Constant.FALSE);

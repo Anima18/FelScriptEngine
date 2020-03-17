@@ -5,6 +5,9 @@ import fel.FelScriptException;
 import fel.function.BaseFunction;
 import fel.util.TextUtil;
 
+/**
+ * 绝对值函数
+ */
 public class AbsFuction extends BaseFunction {
     public AbsFuction(FelContext context) {
         super(context);

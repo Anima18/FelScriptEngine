@@ -16,11 +16,11 @@ public class StdevFunction extends ArithFunction {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
         int count = Integer.parseInt(objects[1].toString());
-        List<Field> dataList = getDataSet().get(refCode);
+        List dataList = getDataSetItemValue(refCode);
         int dataSize = dataList.size();
 
-        List<Field> subDataList = dataList.subList(dataSize - count, dataSize);
-        List<Double> valueList = subDataList.stream().map(e -> Double.parseDouble(e.getValue().toString())).collect(Collectors.toList());
+        List<Object> subDataList = dataList.subList(dataSize - count, dataSize);
+        List<Double> valueList = subDataList.stream().map(e -> Double.parseDouble(e.toString())).collect(Collectors.toList());
         return standardDiviation(valueList);
     }
 

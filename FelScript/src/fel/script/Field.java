@@ -3,6 +3,8 @@ package fel.script;
 import fel.util.Constant;
 import com.sun.istack.internal.NotNull;
 
+import java.util.List;
+
 public class Field {
     private String name;
     private Object value;
@@ -19,6 +21,7 @@ public class Field {
     public Field(String name, FieldType fieldType) {
         this.name = name;
         this.fieldType = fieldType;
+        this.value = FieldType.initFiledValue(this);
     }
 
     public static Field ofValue(@NotNull Object value) {
@@ -36,6 +39,9 @@ public class Field {
         }else if(value instanceof Boolean) {
             field.setFieldType(FieldType.Bool);
             field.setValue(value.toString());
+        }else if(value instanceof List) {
+            field.setFieldType(FieldType.List);
+            field.setValue(value);
         }
 
         return field;

@@ -54,13 +54,7 @@ public class ScriptParser {
             for (String paramStr : paramStrArray) {
                 if (!TextUtil.isEmpty(paramStr.trim())) {
                     lineNum = codeLineList.indexOf(paramStr);
-                    paramStr = paramStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
-                    String[] paramSplitArray = paramStr.split("\\|");
-                    String fieldType = paramSplitArray[0];
-                    String[] nameSplitArray = paramSplitArray[1].split("\\(");
-                    String name = nameSplitArray[0];
-                    String value = nameSplitArray[1].split("\\)")[0];
-                    params.add(new ScriptParam(lineNum+1, name, value, FieldType.to(fieldType)));
+                    params.add(ScriptParam.parse(lineNum, paramStr));
                 }
             }
         } catch (Exception e) {
@@ -81,11 +75,7 @@ public class ScriptParser {
             for (String varStr : varStrArray) {
                 if (!TextUtil.isEmpty(varStr.trim())) {
                     lineNum = codeLineList.indexOf(varStr);
-                    varStr = varStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
-                    String[] varSplitArray = varStr.split("\\|");
-                    String fieldType = varSplitArray[0];
-                    String name = varSplitArray[1];
-                    vars.add(new ScriptVar(lineNum+1, name, FieldType.to(fieldType)));
+                    vars.add(ScriptVar.parse(lineNum, varStr));
                 }
             }
         } catch (Exception e) {
@@ -110,13 +100,7 @@ public class ScriptParser {
             for (String execStr : execStrArray) {
                 if (!TextUtil.isEmpty(execStr.trim())) {
                     lineNum = codeLineList.indexOf(execStr);
-                    execStr = execStr.replaceAll(";", "").replaceAll("\\s*", "");
-                    int index = execStr.indexOf("=");
-                    String name = execStr.substring(0, index);
-                    String expression = execStr.substring(index + 1);
-
-                    ScriptVar var = varMap.get(name);
-                    execs.add(new ScriptExec(lineNum+1, var, expression));
+                    execs.add(ScriptExec.parse(lineNum, varMap, execStr));
                 }
             }
         } catch (Exception e) {

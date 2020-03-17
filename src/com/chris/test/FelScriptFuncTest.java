@@ -55,7 +55,7 @@ public class FelScriptFuncTest {
     @Test
     public void testREFL(){
         Object eval =engine.eval("REFL(A, 1)");
-        Assert.assertEquals(eval, 0.0);
+        Assert.assertEquals(eval, 0);
     }
 
     @Test

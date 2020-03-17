@@ -4,6 +4,8 @@ public interface Constant {
     String TRUE = "True";
     String FALSE = "False";
     String DATA_SET = "dataSet";
+    String DATA_SIZE = "dataSize";
+    //String VAR_SET = "varSet";
 
     /**
      * error message

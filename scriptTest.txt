@@ -2,56 +2,13 @@ Params
 Numeric 	i(200);
 
 Vars
-List<Numeric> 	G;
-List<Numeric> 	H;
-List<Numeric> 	I;
-List<Numeric> 	J;
-List<Numeric> 	K;
-List<Numeric> 	L;
-List<Numeric> 	M;
-List<Numeric> 	N;
-List<Numeric> 	O;
-List<Numeric> 	P;
-List<Numeric> 	Q;
-List<Numeric> 	R;
-List<Numeric> 	S;
-List<Numeric> 	T;
-List<Numeric> 	U;
-List<Numeric> 	V;
-List<Numeric> 	W;
-List<Numeric> 	X;
-List<Numeric> 	Y;
-List<Numeric> 	Z;
-List<Numeric> 	AA;
-List<Numeric> 	AB;
-
-
+List 	G;
+List 	H;
 
 Exec
-PUT(G, i, AVG(close, i, i))
-PUT(H, i, REFL(low, i)-REFL(G, i))
-PUT(I, i, REFL(G, i)-REFL(high,i))
-PUT(J, i, (REFL(G, i) - REFL(G, i-1)) / REFL(G, i) * 100)
-PUT(K, i, AVG(J, i, 50))
-PUT(L, i, AVG(close, i, 60))
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
-PUT(K, i, )
+SET(G, i, AVG(close, i, i))
+SET(H, i, REFL(low, i)-REFL(G, i))
+
 
 
 

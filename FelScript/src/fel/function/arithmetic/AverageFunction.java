@@ -5,6 +5,9 @@ import com.greenpineyu.fel.context.FelContext;
 
 import java.util.List;
 
+/**
+ * 平均值函数，AVG(A, n, l), 求列表A第n项往前l个元素的平均值
+ */
 public class AverageFunction extends ArithFunction {
     public AverageFunction(FelContext context) {
         super(context);
@@ -14,7 +17,7 @@ public class AverageFunction extends ArithFunction {
     public Object call(Object[] objects) {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
-        List<Field> dataList = getDataSet().get(refCode);
+        List dataList = getDataSetItemValue(refCode);
         int fromIndex = 0, toIndex = 0;
         if(objects.length == 2) {
             toIndex = dataList.size();
@@ -24,8 +27,8 @@ public class AverageFunction extends ArithFunction {
             fromIndex = toIndex - Integer.parseInt(objects[2].toString());
         }
 
-        List<Field> subDataList = dataList.subList(fromIndex, toIndex);
-        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.getValue().toString())).average().getAsDouble();
+        List subDataList = dataList.subList(fromIndex, toIndex);
+        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.toString())).average().getAsDouble();
     }
 
     @Override
