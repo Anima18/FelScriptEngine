@@ -3,11 +3,7 @@ package com.chris.test;
 import com.chris.test.excelUtil.ExcelException;
 import com.chris.test.excelUtil.ExcelSheet;
 import com.chris.test.excelUtil.ExcelWorkbook;
-import fel.function.FunctionRepository;
 import fel.script.Field;
-import com.greenpineyu.fel.FelEngine;
-import com.greenpineyu.fel.FelEngineImpl;
-import com.jakewharton.fliptables.FlipTable;
 import fel.script.FieldType;
 
 import java.io.File;
@@ -18,11 +14,12 @@ import java.util.Map;
 
 public class FelTest {
     public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt";
-    //public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest_bat.txt";
+    public static final String SCRIPT_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt";
     public static final String DATA_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/data.xlsx";
+    public static final String DATA_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/data.xlsx";
     public static Map<String, Field> loadDataFromExcel() {
         try {
-            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
+            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE2));
             ExcelSheet sheet = workbook.getSheetAt(0);
             Map<String, Field> datas = new HashMap<>();
             datas.put("time", new Field("time", FieldType.List));

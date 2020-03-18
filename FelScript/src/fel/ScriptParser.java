@@ -97,12 +97,34 @@ public class ScriptParser {
         Integer lineNum = null;
         try {
             String[] execStrArray = execBlock.split("\n");
-            for (String execStr : execStrArray) {
+            for(int i = 0; i < execStrArray.length; i++) {
+                String execStr = execStrArray[i].trim();
+                if(TextUtil.isEmpty(execStr)) {
+                    continue;
+                }else if(execStr.equals("#LOOP")) {
+                    for(int j = i+1; j < execStrArray.length; j++) {
+                        String loopCode = execStrArray[j].trim();
+                        if(!TextUtil.isEmpty(loopCode) && loopCode.equals("#END")) {
+                            List<String> loopBlock = Arrays.asList(execStrArray).subList(i+1, j);
+                            lineNum = codeLineList.indexOf(execStr);
+                            execs.add(ScriptExec.parseLoop(lineNum, loopBlock));
+                            i = j;
+                            break;
+                        }
+                    }
+                }else {
+                    lineNum = codeLineList.indexOf(execStr);
+                    execs.add(ScriptExec.parse(lineNum, varMap, execStr));
+                }
+
+            }
+
+           /* for (String execStr : execStrArray) {
                 if (!TextUtil.isEmpty(execStr.trim())) {
                     lineNum = codeLineList.indexOf(execStr);
                     execs.add(ScriptExec.parse(lineNum, varMap, execStr));
                 }
-            }
+            }*/
         } catch (Exception e) {
             e.printStackTrace();
             String errorMessage = String.format("解析模型脚本Execs失败: %s", e.getMessage());

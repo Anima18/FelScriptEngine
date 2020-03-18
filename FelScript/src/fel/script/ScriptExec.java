@@ -1,5 +1,6 @@
 package fel.script;
 
+import java.util.List;
 import java.util.Map;
 
 public class ScriptExec {
@@ -37,7 +38,16 @@ public class ScriptExec {
         }else {
             return new ScriptExec(lineNum, null, execStr, ExecType.justRun);
         }
+    }
 
+    public static ScriptExec parseLoop(Integer lineNum, List<String> expressionList) {
+        StringBuilder execBuilder = new StringBuilder("LOOP(");
+        for (String expression : expressionList) {
+            execBuilder.append("\""+expression.trim()+"\"");
+            execBuilder.append(",");
+        }
+        execBuilder.append(")");
+        return new ScriptExec(lineNum, null, execBuilder.toString(), ExecType.justRun);
     }
 
     public ScriptVar getVar() {

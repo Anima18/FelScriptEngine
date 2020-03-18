@@ -6,8 +6,12 @@ List 	G;
 List 	H;
 
 Exec
+#LOOP
+i
 SET(G, i, AVG(close, i, i))
 SET(H, i, REFL(low, i)-REFL(G, i))
+#END
+
 
 
 

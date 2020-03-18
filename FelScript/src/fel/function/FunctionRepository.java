@@ -6,6 +6,7 @@ import fel.function.collection.MaxFunction;
 import fel.function.collection.MinColFunction;
 import fel.function.collection.MinFunction;
 import fel.function.conditional.IfFunction;
+import fel.function.conditional.LoopFunction;
 import fel.function.logical.AndFunction;
 import fel.function.logical.OrFunction;
 import fel.script.Field;
@@ -39,6 +40,7 @@ public class FunctionRepository {
         engine.addFun(new MinColFunction(context));
         engine.addFun(new AbsFuction(context));
         engine.addFun(new SetFunction(context));
+        engine.addFun(new LoopFunction(context, engine));
     }
 
     public void initData(Map<String, Field> dataSet) {
