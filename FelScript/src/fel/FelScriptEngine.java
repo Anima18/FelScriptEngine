@@ -9,11 +9,11 @@ import fel.script.*;
 import fel.util.Constant;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static fel.util.Constant.*;
+import static fel.util.Constant.DATA_SET;
+import static fel.util.Constant.DATA_SIZE;
 
 public class FelScriptEngine {
     private FelEngine engine;
@@ -82,9 +82,10 @@ public class FelScriptEngine {
                 throw FelScriptException.withLog(message, var.getLineNum());
             }else {
                 context.set(varName, varName);
-
                 varSet.put(varName, var);
-                if(var.getFieldType().equals(FieldType.List)) {
+
+                FieldType varType = var.getFieldType();
+                if(varType.equals(FieldType.List_Bool) || varType.equals(FieldType.List_Numeric) || varType.equals(FieldType.List_String)) {
                     for(int i = 0; i < (int)context.get(DATA_SIZE); i++) {
                         ((List)var.getValue()).add(null);
                     }

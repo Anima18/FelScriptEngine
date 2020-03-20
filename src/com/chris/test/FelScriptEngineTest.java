@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 import static com.chris.test.FelTest.SCRIPT_FILE;
-import static com.chris.test.FelTest.SCRIPT_FILE2;
 
 public class FelScriptEngineTest {
     public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class FelScriptEngineTest {
         try {
             long startTime = System.currentTimeMillis();
             List<ScriptVar> varList = new FelScriptEngine.Builder()
-                    .setScript(new File(SCRIPT_FILE2))
+                    .setScript(new File(SCRIPT_FILE))
                     .setDataSource(datas)
                     .eval();
             long endTime=System.currentTimeMillis();
@@ -37,17 +36,27 @@ public class FelScriptEngineTest {
     }
 
     private static void showValue(List<ScriptVar> varList) {
-        String[] header = new String[varList.size()];
-        String[][] dataList = new String[((List)varList.get(0).getValue()).size()][varList.size()];
+        int dataListSize = ((List)varList.get(0).getValue()).size();
+        String[] header = new String[varList.size()+1];
+        header[0] = "序号";
+        String[][] dataList = new String[dataListSize][varList.size()+1];
         for (int i = 0; i < varList.size(); i++) {
-            header[i] = varList.get(i).getName();
-            List valueList = (List)varList.get(i).getValue();
-            for(int j = 0; j < valueList.size(); j++) {
-                Object value = valueList.get(j);
-                dataList[j][i] = value==null ? "" : value.toString();
-            }
-
+            header[i+1] = varList.get(i).getName();
         }
+
+
+        for(int i= 0; i < header.length; i++) {
+            for(int j = 0; j < dataListSize; j++) {
+                if(i == 0) {
+                    dataList[j][i] = j+"";
+                }else {
+                    List valueList = (List)varList.get(i-1).getValue();
+                    Object value = valueList.get(j);
+                    dataList[j][i] = value==null ? "" : value.toString();
+                }
+            }
+        }
+
         System.out.println(FlipTable.of(header, dataList));
     }
 }

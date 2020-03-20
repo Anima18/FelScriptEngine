@@ -3,6 +3,7 @@ package fel.function;
 import com.greenpineyu.fel.context.FelContext;
 import com.greenpineyu.fel.function.CommonFunction;
 import fel.script.Field;
+import fel.script.FieldType;
 import fel.util.Constant;
 
 import java.util.List;
@@ -21,6 +22,10 @@ public abstract class BaseFunction extends CommonFunction {
 
     public Field getDataSetItem(Object name) {
         return getDataSet().get(name);
+    }
+
+    public FieldType getDataType(Object name) {
+        return getDataSet().get(name).getFieldType();
     }
 
     public List getDataSetItemValue(Object name) {

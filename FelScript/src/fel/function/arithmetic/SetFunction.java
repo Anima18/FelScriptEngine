@@ -39,7 +39,7 @@ public class SetFunction extends BaseFunction {
     public Object call(Object[] objects) {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
-        int index = Integer.parseInt(objects[1].toString()) -1;
+        int index = Integer.parseInt(objects[1].toString());
         Object value = objects[2];
         getDataSetItemValue(refCode).set(index, value);
         return null;

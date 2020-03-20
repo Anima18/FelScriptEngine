@@ -4,9 +4,10 @@ import fel.FelScriptException;
 import fel.util.TextUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public enum FieldType {
-    Numeric("Numeric"), Bool("Bool"), String("String"), List("List");
+    Numeric("Numeric"), Bool("Bool"), String("String"), List_Numeric("List<Numeric>"), List_Bool("List<Bool>"), List_String("List<String>");
     private String type;
 
     FieldType(java.lang.String type) {
@@ -31,8 +32,12 @@ public enum FieldType {
             return Bool;
         }else if(type.equals("String")) {
             return String;
-        }else if(type.contains("List")) {
-            return List;
+        }else if(type.equals("List<Numeric>")) {
+            return List_Numeric;
+        }else if(type.equals("List<Bool>")) {
+            return List_Bool;
+        }else if(type.equals("List<String>")) {
+            return List_String;
         }else {
             throw new FelScriptException(java.lang.String.format("模型脚本参数不正确,不存在%s类型,请检查!", type));
         }
@@ -52,8 +57,12 @@ public enum FieldType {
                 return "";
             case Numeric:
                 return 0.0;
-            case List:
-                return new ArrayList<>();
+            case List_Numeric:
+                return new ArrayList<Double>();
+            case List_Bool:
+                return new ArrayList<Boolean>();
+            case List_String:
+                return new ArrayList<String>();
             default:
                 return null;
         }
@@ -78,8 +87,12 @@ public enum FieldType {
                 }else {
                     return Double.parseDouble(value);
                 }
-            case List:
-                return (java.util.List)field.getValue();
+            case List_Bool:
+                return (List<Boolean>)field.getValue();
+            case List_Numeric:
+                return (List<Double>)field.getValue();
+            case List_String:
+                return (List<String>)field.getValue();
             default:
                 return field.getValue();
         }

@@ -4,8 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TextUtil {
-    public static boolean isEmpty(CharSequence str) {
-        return (str == null || str.length() == 0);
+    public static boolean isEmpty(Object str) {
+        return (str == null || str.toString().length() == 0);
     }
 
     public static boolean isInt(String str){

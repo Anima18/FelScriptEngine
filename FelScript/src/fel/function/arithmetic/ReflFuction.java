@@ -3,6 +3,7 @@ package fel.function.arithmetic;
 import fel.FelScriptException;
 import fel.function.BaseFunction;
 import fel.script.Field;
+import fel.script.FieldType;
 import fel.util.TextUtil;
 import com.greenpineyu.fel.context.FelContext;
 
@@ -44,12 +45,24 @@ public class ReflFuction extends BaseFunction {
     @Override
     public Object call(Object[] objects) {
         validateParam(objects);
-        List valueList = getDataSetItemValue(objects[0]);
+        Object reflCode = objects[0];
+        List valueList = getDataSetItemValue(reflCode);
         int index = 0;
         if(objects.length == 2) {
-            index = Integer.parseInt(objects[1].toString())-1;
+            index = Integer.parseInt(objects[1].toString());
         }
-        return valueList.get(index);
+        Object value = valueList.get(index);
+        FieldType fieldType = getDataType(reflCode);
+        switch (fieldType) {
+            case List_Numeric:
+                return TextUtil.isEmpty(value) ? 0.0D : Double.parseDouble(value.toString());
+            case List_String:
+                return TextUtil.isEmpty(value) ? "" : value.toString();
+            case List_Bool:
+                return TextUtil.isEmpty(value) ? false :Boolean.valueOf(value.toString());
+            default:
+                return "";
+        }
     }
 
     @Override

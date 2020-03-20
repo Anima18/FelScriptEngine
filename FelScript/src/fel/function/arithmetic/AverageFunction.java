@@ -2,7 +2,9 @@ package fel.function.arithmetic;
 
 import fel.script.Field;
 import com.greenpineyu.fel.context.FelContext;
+import fel.util.TextUtil;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -27,8 +29,13 @@ public class AverageFunction extends ArithFunction {
             fromIndex = toIndex - Integer.parseInt(objects[2].toString());
         }
 
-        List subDataList = dataList.subList(fromIndex, toIndex);
-        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.toString())).average().getAsDouble();
+        List subDataList = dataList.subList(fromIndex, toIndex+1);
+        return subDataList.stream().filter(e -> {
+            if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
+                return false;
+            }
+            return true;
+        }).mapToDouble(e -> new BigDecimal(e.toString()).doubleValue()).average().getAsDouble();
     }
 
     @Override

@@ -19,15 +19,15 @@ public class FelTest {
     public static final String DATA_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/data.xlsx";
     public static Map<String, Field> loadDataFromExcel() {
         try {
-            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE2));
+            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
             ExcelSheet sheet = workbook.getSheetAt(0);
             Map<String, Field> datas = new HashMap<>();
-            datas.put("time", new Field("time", FieldType.List));
-            datas.put("open", new Field("open", FieldType.List));
-            datas.put("high", new Field("high", FieldType.List));
-            datas.put("low", new Field("low", FieldType.List));
-            datas.put("close", new Field("close", FieldType.List));
-            datas.put("amount", new Field("amount", FieldType.List));
+            datas.put("time", new Field("time", FieldType.List_String));
+            datas.put("open", new Field("open", FieldType.List_Numeric));
+            datas.put("high", new Field("high", FieldType.List_Numeric));
+            datas.put("low", new Field("low", FieldType.List_Numeric));
+            datas.put("close", new Field("close", FieldType.List_Numeric));
+            datas.put("amount", new Field("amount", FieldType.List_Numeric));
             for(int r = 1; r < sheet.getRowCount(); r++) {
                 List<String> rowDataList = sheet.getRowDataList(r, 6);
                 ((List)datas.get("time").getValue()).add(rowDataList.get(0));
