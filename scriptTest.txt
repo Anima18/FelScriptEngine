@@ -1,6 +1,9 @@
 Params
 Numeric 	i(199);
-Numeric 	n(199);
+Numeric 	G_param(199);
+Numeric 	K_param(29);
+Numeric 	L_param(59);
+Numeric 	P_param(11);
 
 
 Vars
@@ -13,7 +16,7 @@ List<Numeric> 	L;
 List<Numeric> 	M;
 List<Numeric> 	N;
 List<Numeric> 	O;
-List<Numeric> 	P;
+List<String> 	P;
 List<Numeric> 	Q;
 List<Numeric> 	R;
 List<Numeric> 	S;
@@ -30,12 +33,15 @@ List<Numeric> 	AB;
 Exec
 #LOOP
 i
-SET(G, i, AVG(close, i, n))
+SET(G, i, AVG(close, i, G_param))
 SET(H, i, REFL(low, i)-REFL(G, i))
 SET(I, i, REFL(G, i)-REFL(high,i))
 SET(J, i, (REFL(G, i) - REFL(G, i-1)) / REFL(G, i) * 100)
-SET(K, i, AVG(J, i, 29))
-SET(L, i, AVG(close, i, 59))
+SET(K, i, AVG(J, i, K_param))
+SET(L, i, AVG(close, i, L_param))
 SET(M, i, REFL(G,i)-REFL(L,i))
 SET(N, i, REFL(M,i)-REFL(M,i-1))
+SET(O, i, (REFL(K,i)-REFL(K,i-1))*100)
+SET(P, i, IF(AND(MAXCOL(I, i, P_param) < 0, MINCOL(O, i, P_param) > 0 ), '多单加权', IF(AND(MINCOL(H, i, P_param) <0, MAXCOL(O, i, P_param) <0), '空单加权', '')))
+SET(Q, i, IF(REFL(Q,i-1)!=0, REFL(Q, i-1)*11/13+REFL(close, i)*2/13, REFL(close, i)))
 #END

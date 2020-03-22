@@ -1,13 +1,9 @@
 package fel.function.collection;
 
 import com.greenpineyu.fel.context.FelContext;
-import fel.FelScriptException;
-import fel.function.BaseFunction;
 import fel.function.arithmetic.ArithFunction;
-import fel.script.Field;
+import fel.util.TextUtil;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class MaxColFunction extends ArithFunction {
@@ -20,12 +16,20 @@ public class MaxColFunction extends ArithFunction {
     public Object call(Object[] objects) {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
-        int count = Integer.parseInt(objects[1].toString());
+        int begin = Integer.parseInt(objects[1].toString());
+        int count = Integer.parseInt(objects[2].toString());
         List dataList = getDataSetItemValue(refCode);
-        int dataSize = dataList.size();
 
-        List subDataList = dataList.subList(dataSize - count, dataSize);
-        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.toString())).max().getAsDouble();
+        if(begin == 503) {
+            System.out.println("ddddddddd");
+        }
+        List subDataList = dataList.subList(begin - count, begin+1);
+        return subDataList.stream().filter(e -> {
+            if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
+                return false;
+            }
+            return true;
+        }).mapToDouble(e -> Double.parseDouble(e.toString())).max().getAsDouble();
     }
 
     @Override

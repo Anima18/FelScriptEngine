@@ -36,8 +36,8 @@ public class FelScriptFuncTest {
     }
     @Test
     public void testIf(){
-        Object eval = engine.eval("IF(REFL(B,1) == 1, true, false)");
-        Assert.assertEquals(eval, true);
+        Object eval = engine.eval("IF(REFL(B,1) == 1, 'ccc', 'bbb')");
+        Assert.assertEquals(eval, "bbb");
     }
 
     @Test
