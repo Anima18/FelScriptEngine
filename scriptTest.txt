@@ -24,8 +24,8 @@ List<Numeric> 	T;
 List<Numeric> 	U;
 List<Numeric> 	V;
 List<Numeric> 	W;
-List<Numeric> 	X;
-List<Numeric> 	Y;
+List<String> 	X;
+List<String> 	Y;
 List<Numeric> 	Z;
 List<Numeric> 	AA;
 List<Numeric> 	AB;
@@ -44,4 +44,13 @@ SET(N, i, REFL(M,i)-REFL(M,i-1))
 SET(O, i, (REFL(K,i)-REFL(K,i-1))*100)
 SET(P, i, IF(AND(MAXCOL(I, i, P_param) < 0, MINCOL(O, i, P_param) > 0 ), '多单加权', IF(AND(MINCOL(H, i, P_param) <0, MAXCOL(O, i, P_param) <0), '空单加权', '')))
 SET(Q, i, IF(REFL(Q,i-1)!=0, REFL(Q, i-1)*11/13+REFL(close, i)*2/13, REFL(close, i)))
+SET(R, i, IF(REFL(Q,i-1)!=0, REFL(R, i-1)*25/27+REFL(close, i)*2/27, REFL(close,i)))
+SET(S, i, REFL(Q,i)-REFL(R,i))
+SET(T, i, IF(REFL(T,i-1)!=0, REFL(T, i-1)*8/10+REFL(S, i)*2/10, REFL(S, i)))
+SET(U, i, REFL(T, i)-REFL(T, i-1))
+SET(V, i, (REFL(T, i)-REFL(T, i-1))/REFL(T, i))
+SET(W, i, 2*(REFL(S,i)-REFL(T,i)))
+SET(X, i, IF(AND(REFL(V,i-3)>0, REFL(V,i-2)>0, REFL(V,i-1)<0, REFL(U,i-2)>0, REFL(U, i-1)<0, REFL(P,i-1)!='多单加权'), '空',IF(AND(REFL(V,i-3)>0, REFL(V,i-2)>0, REFL(V,i-1)<0, REFL(U,i-2)<0, REFL(U, i-1)>0, REFL(P,i-1)!='空单加权'), '多',IF(AND(REFL(N,i-4)<0,REFL(N,i-3)<0, REFL(N,i-1)>0,REFL(N,i-2)>0,REFL(Y,i-2)!='空'), '空',IF(AND(REFL(N,i-4)>0,REFL(N,i-3)>0, REFL(N,i-1)<0,REFL(N,i-2)<0,REFL(Y,i-2)!='多'),'多',IF(REFL(Z,i-1)<-0.18,IF(REFL(Y,i-1)=='多','空',IF(REFL(Y,i-1)=='空','多','')),''))))))
+SET(Y, i, IF(AND(REFL(Y,i-1)=='空', REFL(X,i)!='多'),'空',IF(AND(REFL(Y,i-1)=='空',REFL(X,i)=='多'), '多', IF(AND(REFL(Y,i-1)=='多', REFL(X,i)!='空'),'多',IF(AND(REFL(Y,i-1)=='多', REFL(X,i)=='空'),'空',IF(REFL(X,i)=='多','多',IF(REFL(X,i)=='空','空','')))))))
+SET(Z, i, IF(AND(REFL(Z,i-1)>0,REFL(Y,i-1)==REFL(Y,i)),REFL(Z,i-1),IF(AND(REFL(Z,i-1)>0,REFL(Y,i-1)!=REFL(Y,i)),REFL(open,i),'')))
 #END
