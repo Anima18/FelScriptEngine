@@ -52,5 +52,7 @@ SET(V, i, (REFL(T, i)-REFL(T, i-1))/REFL(T, i))
 SET(W, i, 2*(REFL(S,i)-REFL(T,i)))
 SET(X, i, IF(AND(REFL(V,i-3)>0, REFL(V,i-2)>0, REFL(V,i-1)<0, REFL(U,i-2)>0, REFL(U, i-1)<0, REFL(P,i-1)!='多单加权'), '空',IF(AND(REFL(V,i-3)>0, REFL(V,i-2)>0, REFL(V,i-1)<0, REFL(U,i-2)<0, REFL(U, i-1)>0, REFL(P,i-1)!='空单加权'), '多',IF(AND(REFL(N,i-4)<0,REFL(N,i-3)<0, REFL(N,i-1)>0,REFL(N,i-2)>0,REFL(Y,i-2)!='空'), '空',IF(AND(REFL(N,i-4)>0,REFL(N,i-3)>0, REFL(N,i-1)<0,REFL(N,i-2)<0,REFL(Y,i-2)!='多'),'多',IF(REFL(Z,i-1)<-0.18,IF(REFL(Y,i-1)=='多','空',IF(REFL(Y,i-1)=='空','多','')),''))))))
 SET(Y, i, IF(AND(REFL(Y,i-1)=='空', REFL(X,i)!='多'),'空',IF(AND(REFL(Y,i-1)=='空',REFL(X,i)=='多'), '多', IF(AND(REFL(Y,i-1)=='多', REFL(X,i)!='空'),'多',IF(AND(REFL(Y,i-1)=='多', REFL(X,i)=='空'),'空',IF(REFL(X,i)=='多','多',IF(REFL(X,i)=='空','空','')))))))
-SET(Z, i, IF(AND(REFL(Z,i-1)>0,REFL(Y,i-1)==REFL(Y,i)),REFL(Z,i-1),IF(AND(REFL(Z,i-1)>0,REFL(Y,i-1)!=REFL(Y,i)),REFL(open,i),'')))
+SET(Z, i, IF(REFL(Y,i-1)==REFL(Y,i),REFL(Z,i-1),IF(REFL(Y,i-1)!=REFL(Y,i),REFL(open,i),'')))
+SET(AA, i, IF(REFL(Y, i-1)>REFL(Y, i), (REFL(Z, i-1)-REFL(Z, i))/REFL(Z, i-1), IF(REFL(Y, i-1)<REFL(Y, i),(REFL(Z, i)-REFL(Z, i-1))/REFL(Z, i-1),'')))
+SET(AB, i, IF(REFL(Y, i)=='多', (REFL(low, i)-REFL(Z, i))/REFL(Z, i), IF(REFL(Y, i)=='空', (REFL(Z, i)-REFL(high, i))/REFL(Z,i), '')))
 #END

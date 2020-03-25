@@ -20,9 +20,6 @@ public class MaxColFunction extends ArithFunction {
         int count = Integer.parseInt(objects[2].toString());
         List dataList = getDataSetItemValue(refCode);
 
-        if(begin == 503) {
-            System.out.println("ddddddddd");
-        }
         List subDataList = dataList.subList(begin - count, begin+1);
         return subDataList.stream().filter(e -> {
             if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
