@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 public class FelTest {
-    public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt";
+    public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest2.txt";
     public static final String SCRIPT_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt";
     public static final String DATA_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/data.xlsx";
     public static final String DATA_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/data.xlsx";
     public static Map<String, Field> loadDataFromExcel() {
         try {
-            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE2));
+            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
             ExcelSheet sheet = workbook.getSheetAt(0);
             Map<String, Field> datas = new HashMap<>();
             datas.put("time", new Field("time", FieldType.List_String));

@@ -2,6 +2,7 @@ package fel;
 
 import fel.script.*;
 import fel.util.FileUtil;
+import fel.util.ReflLexer;
 import fel.util.TextUtil;
 
 import java.io.File;
@@ -10,8 +11,10 @@ import java.util.*;
 public class ScriptParser {
     private File script;
     private List<String> codeLineList;
+    private Map<String, Field> dataSource;
 
-    public ScriptParser(File script) {
+    public ScriptParser(Map<String, Field> dataSource, File script) {
+        this.dataSource = dataSource;
         this.script = script;
     }
 
@@ -92,6 +95,7 @@ public class ScriptParser {
         for (ScriptVar var : vars) {
             varMap.put(var.getName(), var);
         }
+        ReflLexer lexer = new ReflLexer(dataSource, varMap);
 
         List<ScriptExec> execs = new ArrayList<>();
         Integer lineNum = null;
@@ -107,7 +111,7 @@ public class ScriptParser {
                         if(!TextUtil.isEmpty(loopCode) && loopCode.equals("#END")) {
                             List<String> loopBlock = Arrays.asList(execStrArray).subList(i+1, j);
                             lineNum = codeLineList.indexOf(execStr);
-                            execs.add(ScriptExec.parseLoop(lineNum, loopBlock));
+                            execs.add(ScriptExec.parseLoop(lineNum, lexer, loopBlock));
                             i = j;
                             break;
                         }
@@ -118,13 +122,6 @@ public class ScriptParser {
                 }
 
             }
-
-           /* for (String execStr : execStrArray) {
-                if (!TextUtil.isEmpty(execStr.trim())) {
-                    lineNum = codeLineList.indexOf(execStr);
-                    execs.add(ScriptExec.parse(lineNum, varMap, execStr));
-                }
-            }*/
         } catch (Exception e) {
             e.printStackTrace();
             String errorMessage = String.format("解析模型脚本Execs失败: %s", e.getMessage());

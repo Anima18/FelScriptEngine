@@ -1,5 +1,6 @@
 package fel.script;
 
+import fel.util.ReflLexer;
 import fel.util.TextUtil;
 
 import java.util.List;
@@ -42,11 +43,23 @@ public class ScriptExec {
         }
     }
 
-    public static ScriptExec parseLoop(Integer lineNum, List<String> expressionList) {
+    public static ScriptExec parseLoop(Integer lineNum, ReflLexer lexer, List<String> expressionList) {
         StringBuilder execBuilder = new StringBuilder("LOOP(");
         for (String expression : expressionList) {
-            if(!TextUtil.isEmpty(expression.trim())) {
-                execBuilder.append("\""+expression.trim()+"\"");
+            expression = expression.trim();
+            if(!TextUtil.isEmpty(expression)) {
+                if(!expression.contains("=")) {
+                    execBuilder.append("\""+expression+"\"");
+                }else {
+                    String[] assignArray = expression.split("=");
+                    String variate = assignArray[0].trim();
+                    String reflCode = variate.substring(0, 1);
+                    String reflIndex = variate.substring(variate.indexOf("(")+1, variate.lastIndexOf(")"));
+                    expression = lexer.replace(assignArray[1].trim());
+                    String setBlock = String.format("SET(%s,%s,%s)", reflCode, reflIndex, expression);
+                    execBuilder.append("\""+setBlock+"\"");
+                }
+
                 execBuilder.append(",");
             }
         }

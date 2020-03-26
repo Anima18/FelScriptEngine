@@ -22,7 +22,7 @@ public class FelScriptEngine {
     private FelScriptEngine(Builder builder) {
         Log.clear();
         Log.i("========开始解析脚本========");
-        ScriptParser parser = new ScriptParser(builder.script);
+        ScriptParser parser = new ScriptParser(builder.dataSource, builder.script);
         scriptNode = parser.parse();
         Log.i("========解析脚本完成========");
 

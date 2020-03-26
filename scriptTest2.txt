@@ -1,67 +1,40 @@
 Params
-Numeric 	i(200);
+Numeric 	i(199);
+Numeric 	G_param(199);
+Numeric 	K_param(29);
+Numeric 	L_param(59);
+Numeric 	P_param(11);
+
 
 Vars
-List 	G;
-List 	H;
-List 	I;
-List 	J;
-List 	K;
-List 	L;
-List 	M;
-List 	N;
-List 	O;
-List 	P;
-List 	Q;
-List 	R;
-List 	S;
-List 	T;
-List 	U;
-List 	V;
-List 	W;
-List 	X;
-List 	Y;
-List 	Z;
-List 	AA;
-List 	AB;
-
-
+List<Numeric> 	G;
+List<Numeric> 	H;
+List<Numeric> 	I;
+List<Numeric> 	J;
+List<Numeric> 	K;
+List<Numeric> 	L;
+List<Numeric> 	M;
+List<Numeric> 	N;
+List<Numeric> 	O;
+List<String> 	P;
+List<Numeric> 	Q;
+List<Numeric> 	R;
+List<Numeric> 	S;
+List<Numeric> 	T;
+List<Numeric> 	U;
+List<Numeric> 	V;
+List<Numeric> 	W;
+List<String> 	X;
+List<String> 	Y;
+List<Numeric> 	Z;
+List<Numeric> 	AA;
+List<Numeric> 	AB;
 
 Exec
 #LOOP
 i
-SET(G, i, AVG(close, i, n))
-SET(H, i, REFL(low, i)-REFL(G, i))
-SET(I, i, REFL(G, i)-REFL(high,i))
-SET(J, i, (REFL(G, i) - REFL(G, i-1)) / REFL(G, i) * 100)
-SET(K, i, AVG(J, i, 50))
-SET(L, i, AVG(close, i, 60))
+G(i) = AVG(close, i, G_param)
+H(i) = low(i)-G(i)
+I(i) = G(i)-high(i)
+J(i) = (G(i) - G(i-1)) / G(i) * 100
 #END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
