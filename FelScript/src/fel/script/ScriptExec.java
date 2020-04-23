@@ -51,9 +51,9 @@ public class ScriptExec {
                 if(!expression.contains("=")) {
                     execBuilder.append("\""+expression+"\"");
                 }else {
-                    String[] assignArray = expression.split("=");
+                    String[] assignArray = expression.split("=", 2);
                     String variate = assignArray[0].trim();
-                    String reflCode = variate.substring(0, 1);
+                    String reflCode = variate.substring(0, variate.indexOf("("));
                     String reflIndex = variate.substring(variate.indexOf("(")+1, variate.lastIndexOf(")"));
                     expression = lexer.replace(assignArray[1].trim());
                     String setBlock = String.format("SET(%s,%s,%s)", reflCode, reflIndex, expression);

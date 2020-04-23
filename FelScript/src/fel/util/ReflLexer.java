@@ -32,6 +32,10 @@ public class ReflLexer {
         ignoreSymbol.put('*', '*');
         ignoreSymbol.put('/', '/');
         ignoreSymbol.put('%', '%');
+        ignoreSymbol.put(',', ',');
+        ignoreSymbol.put('=', '=');
+        ignoreSymbol.put('>', '>');
+        ignoreSymbol.put('<', '<');
     }
     public ReflLexer() {}
 

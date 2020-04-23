@@ -33,8 +33,26 @@ List<Numeric> 	AB;
 Exec
 #LOOP
 i
-G(i) = AVG(close, i, G_param)
-H(i) = low(i)-G(i)
-I(i) = G(i)-high(i)
+G(i) = AVG(E, i, G_param)
+H(i) = D(i)-G(i)
+I(i) = G(i)-C(i)
 J(i) = (G(i) - G(i-1)) / G(i) * 100
+K(i) = AVG(J, i, K_param)
+L(i) = AVG(E, i, L_param)
+M(i) = G(i)-L(i)
+N(i) = M(i)-M(i-1)
+O(i) = (K(i)-K(i-1))*100
+P(i) = IF(AND(MAXCOL(I, i, P_param) < 0, MINCOL(O, i, P_param) > 0 ), '多单加权', IF(AND(MINCOL(H, i, P_param) <0, MAXCOL(O, i, P_param) <0), '空单加权', ''))
+Q(i) = IF(Q(i-1) != 0, Q(i-1)*11/13+E(i)*2/13, E(i))
+R(i) = IF(Q(i-1)!=0, R(i-1)*25/27+E(i)*2/27, E(i))
+S(i) = Q(i)-R(i)
+T(i) = IF(T(i-1)!=0, T(i-1)*8/10+S(i)*2/10, S(i))
+U(i) = T(i)-T(i-1)
+V(i) = (T(i)-T(i-1))/T(i)
+W(i) = 2*(S(i)-T(i))
+X(i) = IF(AND(V(i-3)>0, V(i-2)>0, V(i-1)<0, U(i-2)>0, U(i-1)<0, P(i-1)!='多单加权'), '空',IF(AND(V(i-3)>0, V(i-2)>0, V(i-1)<0, U(i-2)<0, U(i-1)>0, P(i-1)!='空单加权'), '多',IF(AND(N(i-4)<0,N(i-3)<0, N(i-1)>0,N(i-2)>0,Y(i-2)!='空'), '空',IF(AND(N(i-4)>0,N(i-3)>0, N(i-1)<0,N(i-2)<0,Y(i-2)!='多'),'多',IF(Z(i-1)<-0.18,IF(Y(i-1)=='多','空',IF(Y(i-1)=='空','多','')),'')))))
+Y(i) = IF(AND(Y(i-1)=='空', X(i)!='多'),'空',IF(AND(Y(i-1)=='空',X(i)=='多'), '多', IF(AND(Y(i-1)=='多', X(i)!='空'),'多',IF(AND(Y(i-1)=='多', X(i)=='空'),'空',IF(X(i)=='多','多',IF(X(i)=='空','空',''))))))
+Z(i) = IF(Y(i-1)==Y(i),Z(i-1),IF(Y(i-1)!=Y(i),B(i),''))
+AA(i) = IF(Y(i-1)>Y(i), (Z(i-1)-Z(i))/Z(i-1), IF(Y(i-1)<Y(i),(Z(i)-Z(i-1))/Z(i-1),''))
+AB(i) = IF(Y(i)=='多', (D(i)-Z(i))/Z(i), IF(Y(i)=='空', (Z(i)-C(i))/Z(i), ''))
 #END

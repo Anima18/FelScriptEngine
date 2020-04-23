@@ -22,20 +22,20 @@ public class FelTest {
             ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
             ExcelSheet sheet = workbook.getSheetAt(0);
             Map<String, Field> datas = new HashMap<>();
-            datas.put("time", new Field("time", FieldType.List_String));
-            datas.put("open", new Field("open", FieldType.List_Numeric));
-            datas.put("high", new Field("high", FieldType.List_Numeric));
-            datas.put("low", new Field("low", FieldType.List_Numeric));
-            datas.put("close", new Field("close", FieldType.List_Numeric));
-            datas.put("amount", new Field("amount", FieldType.List_Numeric));
+            datas.put("A", new Field("A", FieldType.List_String));
+            datas.put("B", new Field("B", FieldType.List_Numeric));
+            datas.put("C", new Field("C", FieldType.List_Numeric));
+            datas.put("D", new Field("D", FieldType.List_Numeric));
+            datas.put("E", new Field("E", FieldType.List_Numeric));
+            datas.put("F", new Field("F", FieldType.List_Numeric));
             for(int r = 1; r < sheet.getRowCount(); r++) {
                 List<String> rowDataList = sheet.getRowDataList(r, 6);
-                ((List)datas.get("time").getValue()).add(rowDataList.get(0));
-                ((List)datas.get("open").getValue()).add(Double.parseDouble(rowDataList.get(1)));
-                ((List)datas.get("high").getValue()).add(Double.parseDouble(rowDataList.get(2)));
-                ((List)datas.get("low").getValue()).add(Double.parseDouble(rowDataList.get(3)));
-                ((List)datas.get("close").getValue()).add(Double.parseDouble(rowDataList.get(4)));
-                ((List)datas.get("amount").getValue()).add(Double.parseDouble(rowDataList.get(5)));
+                ((List)datas.get("A").getValue()).add(rowDataList.get(0));
+                ((List)datas.get("B").getValue()).add(Double.parseDouble(rowDataList.get(1)));
+                ((List)datas.get("C").getValue()).add(Double.parseDouble(rowDataList.get(2)));
+                ((List)datas.get("D").getValue()).add(Double.parseDouble(rowDataList.get(3)));
+                ((List)datas.get("E").getValue()).add(Double.parseDouble(rowDataList.get(4)));
+                ((List)datas.get("F").getValue()).add(Double.parseDouble(rowDataList.get(5)));
             }
 
             workbook.close();

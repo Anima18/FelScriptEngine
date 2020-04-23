@@ -1,6 +1,5 @@
 package fel.function.arithmetic;
 
-import fel.script.Field;
 import com.greenpineyu.fel.context.FelContext;
 
 import java.util.List;

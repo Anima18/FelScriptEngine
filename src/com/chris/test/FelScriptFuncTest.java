@@ -78,7 +78,7 @@ public class FelScriptFuncTest {
 
     @Test
     public void testMAXCOL(){
-        Object eval = engine.eval("MAXCOL(A, 5)");
+        Object eval = engine.eval("MAXCOL(A, 5, 3)");
         Assert.assertEquals(eval, 90.0);
     }
 
