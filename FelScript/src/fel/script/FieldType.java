@@ -97,4 +97,22 @@ public enum FieldType {
                 return field.getValue();
         }
     }
+
+
+    public static Object getFieldItemObject(FieldType type, Object data) {
+        java.lang.String value = data.toString();
+        switch (type) {
+            case List_Bool:
+            case Bool:
+                return Boolean.valueOf(value);
+            case List_String:
+            case String:
+                return value;
+            case List_Numeric:
+            case Numeric:
+                return Double.parseDouble(value);
+            default:
+                return data;
+        }
+    }
 }

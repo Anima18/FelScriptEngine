@@ -6,7 +6,7 @@ Numeric j(15);
 Vars
 List<Numeric>G;
 List<Numeric>H;
-List<Numeric> 	I;
+List<Numeric> I;
 List<String> 	J;
 List<Numeric>	currPrice;
 List<Numeric>	stopPrice;

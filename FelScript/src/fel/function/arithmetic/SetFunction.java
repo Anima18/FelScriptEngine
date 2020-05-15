@@ -59,7 +59,8 @@ public class SetFunction extends BaseFunction {
     private void setListItemValue(Object[] objects) {
         String refCode = String.valueOf(objects[0]);
         int index = Integer.parseInt(objects[1].toString());
-        Object value = objects[2];
+        FieldType fieldType = getDataType(refCode);
+        Object value = FieldType.getFieldItemObject(fieldType, objects[2]);
         getDataSetItemValue(refCode).set(index, value);
     }
 
