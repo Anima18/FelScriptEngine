@@ -1,6 +1,7 @@
 package fel.script;
 
 import com.sun.istack.internal.NotNull;
+import fel.FelScriptException;
 import fel.util.Constant;
 
 import java.util.List;
@@ -22,6 +23,30 @@ public class Field {
         this.name = name;
         this.fieldType = fieldType;
         this.value = FieldType.initFiledValue(this);
+    }
+
+    public static String[] fieldTypeAndName(String paramStr) throws FelScriptException {
+        String[] fieldTypeName = new String[2];
+        String fieldType, fieldName;
+        if(paramStr.contains("List<Numeric>")) {
+            fieldType = "List<Numeric>";
+        }else if(paramStr.contains("List<Bool>")) {
+            fieldType = "List<Bool>";
+        }else if(paramStr.contains("List<String>")) {
+            fieldType = "List<String>";
+        }else if(paramStr.contains("Numeric")) {
+            fieldType = "Numeric";
+        }else if(paramStr.contains("Bool")) {
+            fieldType = "Bool";
+        }else if(paramStr.contains("String")) {
+            fieldType = "String";
+        }else {
+            throw new FelScriptException(java.lang.String.format("模型脚本参数不正确,请检查!"));
+        }
+        fieldName = paramStr.substring(fieldType.length()).trim();
+        fieldTypeName[0] = fieldType;
+        fieldTypeName[1] = fieldName;
+        return fieldTypeName;
     }
 
     public static Field ofValue(@NotNull Object value) {

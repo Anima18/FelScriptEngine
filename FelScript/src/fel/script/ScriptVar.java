@@ -9,8 +9,8 @@ public class ScriptVar extends Field {
     }
 
     public static ScriptVar parse(int lineNum, String varStr) {
-        varStr = varStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
-        String[] varSplitArray = varStr.split("\\|");
+        varStr = varStr.replaceAll(";", "").replaceAll("\\s*", "");
+        String[] varSplitArray = Field.fieldTypeAndName(varStr);
         String fieldType = varSplitArray[0];
         String name = varSplitArray[1];
         return new ScriptVar(lineNum, name, FieldType.to(fieldType));

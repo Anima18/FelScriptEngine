@@ -17,7 +17,7 @@ public class FelScriptFuncTest {
         engine = new FelEngineImpl();
         FunctionRepository repository = new FunctionRepository(engine);
         repository.initFunction();
-        repository.initData(initData());
+        repository.initData(loadDataFromExcel());
     }
 
     @Test
@@ -36,8 +36,9 @@ public class FelScriptFuncTest {
     }
     @Test
     public void testIf(){
-        Object eval = engine.eval("IF(REFL(B,1) == 1, 'ccc', 'bbb')");
-        Assert.assertEquals(eval, "bbb");
+        //Object eval = engine.eval("IF(REFL(B,1) > REFL(B,2), 'ccc', 'bbb')");
+        Object eval = engine.eval("IF(REFL(B, 0)<REFL(B, 1), REFL(F), False)");
+        Assert.assertEquals(eval, "ccc");
     }
 
     @Test
@@ -54,7 +55,7 @@ public class FelScriptFuncTest {
 
     @Test
     public void testREFL(){
-        Object eval =engine.eval("REFL(A, 0)");
+        Object eval =engine.eval("REFL(B, 0)");
         Assert.assertEquals(eval, 0);
     }
 

@@ -1,58 +1,29 @@
 Params
-Numeric 	i(199);
-Numeric 	G_param(199);
-Numeric 	K_param(29);
-Numeric 	L_param(59);
-Numeric 	P_param(11);
+Numeric i(16);
+Numeric j(15);
 
 
 Vars
-List<Numeric> 	G;
-List<Numeric> 	H;
+List<Numeric>G;
+List<Numeric>H;
 List<Numeric> 	I;
-List<Numeric> 	J;
-List<Numeric> 	K;
-List<Numeric> 	L;
-List<Numeric> 	M;
-List<Numeric> 	N;
-List<Numeric> 	O;
-List<String> 	P;
-List<Numeric> 	Q;
-List<Numeric> 	R;
-List<Numeric> 	S;
-List<Numeric> 	T;
-List<Numeric> 	U;
-List<Numeric> 	V;
-List<Numeric> 	W;
-List<String> 	X;
-List<String> 	Y;
-List<Numeric> 	Z;
-List<Numeric> 	AA;
-List<Numeric> 	AB;
+List<String> 	J;
+List<Numeric>	currPrice;
+List<Numeric>	stopPrice;
+List<String>	operDirection;
+List<String>	operDescription;
 
 Exec
 #LOOP
 i
-SET(G, i, AVG(close, i, G_param))
-SET(H, i, REFL(low, i)-REFL(G, i))
-SET(I, i, REFL(G, i)-REFL(high,i))
-SET(J, i, (REFL(G, i) - REFL(G, i-1)) / REFL(G, i) * 100)
-SET(K, i, AVG(J, i, K_param))
-SET(L, i, AVG(close, i, L_param))
-SET(M, i, REFL(G,i)-REFL(L,i))
-SET(N, i, REFL(M,i)-REFL(M,i-1))
-SET(O, i, (REFL(K,i)-REFL(K,i-1))*100)
-SET(P, i, IF(AND(MAXCOL(I, i, P_param) < 0, MINCOL(O, i, P_param) > 0 ), '多单加权', IF(AND(MINCOL(H, i, P_param) <0, MAXCOL(O, i, P_param) <0), '空单加权', '')))
-SET(Q, i, IF(REFL(Q,i-1)!=0, REFL(Q, i-1)*11/13+REFL(close, i)*2/13, REFL(close, i)))
-SET(R, i, IF(REFL(Q,i-1)!=0, REFL(R, i-1)*25/27+REFL(close, i)*2/27, REFL(close,i)))
-SET(S, i, REFL(Q,i)-REFL(R,i))
-SET(T, i, IF(REFL(T,i-1)!=0, REFL(T, i-1)*8/10+REFL(S, i)*2/10, REFL(S, i)))
-SET(U, i, REFL(T, i)-REFL(T, i-1))
-SET(V, i, (REFL(T, i)-REFL(T, i-1))/REFL(T, i))
-SET(W, i, 2*(REFL(S,i)-REFL(T,i)))
-SET(X, i, IF(AND(REFL(V,i-3)>0, REFL(V,i-2)>0, REFL(V,i-1)<0, REFL(U,i-2)>0, REFL(U, i-1)<0, REFL(P,i-1)!='多单加权'), '空',IF(AND(REFL(V,i-3)>0, REFL(V,i-2)>0, REFL(V,i-1)<0, REFL(U,i-2)<0, REFL(U, i-1)>0, REFL(P,i-1)!='空单加权'), '多',IF(AND(REFL(N,i-4)<0,REFL(N,i-3)<0, REFL(N,i-1)>0,REFL(N,i-2)>0,REFL(Y,i-2)!='空'), '空',IF(AND(REFL(N,i-4)>0,REFL(N,i-3)>0, REFL(N,i-1)<0,REFL(N,i-2)<0,REFL(Y,i-2)!='多'),'多',IF(REFL(Z,i-1)<-0.18,IF(REFL(Y,i-1)=='多','空',IF(REFL(Y,i-1)=='空','多','')),''))))))
-SET(Y, i, IF(AND(REFL(Y,i-1)=='空', REFL(X,i)!='多'),'空',IF(AND(REFL(Y,i-1)=='空',REFL(X,i)=='多'), '多', IF(AND(REFL(Y,i-1)=='多', REFL(X,i)!='空'),'多',IF(AND(REFL(Y,i-1)=='多', REFL(X,i)=='空'),'空',IF(REFL(X,i)=='多','多',IF(REFL(X,i)=='空','空','')))))))
-SET(Z, i, IF(REFL(Y,i-1)==REFL(Y,i),REFL(Z,i-1),IF(REFL(Y,i-1)!=REFL(Y,i),REFL(open,i),'')))
-SET(AA, i, IF(REFL(Y, i-1)>REFL(Y, i), (REFL(Z, i-1)-REFL(Z, i))/REFL(Z, i-1), IF(REFL(Y, i-1)<REFL(Y, i),(REFL(Z, i)-REFL(Z, i-1))/REFL(Z, i-1),'')))
-SET(AB, i, IF(REFL(Y, i)=='多', (REFL(low, i)-REFL(Z, i))/REFL(Z, i), IF(REFL(Y, i)=='空', (REFL(Z, i)-REFL(high, i))/REFL(Z,i), '')))
+G(i) = AVG(E, i, j)
+H(i) = G(i)+2*STDEV(E,i)
+I(i) = G(i)-2*STDEV(E,i)
+J(i) = IF(AND(B(i)<E(i),B(i)<G(i),E(i)>G(i)),1,IF(AND(B(i)>E(i),B(i)>G(i),E(i)<G(i)),2,IF(AND(B(i)<E(i),B(i)<G(i),E(i)>G(i)),2,IF(AND(B(i)<E(i),B(i)<H(i),E(i)>H(i)),1,''))))
+
+operDirection(i)=IF(N==2,'做多',IF(N==1,'做空',''))
+operDescription(i)=IF(N==2,'做多，这是一种指标战法，不需要止损，历史回测亏损最严重的时为12%，9000根K线盈利211%，适合合约轻仓操作。',IF(N==1,'做空，这是一种指标战法，不需要止损，历史回测亏损最严重的时为12%，19年1月起，9000根K线盈利211%，适合合约轻仓操作。',''))
+currPrice(i)=E(i)
+stopPrice(i)=IF(N==2,E(i)*0.95,IF(N==1,E(i)*1.05,0))
+
 #END

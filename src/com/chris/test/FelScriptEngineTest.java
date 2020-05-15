@@ -37,6 +37,25 @@ public class FelScriptEngineTest {
     }
 
     private static void showValue(List<ScriptVar> varList) {
+        if(varList.get(0).getValue() instanceof List) {
+            showListValue(varList);
+        }else {
+            showItemValue(varList);
+        }
+    }
+
+    private static void showItemValue(List<ScriptVar> varList) {
+        String[] header = new String[varList.size()];
+        String[][] dataList = new String[1][varList.size()];
+        for (int i = 0; i < varList.size(); i++) {
+            ScriptVar var = varList.get(i);
+            header[i] = var.getName();
+            dataList[0][i] = var.getValue().toString();
+        }
+        System.out.println(FlipTable.of(header, dataList));
+    }
+
+    private static void showListValue(List<ScriptVar> varList) {
         int dataListSize = ((List)varList.get(0).getValue()).size();
         String[] header = new String[varList.size()+1];
         header[0] = "序号";

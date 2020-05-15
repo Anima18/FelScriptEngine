@@ -22,10 +22,15 @@ public class ReflFuction extends BaseFunction {
     protected void validateParam(Object[] objects) {
         if (objects != null && (objects.length == 1 || objects.length == 2)) {
             Map<String, Field> dataSet = getDataSet();
-            if(objects.length == 1 && !dataSet.containsKey(objects[0])) {
-                throw new FelScriptException(String.format("%s运算出错，参数%s不存在！", getName(), objects[0]));
+            Object refCode = objects[0];
+            if(objects.length == 1) {
+                FieldType fieldType = getDataType(refCode);
+                if(!dataSet.containsKey(objects[0])) {
+                    throw new FelScriptException(String.format("%s运算出错，参数%s不存在！", getName(), objects[0]));
+                }else if(fieldType.equals(FieldType.List_String) || fieldType.equals(FieldType.List_Numeric) || fieldType.equals(FieldType.List_Bool)) {
+                    throw new FelScriptException(String.format("%s运算出错，参数%s是列表，必须要指明下标参数", getName(), objects[0]));
+                }
             }else if(objects.length == 2) {
-                Object refCode = objects[0];
                 Object count = objects[1];
                 if (refCode == null || count == null) {
                     throw new FelScriptException(String.format("%s运算出错，参数不正确！", getName()));
@@ -45,6 +50,35 @@ public class ReflFuction extends BaseFunction {
     @Override
     public Object call(Object[] objects) {
         validateParam(objects);
+        Object value = "";
+        if(objects.length == 1) {
+            value = getItemValue(objects);
+        }else {
+            value = getListItemValue(objects);
+        }
+        Object reflCode = objects[0];
+        FieldType fieldType = getDataType(reflCode);
+        switch (fieldType) {
+            case Numeric:
+            case List_Numeric:
+                return TextUtil.isEmpty(value) ? 0.0D : Double.parseDouble(value.toString());
+            case String:
+            case List_String:
+                return TextUtil.isEmpty(value) ? "" : value.toString();
+            case Bool:
+            case List_Bool:
+                return TextUtil.isEmpty(value) ? false :Boolean.valueOf(value.toString());
+            default:
+                return "";
+        }
+    }
+
+    private Object getItemValue(Object[] objects) {
+        Object reflCode = objects[0];
+        return getDataSetItem(reflCode).getValue();
+    }
+
+    private Object getListItemValue(Object[] objects) {
         Object reflCode = objects[0];
         List valueList = getDataSetItemValue(reflCode);
         int index = 0;
@@ -52,17 +86,7 @@ public class ReflFuction extends BaseFunction {
             index = Integer.parseInt(objects[1].toString());
         }
         Object value = valueList.get(index);
-        FieldType fieldType = getDataType(reflCode);
-        switch (fieldType) {
-            case List_Numeric:
-                return TextUtil.isEmpty(value) ? 0.0D : Double.parseDouble(value.toString());
-            case List_String:
-                return TextUtil.isEmpty(value) ? "" : value.toString();
-            case List_Bool:
-                return TextUtil.isEmpty(value) ? false :Boolean.valueOf(value.toString());
-            default:
-                return "";
-        }
+        return value;
     }
 
     @Override

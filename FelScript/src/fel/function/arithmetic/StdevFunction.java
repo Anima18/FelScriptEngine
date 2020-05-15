@@ -14,11 +14,25 @@ public class StdevFunction extends ArithFunction {
     public Object call(Object[] objects) {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
+/*
         int count = Integer.parseInt(objects[1].toString());
-        List dataList = getDataSetItemValue(refCode);
+
         int dataSize = dataList.size();
 
         List<Object> subDataList = dataList.subList(dataSize - count, dataSize);
+*/
+
+        List dataList = getDataSetItemValue(refCode);
+        int fromIndex = 0, toIndex = 0;
+        if(objects.length == 2) {
+            fromIndex = 0;
+            toIndex = Integer.parseInt(objects[1].toString());
+        }else if(objects.length == 3) {
+            toIndex = Integer.parseInt(objects[1].toString());
+            fromIndex = toIndex - Integer.parseInt(objects[2].toString());
+        }
+
+        List<Object> subDataList = dataList.subList(fromIndex, toIndex+1);
         List<Double> valueList = subDataList.stream().map(e -> Double.parseDouble(e.toString())).collect(Collectors.toList());
         return standardDiviation(valueList);
     }

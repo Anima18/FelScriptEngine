@@ -22,8 +22,8 @@ public class AverageFunction extends ArithFunction {
         List dataList = getDataSetItemValue(refCode);
         int fromIndex = 0, toIndex = 0;
         if(objects.length == 2) {
-            toIndex = dataList.size();
-            fromIndex = toIndex - Integer.parseInt(objects[1].toString());
+            fromIndex = 0;
+            toIndex = Integer.parseInt(objects[1].toString());
         }else if(objects.length == 3) {
             toIndex = Integer.parseInt(objects[1].toString());
             fromIndex = toIndex - Integer.parseInt(objects[2].toString());

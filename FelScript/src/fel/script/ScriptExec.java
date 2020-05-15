@@ -30,10 +30,11 @@ public class ScriptExec {
         if(execStr.contains("=")) {
             int index = execStr.indexOf("=");
             String name = execStr.substring(0, index);
-            if(execStr.contains(name)) {
+            if(varMap.containsKey(name)) {
                 String expression = execStr.substring(index + 1);
                 ScriptVar var = varMap.get(name);
-                return new ScriptExec(lineNum, var, expression, ExecType.justRun);
+                String setBlock = String.format("SET(%s,%s)", name, expression);
+                return new ScriptExec(lineNum, var, expression, ExecType.assign);
             }else {
                 return new ScriptExec(lineNum, null, execStr, ExecType.justRun);
             }

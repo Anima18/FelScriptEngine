@@ -8,8 +8,8 @@ public class ScriptParam extends Field {
     }
 
     public static ScriptParam parse(int lineNum, String paramStr) {
-        paramStr = paramStr.replaceFirst("\t", "|").replaceAll(";", "").replaceAll("\\s*", "");
-        String[] paramSplitArray = paramStr.split("\\|");
+        paramStr = paramStr.replaceAll(";", "").replaceAll("\\s*", "");
+        String[] paramSplitArray = fieldTypeAndName(paramStr);
         String fieldType = paramSplitArray[0];
         String[] nameSplitArray = paramSplitArray[1].split("\\(");
         String name = nameSplitArray[0];
