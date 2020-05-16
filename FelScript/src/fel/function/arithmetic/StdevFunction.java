@@ -1,7 +1,9 @@
 package fel.function.arithmetic;
 
 import com.greenpineyu.fel.context.FelContext;
+import fel.util.TextUtil;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,7 +45,7 @@ public class StdevFunction extends ArithFunction {
     }
 
     //标准差σ=sqrt(s^2)
-    private double standardDiviation(List<Double> x) {
+    /*private double standardDiviation(List<Double> x) {
         int m=x.size();
         double sum=0;
         for(int i=0;i<m;i++){//求和
@@ -55,5 +57,53 @@ public class StdevFunction extends ArithFunction {
             dVar+=(x.get(i)-dAve)*(x.get(i)-dAve);
         }
         return Math.sqrt(dVar/m);
+        //2.152536075320357
+    }*/
+
+    private double avg(List<Double> subDataList) {
+        return subDataList.stream().filter(e -> {
+            if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
+                return false;
+            }
+            return true;
+        }).mapToDouble(e -> new BigDecimal(e.toString()).doubleValue()).average().getAsDouble();
     }
+
+    private double standardDiviation(List<Double> vals){
+        double rval = 0;
+        double avg = avg(vals);
+        for (int i = 0; i < vals.size(); i++) {
+            rval += Math.pow((vals.get(i) - avg), 2);
+        }
+        rval /= vals.size()-1;
+        rval = Math.sqrt(rval);
+        return rval;
+        //2.152536075320357
+    }
+    /**
+     * 只遍历数组一次求总体标准差
+     * @param sample doube数组
+     * @return
+     */
+    /*private double standardDiviation(List<Double> sample) {
+        if (1 > sample.size()) {
+            return 0;
+        }
+        double dSum = 0.0; // 样本值之和
+        double dAverage = 0.0; // 样本值的平均值
+        // 遍历样本
+        for (int i = 0; i < sample.size(); ++i) {
+            dSum += sample.get(i);
+        }
+        dAverage = dSum / sample.size();
+
+        // 遍历样本数字
+        dSum = 0.0;
+        for (int i = 0; i < sample.size(); ++i) {
+            dSum += (sample.get(i) - dAverage) * (sample.get(i) - dAverage);
+        }
+        double dStdDev = Math.sqrt(dSum / sample.size());
+        return dStdDev;
+        //2.152536075320357
+    }*/
 }

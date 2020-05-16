@@ -8,7 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scriptTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scriptTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/ScriptParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/ScriptParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/StdevFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/StdevFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/SumFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/SumFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MaxColFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MaxColFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MinColFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MinColFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec$ExecType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec$ExecType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptFuncTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptFuncTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,78 +183,54 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="21" key="#Project_Structure" timestamp="1580093315552">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="21" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1580093315552" />
-    <state x="241" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580093118609">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="241" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580093118609" />
     <state x="527" y="93" width="686" height="558" key="#com.intellij.ide.util.MemberChooser" timestamp="1584544105305">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="527" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584544105305" />
-    <state x="2328" y="257" width="686" height="558" key="#com.intellij.ide.util.MemberChooser/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357467254" />
-    <state x="355" y="287" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1578836068557">
+    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1589465835789">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="355" y="287" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1578836068557" />
-    <state width="469" height="324" key="DebuggerActiveHint" timestamp="1584887418276">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1584887418276" />
-    <state width="576" height="466" key="DebuggerActiveHint/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357983714" />
+    <state width="469" height="324" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1589465835789" />
     <state x="455" y="204" key="FileChooserDialogImpl" timestamp="1584976243676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="204" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584976243676" />
-    <state x="2239" y="294" key="FileChooserDialogImpl/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349835342" />
-    <state width="1322" height="194" key="GridCell.Tab.0.bottom" timestamp="1585061395248">
+    <state width="1322" height="240" key="GridCell.Tab.0.bottom" timestamp="1589591951934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="194" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585061395248" />
-    <state width="1628" height="178" key="GridCell.Tab.0.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="194" key="GridCell.Tab.0.center" timestamp="1585061395248">
+    <state width="1322" height="240" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589591951934" />
+    <state width="1322" height="240" key="GridCell.Tab.0.center" timestamp="1589591951933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="194" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585061395248" />
-    <state width="1628" height="178" key="GridCell.Tab.0.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="194" key="GridCell.Tab.0.left" timestamp="1585061395248">
+    <state width="1322" height="240" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589591951933" />
+    <state width="1322" height="240" key="GridCell.Tab.0.left" timestamp="1589591951933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="194" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585061395248" />
-    <state width="1628" height="178" key="GridCell.Tab.0.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="194" key="GridCell.Tab.0.right" timestamp="1585061395248">
+    <state width="1322" height="240" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589591951933" />
+    <state width="1322" height="240" key="GridCell.Tab.0.right" timestamp="1589591951934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="194" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585061395248" />
-    <state width="1628" height="178" key="GridCell.Tab.0.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357966985" />
-    <state width="1322" height="241" key="GridCell.Tab.1.bottom" timestamp="1585052152322">
+    <state width="1322" height="240" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589591951934" />
+    <state width="1322" height="201" key="GridCell.Tab.1.bottom" timestamp="1589591951930">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585052152322" />
-    <state width="1628" height="178" key="GridCell.Tab.1.bottom/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="241" key="GridCell.Tab.1.center" timestamp="1585052152322">
+    <state width="1322" height="201" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589591951930" />
+    <state width="1322" height="201" key="GridCell.Tab.1.center" timestamp="1589591951930">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585052152322" />
-    <state width="1628" height="178" key="GridCell.Tab.1.center/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="241" key="GridCell.Tab.1.left" timestamp="1585052152322">
+    <state width="1322" height="201" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1589591951930" />
+    <state width="1322" height="201" key="GridCell.Tab.1.left" timestamp="1589591951930">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585052152322" />
-    <state width="1628" height="178" key="GridCell.Tab.1.left/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
-    <state width="1322" height="241" key="GridCell.Tab.1.right" timestamp="1585052152322">
+    <state width="1322" height="201" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1589591951930" />
+    <state width="1322" height="201" key="GridCell.Tab.1.right" timestamp="1589591951930">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="241" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585052152322" />
-    <state width="1628" height="178" key="GridCell.Tab.1.right/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577357967022" />
+    <state width="1322" height="201" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1589591951930" />
     <state x="160" y="0" width="916" height="728" key="SettingsEditor" timestamp="1584242773543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="160" y="0" width="916" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584242773543" />
-    <state x="2003" y="115" width="1024" height="843" key="SettingsEditor/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577349840060" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584238326986">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -250,23 +239,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="293" y="195" width="773" height="470" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1584243862859" />
-    <state x="2040" y="277" width="950" height="520" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1680.0.1680.1050/0.27.1680.1023@1680.0.1680.1050" timestamp="1577356436579" />
-    <state x="368" y="25" width="647" height="563" key="find.popup" timestamp="1577870225399">
+    <state x="359" y="97" width="647" height="534" key="find.popup" timestamp="1589469281690">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="368" y="25" width="647" height="563" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577870225399" />
-    <state x="70" y="0" key="new project wizard" timestamp="1580093592539">
+    <state x="359" y="97" width="647" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1589469281690" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1589467971736">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="70" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1580093592539" />
-    <state x="339" y="157" key="run.anything.popup" timestamp="1577868903870">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577868903870" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1585058164303">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1585058164303" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1589467971736" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -278,7 +258,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FelScript/src/fel/ScriptParser.java</url>
-          <line>30</line>
+          <line>33</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -288,18 +268,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FelScript/src/fel/ScriptParser.java</url>
-          <line>121</line>
+          <line>124</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/collection/MaxColFunction.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="64" />
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/collection/MinColFunction.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="65" />
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/conditional/IfFunction.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/conditional/IfFunction.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/conditional/LoopFunction.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/conditional/LoopFunction.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

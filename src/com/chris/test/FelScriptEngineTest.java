@@ -20,7 +20,7 @@ public class FelScriptEngineTest {
         try {
             long startTime = System.currentTimeMillis();
             List<ScriptVar> varList = new FelScriptEngine.Builder()
-                    .setScript(new File(SCRIPT_FILE))
+                    .setScript(new File(SCRIPT_FILE2))
                     .setDataSource(datas)
                     .eval();
             long endTime=System.currentTimeMillis();

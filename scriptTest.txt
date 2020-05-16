@@ -1,12 +1,12 @@
 Params
-Numeric i(16);
-Numeric j(15);
+Numeric 	i(15);
+Numeric 	j(14);
 
 
 Vars
-List<Numeric>G;
-List<Numeric>H;
-List<Numeric> I;
+List<Numeric> 	G;
+List<Numeric> 	H;
+List<Numeric> 	I;
 List<String> 	J;
 List<Numeric>	currPrice;
 List<Numeric>	stopPrice;
@@ -17,13 +17,11 @@ Exec
 #LOOP
 i
 G(i) = AVG(E, i, j)
-H(i) = G(i)+2*STDEV(E,i)
-I(i) = G(i)-2*STDEV(E,i)
-J(i) = IF(AND(B(i)<E(i),B(i)<G(i),E(i)>G(i)),1,IF(AND(B(i)>E(i),B(i)>G(i),E(i)<G(i)),2,IF(AND(B(i)<E(i),B(i)<G(i),E(i)>G(i)),2,IF(AND(B(i)<E(i),B(i)<H(i),E(i)>H(i)),1,''))))
-
-operDirection(i)=IF(N==2,'åšå¤š',IF(N==1,'åšç©º',''))
-operDescription(i)=IF(N==2,'åšå¤šï¼Œè¿™æ˜¯ä¸€ç§æŒ‡æ ‡æˆ˜æ³•ï¼Œä¸éœ€è¦æ­¢æŸï¼ŒåŽ†å²å›žæµ‹äºæŸæœ€ä¸¥é‡çš„æ—¶ä¸º12%ï¼Œ9000æ ¹Kçº¿ç›ˆåˆ©211%ï¼Œé€‚åˆåˆçº¦è½»ä»“æ“ä½œã€‚',IF(N==1,'åšç©ºï¼Œè¿™æ˜¯ä¸€ç§æŒ‡æ ‡æˆ˜æ³•ï¼Œä¸éœ€è¦æ­¢æŸï¼ŒåŽ†å²å›žæµ‹äºæŸæœ€ä¸¥é‡çš„æ—¶ä¸º12%ï¼Œ19å¹´1æœˆèµ·ï¼Œ9000æ ¹Kçº¿ç›ˆåˆ©211%ï¼Œé€‚åˆåˆçº¦è½»ä»“æ“ä½œã€‚',''))
+H(i) = G(i)+2*STDEV(E,i,j)
+I(i) = G(i)-2*STDEV(E,i,j)
+J(i) = IF(AND(B(i)>E(i),B(i)>G(i),E(i)<G(i)),1,IF(AND(B(i)<E(i),B(i)<G(i),E(i)>G(i)),2,IF(AND(B(i)<E(i),B(i)<H(i),E(i)>H(i)),1,IF(AND(B(i)>E(i),B(i)>I(i),E(i)<I(i)),2,''))))
+operDirection(i)=IF(N==2,'×ö¶à',IF(N==1,'×ö¿Õ',''))
+operDescription(i)=IF(N==2,'×ö¶à£¬ÕâÊÇÒ»ÖÖÖ¸±êÕ½·¨£¬²»ÐèÒªÖ¹Ëð£¬ÀúÊ·»Ø²â¿÷Ëð×îÑÏÖØµÄÊ±Îª12%£¬9000¸ùKÏßÓ¯Àû211%£¬ÊÊºÏºÏÔ¼Çá²Ö²Ù×÷¡£',IF(N==1,'×ö¿Õ£¬ÕâÊÇÒ»ÖÖÖ¸±êÕ½·¨£¬²»ÐèÒªÖ¹Ëð£¬ÀúÊ·»Ø²â¿÷Ëð×îÑÏÖØµÄÊ±Îª12%£¬19Äê1ÔÂÆð£¬9000¸ùKÏßÓ¯Àû211%£¬ÊÊºÏºÏÔ¼Çá²Ö²Ù×÷¡£', ''))
 currPrice(i)=E(i)
-stopPrice(i)=IF(N==2,E(i)*0.95,IF(N==1,E(i)*1.05,0))
-
+stopPrice(i)=IF(N==2,E(i)*0.95,IF(N==1,E(i)*1.05,0.0))
 #END
