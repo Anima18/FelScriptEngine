@@ -4,6 +4,8 @@ import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.context.FelContext;
 import fel.function.BaseFunction;
 
+import java.io.UnsupportedEncodingException;
+
 import static fel.util.Constant.DATA_SIZE;
 
 public class LoopFunction extends BaseFunction {
