@@ -5,6 +5,7 @@ import fel.function.arithmetic.ArithFunction;
 import fel.util.TextUtil;
 
 import java.util.List;
+import java.util.OptionalDouble;
 
 public class MaxColFunction extends ArithFunction {
 
@@ -16,17 +17,29 @@ public class MaxColFunction extends ArithFunction {
     public Object call(Object[] objects) {
         validateParam(objects);
         String refCode = String.valueOf(objects[0]);
-        int begin = Integer.parseInt(objects[1].toString());
-        int count = Integer.parseInt(objects[2].toString());
         List dataList = getDataSetItemValue(refCode);
+        int fromIndex = 0, toIndex = 0;
+        if(objects.length == 2) {
+            fromIndex = 0;
+            toIndex = Integer.parseInt(objects[1].toString());
+        }else if(objects.length == 3) {
+            toIndex = Integer.parseInt(objects[1].toString());
+            fromIndex = toIndex - Integer.parseInt(objects[2].toString());
+        }
 
-        List subDataList = dataList.subList(begin - count, begin+1);
-        return subDataList.stream().filter(e -> {
+        List subDataList = dataList.subList(fromIndex, toIndex+1);
+        OptionalDouble optional = subDataList.stream().filter(e -> {
             if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
                 return false;
             }
             return true;
-        }).mapToDouble(e -> Double.parseDouble(e.toString())).max().getAsDouble();
+        }).mapToDouble(e -> Double.parseDouble(e.toString())).max();
+        if(optional != null && optional.isPresent()) {
+            return optional.getAsDouble();
+        }else {
+            return 0;
+        }
+
     }
 
     @Override

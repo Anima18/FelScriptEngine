@@ -35,7 +35,15 @@ public class StdevFunction extends ArithFunction {
         }
 
         List<Object> subDataList = dataList.subList(fromIndex, toIndex+1);
-        List<Double> valueList = subDataList.stream().map(e -> Double.parseDouble(e.toString())).collect(Collectors.toList());
+        List<Double> valueList = subDataList.stream()
+                .filter(e -> {
+                    if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
+                        return false;
+                    }
+                    return true;
+                })
+                .map(e -> Double.parseDouble(e.toString()))
+                .collect(Collectors.toList());
         return standardDiviation(valueList);
     }
 

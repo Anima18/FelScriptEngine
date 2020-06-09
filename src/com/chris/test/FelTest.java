@@ -14,8 +14,8 @@ import java.util.Map;
 
 public class FelTest {
 
-    public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest.txt";
-    public static final String SCRIPT_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt";
+    public static final String SCRIPT_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/scriptTest3.txt";
+    public static final String SCRIPT_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/scriptTest3.txt";
     public static final String DATA_FILE = "/home/jianjianhong/Documents/code/IdeaProjects/FelScriptEngine/data.xlsx";
     public static final String DATA_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/data2.xlsx";
     public static Map<String, Field> loadDataFromExcel() {

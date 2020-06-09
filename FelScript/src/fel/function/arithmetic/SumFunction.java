@@ -2,6 +2,7 @@ package fel.function.arithmetic;
 
 import fel.script.Field;
 import com.greenpineyu.fel.context.FelContext;
+import fel.util.TextUtil;
 
 import java.util.List;
 
@@ -26,7 +27,14 @@ public class SumFunction extends ArithFunction {
         }
 
         List subDataList = dataList.subList(fromIndex, toIndex+1);
-        return subDataList.stream().mapToDouble(e -> Double.parseDouble(e.toString())).sum();
+        return subDataList.stream()
+                .filter(e -> {
+                    if (TextUtil.isEmpty(e) || !TextUtil.isDouble(e.toString())) {
+                        return false;
+                    }
+                    return true;
+                })
+                .mapToDouble(e -> Double.parseDouble(e.toString())).sum();
     }
 
     @Override
