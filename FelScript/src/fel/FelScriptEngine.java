@@ -7,10 +7,14 @@ import com.greenpineyu.fel.exception.EvalException;
 import fel.function.FunctionRepository;
 import fel.script.*;
 import fel.util.Constant;
+import fel.util.FileUtil;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static fel.util.Constant.DATA_SET;
 import static fel.util.Constant.DATA_SIZE;
@@ -18,8 +22,15 @@ import static fel.util.Constant.DATA_SIZE;
 public class FelScriptEngine {
     private FelEngine engine;
     private ScriptNode scriptNode;
+    private String scriptFilePath;
+    private String scriptFileName;
+    private Map<String, Field> dataSource;
 
     private FelScriptEngine(Builder builder) {
+        scriptFilePath = builder.script.getPath();
+        scriptFileName = builder.script.getName();
+        dataSource = builder.dataSource;
+
         Log.clear();
         Log.i("========开始解析脚本========");
         ScriptParser parser = new ScriptParser(builder.dataSource, builder.script);
@@ -51,7 +62,53 @@ public class FelScriptEngine {
         long endTime3 = System.currentTimeMillis();
         System.out.println("runExecs运行时间： "+(endTime3-startTime3)+"ms");
 
-        return scriptNode.getVars();
+        List<ScriptVar> scriptVars = scriptNode.getVars();
+
+        saveResult(scriptVars);
+        return scriptVars;
+    }
+
+    private void saveResult(List<ScriptVar> scriptVars) {
+        List<String> timeList = (List<String>)dataSource.get("A").getValue();
+        if(timeList == null || timeList.size() == 0) {
+            return;
+        }
+
+        List<String> headerList = new ArrayList<>();
+        headerList.add("A");
+        scriptVars.forEach(scriptVar -> headerList.add(scriptVar.getName()));
+
+        List<Map<String, String>> contentList = new ArrayList<>();
+        for(int i = 0; i < timeList.size(); i++) {
+            if(((List<?>) scriptVars.get(0).getValue()).get(i) == null) {
+                continue;
+            }
+            Map<String, String> content = new HashMap<>();
+            content.put("A", timeList.get(i));
+            for(ScriptVar scriptVar : scriptVars) {
+                List<?> values = (List<?>)scriptVar.getValue();
+                content.put(scriptVar.getName(), values.get(i).toString());
+            }
+            contentList.add(content);
+        }
+        System.out.println(headerList);
+        System.out.println(contentList);
+
+        StringBuilder builder = new StringBuilder();
+        String headerString = headerList.stream().collect(Collectors.joining("||"));
+        builder.append(headerString);
+        builder.append("\n");
+
+        for(Map<String, String> content : contentList) {
+            String contentString = headerList.stream().map(header -> content.get(header)).collect(Collectors.joining("||"));
+            builder.append(contentString);
+            builder.append("\n");
+        }
+
+
+        String resultFileName = String.format("%s_%s.txt", scriptFileName.split("\\.")[0], "run_data");
+        String resultFilePath = scriptFilePath.replace(scriptFileName, resultFileName);
+        FileUtil.writeText(resultFilePath, builder.toString());
     }
 
     private void loadParams(List<ScriptParam> params) {

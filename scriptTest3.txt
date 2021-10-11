@@ -6,16 +6,11 @@ Numeric 	j(14);
 Vars
 List<Numeric> 	G;
 List<Numeric> 	H;
-List<Numeric> 	I;
-List<String> 	J;
-List<Numeric>	currPrice;
-List<Numeric>	stopPrice;
-List<String>	operDirection;
-List<String>	operDescription;
 
 Exec
 #LOOP
 i
 G(i) = AVG(E, i, j)
 H(i) = STDEV(G,i,j)
+K(i) = G(i-1)
 #END

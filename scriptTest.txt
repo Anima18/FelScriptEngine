@@ -1,11 +1,8 @@
 Params
-Numeric 	m(26);
-Numeric 	i(30);
-Numeric 	j(20);
-Numeric 	h(24);
-Numeric 	y(9);
-Numeric 	w(3);
-
+Numeric 	i(199);
+Numeric 	G_param(199);
+Numeric 	K_param(29);
+Numeric 	L_param(59);
 
 Vars
 List<Numeric> 	G;
@@ -13,17 +10,15 @@ List<Numeric> 	H;
 List<Numeric> 	I;
 List<Numeric> 	J;
 List<Numeric> 	K;
-List<String> 	L;
-
+List<Numeric> 	L;
 
 Exec
 #LOOP
 i
-G(i) = AVG(E, i, j)
-H(i) = (G(i)-G(i-1))/G(i)*100
-I(i) = AVG(E, i, j)
-J(i) = I(i)-2.2*STDEV(E,i,j)
-K(i) = E(i)-J(i) 
-L(i) = IF(AND(i>60,MINCOL(K,i-4,y)>0,MINCOL(K,i,w)>0),'2','0')
-
+G(i) = AVG(E, i, G_param)
+H(i) = D(i)-G(i)
+I(i) = G(i)-C(i)
+J(i) = (G(i) - G(i-1)) / G(i) * 100
+K(i) = AVG(J, i, K_param)
+L(i) = AVG(E, i, L_param)
 #END
