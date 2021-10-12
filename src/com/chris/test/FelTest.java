@@ -15,12 +15,12 @@ import java.util.Map;
 public class FelTest {
 
     public static final String SCRIPT_FILE = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/scriptTest.txt";
-    public static final String SCRIPT_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/scriptTest.txt";
+    public static final String SCRIPT_FILE2 = "E:/code/GitHub/FelScriptEngine/scriptTest.txt";
     public static final String DATA_FILE = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/data.xlsx";
-    public static final String DATA_FILE2 = "E:/code/Idea_workspace/FelScriptEngine/data2.xlsx";
+    public static final String DATA_FILE2 = "E:/code/GitHub/FelScriptEngine/data.xlsx";
     public static Map<String, Field> loadDataFromExcel() {
         try {
-            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
+            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE2));
             ExcelSheet sheet = workbook.getSheetAt(0);
             Map<String, Field> datas = new HashMap<>();
             datas.put("A", new Field("A", FieldType.List_String));

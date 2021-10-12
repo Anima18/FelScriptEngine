@@ -190,7 +190,19 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -210,22 +222,46 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1868" height="512" key="GridCell.Tab.0.bottom" timestamp="1633776510946">
-      <screen x="0" y="27" width="1920" height="1173" />
+    <state width="433" height="441" key="DebuggerActiveHint" timestamp="1634047548127">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="433" height="441" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1634047548127" />
+    <state width="1322" height="259" key="GridCell.Tab.0.bottom" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="259" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
     <state width="1868" height="512" key="GridCell.Tab.0.bottom/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
-    <state width="1868" height="512" key="GridCell.Tab.0.center" timestamp="1633776510946">
-      <screen x="0" y="27" width="1920" height="1173" />
+    <state width="1322" height="259" key="GridCell.Tab.0.center" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="259" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
     <state width="1868" height="512" key="GridCell.Tab.0.center/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
-    <state width="1868" height="512" key="GridCell.Tab.0.left" timestamp="1633776510946">
-      <screen x="0" y="27" width="1920" height="1173" />
+    <state width="1322" height="259" key="GridCell.Tab.0.left" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="259" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
     <state width="1868" height="512" key="GridCell.Tab.0.left/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
-    <state width="1868" height="512" key="GridCell.Tab.0.right" timestamp="1633776510946">
-      <screen x="0" y="27" width="1920" height="1173" />
+    <state width="1322" height="259" key="GridCell.Tab.0.right" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="259" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
     <state width="1868" height="512" key="GridCell.Tab.0.right/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
+    <state width="1322" height="259" key="GridCell.Tab.1.bottom" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="259" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="259" key="GridCell.Tab.1.center" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="259" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="259" key="GridCell.Tab.1.left" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="259" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="259" key="GridCell.Tab.1.right" timestamp="1634047513175">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="259" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -254,6 +290,11 @@
           <url>file://$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java</url>
           <line>28</line>
           <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="121" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

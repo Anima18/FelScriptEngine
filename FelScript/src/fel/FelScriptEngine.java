@@ -10,10 +10,7 @@ import fel.util.Constant;
 import fel.util.FileUtil;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static fel.util.Constant.DATA_SET;
@@ -43,6 +40,9 @@ public class FelScriptEngine {
         Log.i("【√】初始化函数成功");
         repository.initData(builder.dataSource);
         Log.i("【√】加载数据成功");
+
+        //加载历史数据
+        loadResultData();
     }
 
     public List<ScriptVar> eval() {
@@ -68,6 +68,47 @@ public class FelScriptEngine {
         return scriptVars;
     }
 
+    /**
+     * 获取历史脚本运行结果文件路径
+     * @return
+     */
+    private String getResultDataFilePath() {
+        String resultFileName = String.format("%s_%s.txt", scriptFileName.split("\\.")[0], "run_data");
+        return scriptFilePath.replace(scriptFileName, resultFileName);
+    }
+
+    private void loadResultData() {
+        String filePath = getResultDataFilePath();
+        List<String> contentList = FileUtil.readText(filePath);
+        if(contentList == null || contentList.size() == 0) {
+            return;
+        }
+        List<String> header = getResultItem(contentList.get(0));
+        Map<String, Integer> headerIndexMap = new HashMap<>();
+        for(int i = 0; i < header.size(); i++) {
+            headerIndexMap.put(header.get(i), i);
+        }
+
+        List<String> timeList = new ArrayList<>();
+        List<Map<String,  String>> valueList = new ArrayList<>();
+        for(int i = 1; i < contentList.size(); i++) {
+            List<String> content = getResultItem(contentList.get(i));
+
+            timeList.add(content.get(headerIndexMap.get("A")));
+            Map<String, String> value = new HashMap<>();
+            headerIndexMap.forEach((k, v) -> {
+                value.put(k, content.get(v));
+            });
+            valueList.add(value);
+        }
+
+        System.out.println(timeList);
+    }
+
+    private List<String> getResultItem(String content) {
+        return Arrays.asList(content .split("\\|\\|")).stream().map(s -> (s.trim())).collect(Collectors.toList());
+    }
+
     private void saveResult(List<ScriptVar> scriptVars) {
         List<String> timeList = (List<String>)dataSource.get("A").getValue();
         if(timeList == null || timeList.size() == 0) {
@@ -91,8 +132,6 @@ public class FelScriptEngine {
             }
             contentList.add(content);
         }
-        System.out.println(headerList);
-        System.out.println(contentList);
 
         StringBuilder builder = new StringBuilder();
         String headerString = headerList.stream().collect(Collectors.joining("||"));
@@ -105,9 +144,7 @@ public class FelScriptEngine {
             builder.append("\n");
         }
 
-
-        String resultFileName = String.format("%s_%s.txt", scriptFileName.split("\\.")[0], "run_data");
-        String resultFilePath = scriptFilePath.replace(scriptFileName, resultFileName);
+        String resultFilePath = getResultDataFilePath();
         FileUtil.writeText(resultFilePath, builder.toString());
     }
 
