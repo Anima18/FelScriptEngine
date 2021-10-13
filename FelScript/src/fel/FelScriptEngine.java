@@ -8,6 +8,7 @@ import fel.function.FunctionRepository;
 import fel.script.*;
 import fel.util.Constant;
 import fel.util.FileUtil;
+import fel.util.ResultSetRepository;
 
 import java.io.File;
 import java.util.*;
@@ -19,14 +20,11 @@ import static fel.util.Constant.DATA_SIZE;
 public class FelScriptEngine {
     private FelEngine engine;
     private ScriptNode scriptNode;
-    private String scriptFilePath;
-    private String scriptFileName;
-    private Map<String, Field> dataSource;
+    private ResultSetRepository resultSet;
+
 
     private FelScriptEngine(Builder builder) {
-        scriptFilePath = builder.script.getPath();
-        scriptFileName = builder.script.getName();
-        dataSource = builder.dataSource;
+        resultSet = new ResultSetRepository(builder.script, builder.dataSource);
 
         Log.clear();
         Log.i("========开始解析脚本========");
@@ -42,7 +40,7 @@ public class FelScriptEngine {
         Log.i("【√】加载数据成功");
 
         //加载历史数据
-        loadResultData();
+        resultSet.initResultSet();
     }
 
     public List<ScriptVar> eval() {
@@ -64,89 +62,11 @@ public class FelScriptEngine {
 
         List<ScriptVar> scriptVars = scriptNode.getVars();
 
-        saveResult(scriptVars);
+        resultSet.setResultSet(scriptVars);
         return scriptVars;
     }
 
-    /**
-     * 获取历史脚本运行结果文件路径
-     * @return
-     */
-    private String getResultDataFilePath() {
-        String resultFileName = String.format("%s_%s.txt", scriptFileName.split("\\.")[0], "run_data");
-        return scriptFilePath.replace(scriptFileName, resultFileName);
-    }
 
-    private void loadResultData() {
-        String filePath = getResultDataFilePath();
-        List<String> contentList = FileUtil.readText(filePath);
-        if(contentList == null || contentList.size() == 0) {
-            return;
-        }
-        List<String> header = getResultItem(contentList.get(0));
-        Map<String, Integer> headerIndexMap = new HashMap<>();
-        for(int i = 0; i < header.size(); i++) {
-            headerIndexMap.put(header.get(i), i);
-        }
-
-        List<String> timeList = new ArrayList<>();
-        List<Map<String,  String>> valueList = new ArrayList<>();
-        for(int i = 1; i < contentList.size(); i++) {
-            List<String> content = getResultItem(contentList.get(i));
-
-            timeList.add(content.get(headerIndexMap.get("A")));
-            Map<String, String> value = new HashMap<>();
-            headerIndexMap.forEach((k, v) -> {
-                value.put(k, content.get(v));
-            });
-            valueList.add(value);
-        }
-
-        System.out.println(timeList);
-    }
-
-    private List<String> getResultItem(String content) {
-        return Arrays.asList(content .split("\\|\\|")).stream().map(s -> (s.trim())).collect(Collectors.toList());
-    }
-
-    private void saveResult(List<ScriptVar> scriptVars) {
-        List<String> timeList = (List<String>)dataSource.get("A").getValue();
-        if(timeList == null || timeList.size() == 0) {
-            return;
-        }
-
-        List<String> headerList = new ArrayList<>();
-        headerList.add("A");
-        scriptVars.forEach(scriptVar -> headerList.add(scriptVar.getName()));
-
-        List<Map<String, String>> contentList = new ArrayList<>();
-        for(int i = 0; i < timeList.size(); i++) {
-            if(((List<?>) scriptVars.get(0).getValue()).get(i) == null) {
-                continue;
-            }
-            Map<String, String> content = new HashMap<>();
-            content.put("A", timeList.get(i));
-            for(ScriptVar scriptVar : scriptVars) {
-                List<?> values = (List<?>)scriptVar.getValue();
-                content.put(scriptVar.getName(), values.get(i).toString());
-            }
-            contentList.add(content);
-        }
-
-        StringBuilder builder = new StringBuilder();
-        String headerString = headerList.stream().collect(Collectors.joining("||"));
-        builder.append(headerString);
-        builder.append("\n");
-
-        for(Map<String, String> content : contentList) {
-            String contentString = headerList.stream().map(header -> content.get(header)).collect(Collectors.joining("||"));
-            builder.append(contentString);
-            builder.append("\n");
-        }
-
-        String resultFilePath = getResultDataFilePath();
-        FileUtil.writeText(resultFilePath, builder.toString());
-    }
 
     private void loadParams(List<ScriptParam> params) {
         FelContext context = engine.getContext();

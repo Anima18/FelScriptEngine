@@ -32,7 +32,7 @@ public class FileUtil {
     private FileUtil() {
     }
 
-    public static void writeText(String filePath, String content) {
+    public static void writeText(String filePath, String content ) {
 
         Path path = Paths.get(filePath);
         //创建文件
@@ -54,7 +54,7 @@ public class FileUtil {
         }
     }
 
-    public static List<String> readText(String filePath) {
+    public static List<String> readText(String filePath ) {
 
         Path path = Paths.get(filePath);
         if(!Files.exists(path)) {

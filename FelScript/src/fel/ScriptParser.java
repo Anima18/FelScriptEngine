@@ -13,7 +13,7 @@ public class ScriptParser {
     private List<String> codeLineList;
     private Map<String, Field> dataSource;
 
-    public ScriptParser(Map<String, Field> dataSource, File script) {
+    public ScriptParser(Map<String, Field> dataSource, File script ) {
         this.dataSource = dataSource;
         this.script = script;
     }
