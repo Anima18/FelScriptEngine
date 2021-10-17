@@ -1,5 +1,7 @@
 package fel.util;
 
+import com.greenpineyu.fel.common.StringUtils;
+import fel.FelScriptEngine;
 import fel.script.Field;
 import fel.script.ScriptVar;
 
@@ -33,6 +35,7 @@ public class ResultSetRepository {
     }
 
     public void initResultSet() {
+        long startTime = System.currentTimeMillis();
         String filePath = getResultDataFilePath();
         List<String> contentList = FileUtil.readText(filePath);
         if(contentList == null || contentList.size() == 0) {
@@ -52,7 +55,7 @@ public class ResultSetRepository {
             timeList.add(content.get(headerIndexMap.get("A")));
             Map<String, String> value = new HashMap<>();
             headerIndexMap.forEach((k, v) -> {
-                value.put(k, content.get(v));
+                value.put(k, content.get(v) != null ? content.get(v) : "");
             });
             valueList.add(value);
         }
@@ -70,7 +73,8 @@ public class ResultSetRepository {
             indexValueMap.put(v, valueList.get(k));
         });
 
-        System.out.println(indexValueMap);
+        long endTime=System.currentTimeMillis();
+        System.out.println("加载历史数据时间： "+(endTime-startTime)+"ms");
     }
 
     private List<String> getResultItem(String content) {
@@ -82,6 +86,7 @@ public class ResultSetRepository {
     }
 
     public void setResultSet(List<ScriptVar> scriptVars) {
+        long startTime=System.currentTimeMillis();
         List<String> timeList = getAValues();
         if(timeList == null || timeList.size() == 0) {
             return;
@@ -110,13 +115,20 @@ public class ResultSetRepository {
         builder.append(headerString);
         builder.append("\n");
 
+        int contentSize = contentList.size();
+        if(contentSize > 500) {
+            contentList = contentList.subList(contentSize - 500, contentSize);
+        }
+
         for(Map<String, String> content : contentList) {
-            String contentString = headerList.stream().map(header -> content.get(header)).collect(Collectors.joining("||"));
+            String contentString = headerList.stream().map(header -> StringUtils.isEmpty(content.get(header)) ? " " : content.get(header)).collect(Collectors.joining("||"));
             builder.append(contentString);
             builder.append("\n");
         }
 
         String resultFilePath = getResultDataFilePath();
         FileUtil.writeText(resultFilePath, builder.toString());
+        long endTime=System.currentTimeMillis();
+        System.out.println("保存历史数据时间： "+(endTime-startTime)+"ms");
     }
 }

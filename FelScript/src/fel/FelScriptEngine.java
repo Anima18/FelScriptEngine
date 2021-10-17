@@ -98,10 +98,20 @@ public class FelScriptEngine {
                 context.set(varName, varName);
                 varSet.put(varName, var);
 
+                Map<Integer, Map<String, String>> indexValueMap = resultSet.getIndexValueMap();
                 FieldType varType = var.getFieldType();
                 if(varType.equals(FieldType.List_Bool) || varType.equals(FieldType.List_Numeric) || varType.equals(FieldType.List_String)) {
                     for(int i = 0; i < (int)context.get(DATA_SIZE); i++) {
-                        ((List)var.getValue()).add(null);
+                        List values = ((List)var.getValue());
+                        String value = indexValueMap.get(i) != null ? indexValueMap.get(i).get(varName) : null;
+                        if(varType.equals(FieldType.List_Bool)) {
+                            values.add(value != null ? Boolean.valueOf(value) : false);
+                        }else if(varType.equals(FieldType.List_Numeric)) {
+                            values.add(value != null ? Double.valueOf(value) : 0);
+                        }else if(varType.equals(FieldType.List_String)) {
+                            values.add(value != null ? value : "");
+                        }
+
                     }
                 }
             }

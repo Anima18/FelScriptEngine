@@ -44,7 +44,7 @@ public class ScriptExec {
         }
     }
 
-    public static ScriptExec parseLoop(Integer lineNum, ReflLexer lexer, List<String> expressionList ) {
+    public static ScriptExec parseLoop(Integer lineNum, ReflLexer lexer, List<String> expressionList) {
         StringBuilder execBuilder = new StringBuilder("LOOP(");
         for (String expression : expressionList) {
             expression = expression.trim();
