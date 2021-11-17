@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 import static com.chris.test.FelTest.SCRIPT_FILE;
-import static com.chris.test.FelTest.SCRIPT_FILE2;
 
 public class FelScriptEngineTest {
     public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class FelScriptEngineTest {
         try {
             long startTime = System.currentTimeMillis();
             List<ScriptVar> varList = new FelScriptEngine.Builder()
-                    .setScript(new File(SCRIPT_FILE2))
+                    .setScript(new File(SCRIPT_FILE))
                     .setDataSource(datas)
                     .eval();
             long endTime=System.currentTimeMillis();

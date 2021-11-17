@@ -54,7 +54,7 @@ public class FileUtil {
         }
     }
 
-    public static List<String> readText(String filePath ) {
+    public static List<String> readText(String filePath) {
 
         Path path = Paths.get(filePath);
         if(!Files.exists(path)) {

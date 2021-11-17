@@ -7,24 +7,29 @@ import com.greenpineyu.fel.exception.EvalException;
 import fel.function.FunctionRepository;
 import fel.script.*;
 import fel.util.Constant;
-import fel.util.FileUtil;
 import fel.util.ResultSetRepository;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
-
-import static fel.util.Constant.DATA_SET;
-import static fel.util.Constant.DATA_SIZE;
 
 public class FelScriptEngine {
     private FelEngine engine;
     private ScriptNode scriptNode;
     private ResultSetRepository resultSet;
 
+    private Map<String, Field> dataSource;
+    private FunctionRepository repository;
+
 
     private FelScriptEngine(Builder builder) {
-        resultSet = new ResultSetRepository(builder.script, builder.dataSource);
+        this.dataSource = builder.dataSource;
+        resultSet = new ResultSetRepository(builder.script);
+        //加载历史数据
+        resultSet.initResultSet();
 
         Log.clear();
         Log.i("========开始解析脚本========");
@@ -33,14 +38,10 @@ public class FelScriptEngine {
         Log.i("========解析脚本完成========");
 
         engine = new FelEngineImpl();
-        FunctionRepository repository = new FunctionRepository(engine);
+        repository = new FunctionRepository(engine);
         repository.initFunction();
         Log.i("【√】初始化函数成功");
-        repository.initData(builder.dataSource);
-        Log.i("【√】加载数据成功");
 
-        //加载历史数据
-        resultSet.initResultSet();
     }
 
     public List<ScriptVar> eval() {
@@ -62,7 +63,7 @@ public class FelScriptEngine {
 
         List<ScriptVar> scriptVars = scriptNode.getVars();
 
-        resultSet.setResultSet(scriptVars);
+        resultSet.setResultSet((Map<String, Field>)engine.getContext().get(Constant.DATA_SET));
         return scriptVars;
     }
 
@@ -82,12 +83,41 @@ public class FelScriptEngine {
         Log.i("【√】加载脚本Params成功");
     }
 
+    private Object getFieldValue(String value, FieldType fieldType) {
+        if(fieldType.equals(FieldType.List_Bool)) {
+            return value != null ? Boolean.valueOf(value) : false;
+        }else if(fieldType.equals(FieldType.List_Numeric)) {
+            return value != null ? Double.valueOf(value) : 0;
+        }else if(fieldType.equals(FieldType.List_String)) {
+            return value != null ? value : "";
+        }else {
+            return null;
+        }
+    }
+
     private void loadVars(List<ScriptVar> Vars) {
         FelContext context = engine.getContext();
-        /*if(context.get(VAR_SET) == null) {
-            context.set(VAR_SET, new HashMap<String, Field>());
-        }*/
-        Map<String, Field> varSet = (Map<String, Field>)context.get(DATA_SET);
+        //上次运行结果
+        Map<String, List<String>> resultListMap = resultSet.getResultListMap();
+
+        /**
+         * 加载历史参数和新增参数
+         */
+        Map<String, Field> dataSet = new HashMap<>();
+        this.dataSource.values().forEach(field -> {
+            String fieldName = field.getName();
+            FieldType fieldType = field.getFieldType();
+            List fieldValue;
+            if(resultListMap != null) {
+                fieldValue = resultListMap.get(fieldName).stream().map(value -> getFieldValue(value, fieldType)).collect(Collectors.toList());
+                fieldValue.addAll((List)field.getValue());
+            }else {
+                fieldValue = (List)field.getValue();
+            }
+            dataSet.put(fieldName, new Field(fieldName, fieldValue, fieldType));
+        });
+
+
         for(ScriptVar var : Vars) {
             String varName = var.getName();
             if(context.get(varName) != null) {
@@ -95,28 +125,25 @@ public class FelScriptEngine {
                 //Log.i(message);
                 throw FelScriptException.withLog(message, var.getLineNum());
             }else {
+
                 context.set(varName, varName);
-                varSet.put(varName, var);
-
-                Map<Integer, Map<String, String>> indexValueMap = resultSet.getIndexValueMap();
+                dataSet.put(varName, var);
                 FieldType varType = var.getFieldType();
-                if(varType.equals(FieldType.List_Bool) || varType.equals(FieldType.List_Numeric) || varType.equals(FieldType.List_String)) {
-                    for(int i = 0; i < (int)context.get(DATA_SIZE); i++) {
-                        List values = ((List)var.getValue());
-                        String value = indexValueMap.get(i) != null ? indexValueMap.get(i).get(varName) : null;
-                        if(varType.equals(FieldType.List_Bool)) {
-                            values.add(value != null ? Boolean.valueOf(value) : false);
-                        }else if(varType.equals(FieldType.List_Numeric)) {
-                            values.add(value != null ? Double.valueOf(value) : 0);
-                        }else if(varType.equals(FieldType.List_String)) {
-                            values.add(value != null ? value : "");
-                        }
 
-                    }
+                List varValue = new ArrayList();
+                if(resultListMap != null) {
+                    varValue = resultListMap.get(varName).stream().map(value -> getFieldValue(value, varType)).collect(Collectors.toList());
                 }
+                for(int i = 0; i<((List)dataSource.get("A").getValue()).size(); i++) {
+                    varValue.add(getFieldValue(null, varType));
+                }
+                var.setValue(varValue);
             }
         }
         Log.i("【√】加载脚本Vars成功");
+
+        repository.initData(dataSet);
+        Log.i("【√】加载数据成功");
     }
 
     private void runExecs(List<ScriptExec> execs) {

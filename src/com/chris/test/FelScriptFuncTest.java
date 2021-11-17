@@ -10,7 +10,7 @@ import static com.chris.test.FelTest.loadDataFromExcel;
 
 public class FelScriptFuncTest {
 
-    private static FelEngine engine;
+   /* private static FelEngine engine;
 
     @BeforeClass
     public static void beforeClass(){
@@ -93,5 +93,5 @@ public class FelScriptFuncTest {
     public void testABS(){
         Object eval = engine.eval("ABS(-1)");
         Assert.assertEquals(eval, 1.0);
-    }
+    }*/
 }

@@ -12,11 +12,9 @@ import java.util.stream.Collectors;
 public class ResultSetRepository {
     private String scriptFilePath;
     private String scriptFileName;
-    private Map<String, Field> dataSource;
-    private Map<Integer, Map<String, String>> indexValueMap = new HashMap<>();
+    private Map<String, List<String>> resultListMap;
 
-    public ResultSetRepository(File scriptFile,  Map<String, Field> dataSource) {
-        this.dataSource = dataSource;
+    public ResultSetRepository(File scriptFile) {
         scriptFilePath = scriptFile.getPath();
         scriptFileName = scriptFile.getName();
     }
@@ -30,8 +28,8 @@ public class ResultSetRepository {
         return scriptFilePath.replace(scriptFileName, resultFileName);
     }
 
-    public Map<Integer, Map<String, String>> getIndexValueMap() {
-        return indexValueMap;
+    public Map<String, List<String>> getResultListMap() {
+        return resultListMap;
     }
 
     public void initResultSet() {
@@ -47,31 +45,21 @@ public class ResultSetRepository {
             headerIndexMap.put(header.get(i), i);
         }
 
-        List<String> timeList = new ArrayList<>();
-        List<Map<String,  String>> valueList = new ArrayList<>();
+        resultListMap = new HashMap<>();
         for(int i = 1; i < contentList.size(); i++) {
             List<String> content = getResultItem(contentList.get(i));
 
-            timeList.add(content.get(headerIndexMap.get("A")));
-            Map<String, String> value = new HashMap<>();
             headerIndexMap.forEach((k, v) -> {
-                value.put(k, content.get(v) != null ? content.get(v) : "");
+                List<String> resultList;
+                if(resultListMap.containsKey(k)) {
+                    resultList = resultListMap.get(k);
+                }else {
+                    resultList = new ArrayList<>();
+                    resultListMap.put(k, resultList);
+                }
+                resultList.add(content.get(v));
             });
-            valueList.add(value);
         }
-
-        Map<Integer, Integer> indexMap = new HashMap<>();
-        List<String> aValues = getAValues();
-        for (int i=0; i<timeList.size(); i++) {
-            String time = timeList.get(i);
-            if(aValues.contains(time)) {
-                indexMap.put(i, aValues.indexOf(time));
-            }
-        }
-
-        indexMap.forEach((k, v) -> {
-            indexValueMap.put(v, valueList.get(k));
-        });
 
         long endTime=System.currentTimeMillis();
         System.out.println("加载历史数据时间： "+(endTime-startTime)+"ms");
@@ -81,10 +69,41 @@ public class ResultSetRepository {
         return Arrays.asList(content .split("\\|\\|")).stream().map(s -> (s.trim())).collect(Collectors.toList());
     }
 
-    private List<String> getAValues() {
-        return (List<String>)dataSource.get("A").getValue();
-    }
+    public void setResultSet(Map<String, Field> dataSet) {
+        long startTime=System.currentTimeMillis();
+        final List<String> headerList = new ArrayList<>(dataSet.keySet());
+        List<Map<String, String>> contentList = new ArrayList<>();
+        for(int i = 0; i < ((List<String>)dataSet.get("A").getValue()).size(); i++) {
+            Map<String, String> content = new HashMap<>();
+            for(Field field : dataSet.values()) {
+                List<?> values = (List<?>)field.getValue();
+                content.put(field.getName(), values.get(i).toString());
+            }
+            contentList.add(content);
+        }
 
+        StringBuilder builder = new StringBuilder();
+        String headerString = headerList.stream().collect(Collectors.joining("||"));
+        builder.append(headerString);
+        builder.append("\n");
+
+        int contentSize = contentList.size();
+        if(contentSize > 200) {
+            contentList = contentList.subList(contentSize - 200, contentSize);
+        }
+
+        for(Map<String, String> content : contentList) {
+            String contentString = headerList.stream().map(header -> StringUtils.isEmpty(content.get(header)) ? " " : content.get(header)).collect(Collectors.joining("||"));
+            builder.append(contentString);
+            builder.append("\n");
+        }
+
+        String resultFilePath = getResultDataFilePath();
+        FileUtil.writeText(resultFilePath, builder.toString());
+        long endTime=System.currentTimeMillis();
+        System.out.println("保存历史数据时间： "+(endTime-startTime)+"ms");
+    }
+/*
     public void setResultSet(List<ScriptVar> scriptVars) {
         long startTime=System.currentTimeMillis();
         List<String> timeList = getAValues();
@@ -92,9 +111,11 @@ public class ResultSetRepository {
             return;
         }
 
+        //设置表头数据
         List<String> headerList = new ArrayList<>();
         headerList.add("A");
         scriptVars.forEach(scriptVar -> headerList.add(scriptVar.getName()));
+
 
         List<Map<String, String>> contentList = new ArrayList<>();
         for(int i = 0; i < timeList.size(); i++) {
@@ -116,8 +137,8 @@ public class ResultSetRepository {
         builder.append("\n");
 
         int contentSize = contentList.size();
-        if(contentSize > 500) {
-            contentList = contentList.subList(contentSize - 500, contentSize);
+        if(contentSize > 200) {
+            contentList = contentList.subList(contentSize - 200, contentSize);
         }
 
         for(Map<String, String> content : contentList) {
@@ -130,5 +151,5 @@ public class ResultSetRepository {
         FileUtil.writeText(resultFilePath, builder.toString());
         long endTime=System.currentTimeMillis();
         System.out.println("保存历史数据时间： "+(endTime-startTime)+"ms");
-    }
+    }*/
 }
