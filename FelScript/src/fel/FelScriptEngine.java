@@ -71,7 +71,7 @@ public class FelScriptEngine {
 
         resultSet.setResultSet((Map<String, Field>)engine.getContext().get(Constant.DATA_SET));
 
-        if(index == 0) {
+        /*if(index == 0) {
             scriptVars = scriptVars.stream().map(var -> {
                 List values = (List)var.getValue();
                 var.setValue(values.subList(values.size()-((List)dataSource.get("A").getValue()).size(), values.size()));
@@ -85,7 +85,7 @@ public class FelScriptEngine {
                 }
                 return var;
             }).collect(Collectors.toList());
-        }
+        }*/
         return scriptVars;
     }
 

@@ -58,19 +58,19 @@ public class FelScriptEngineTest {
         int dataListSize = ((List)varList.get(0).getValue()).size();
         String[] header = new String[varList.size()+1];
         header[0] = "序号";
-        String[][] dataList = new String[dataListSize][varList.size()+1];
+        String[][] dataList = new String[1][varList.size()+1];
         for (int i = 0; i < varList.size(); i++) {
             header[i+1] = varList.get(i).getName();
         }
 
 
         for(int i= 0; i < header.length; i++) {
-            for(int j = 0; j < dataListSize; j++) {
+            for(int j = 0; j < 1; j++) {
                 if(i == 0) {
                     dataList[j][i] = j+"";
                 }else {
                     List valueList = (List)varList.get(i-1).getValue();
-                    Object value = valueList.get(j);
+                    Object value = valueList.get(dataListSize-1);
                     dataList[j][i] = value==null ? "" : value.toString();
                 }
             }
