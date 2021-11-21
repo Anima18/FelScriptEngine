@@ -14,13 +14,13 @@ import java.util.Map;
 
 public class FelTest {
 
-    public static final String SCRIPT_FILE = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/ETH_usdt_okex.txt";
-    public static final String SCRIPT_FILE2 = "E:/code/GitHub/FelScriptEngine/ETH_usdt_okex.txt";
+    public static final String SCRIPT_FILE = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/scriptTest.txt";
+    public static final String SCRIPT_FILE2 = "E:/code/GitHub/FelScriptEngine/1637259613454_scriptTest.txt";
     public static final String DATA_FILE = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/ETH_usdt_okex_data2.xlsx";
-    public static final String DATA_FILE2 = "E:/code/GitHub/FelScriptEngine/ETH_usdt_okex_data.xlsx";
+    public static final String DATA_FILE2 = "E:/code/GitHub/FelScriptEngine/ETH_usdt_okex_data2.xlsx";
     public static Map<String, Field> loadDataFromExcel() {
         try {
-            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE));
+            ExcelWorkbook workbook = new ExcelWorkbook(new File(DATA_FILE2));
             ExcelSheet sheet = workbook.getSheetAt(0);
             Map<String, Field> datas = new HashMap<>();
             datas.put("A", new Field("A", FieldType.List_String));

@@ -2,6 +2,7 @@ package fel;
 
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
+import com.greenpineyu.fel.common.StringUtils;
 import com.greenpineyu.fel.context.FelContext;
 import com.greenpineyu.fel.exception.EvalException;
 import fel.function.FunctionRepository;
@@ -10,10 +11,7 @@ import fel.util.Constant;
 import fel.util.ResultSetRepository;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FelScriptEngine {
@@ -22,18 +20,26 @@ public class FelScriptEngine {
     private ResultSetRepository resultSet;
 
     private Map<String, Field> dataSource;
+    private List<String> timeColumn;
     private FunctionRepository repository;
 
+    private String resultLastTime;
+
+    /**
+     * 根据历史最后结果在新参数的下标
+     */
+    int index = 0;
 
     private FelScriptEngine(Builder builder) {
         this.dataSource = builder.dataSource;
+        this.timeColumn = (List<String>)dataSource.get("A").getValue();
         resultSet = new ResultSetRepository(builder.script);
         //加载历史数据
         resultSet.initResultSet();
 
         Log.clear();
         Log.i("========开始解析脚本========");
-        ScriptParser parser = new ScriptParser(builder.dataSource, builder.script);
+        ScriptParser parser = new ScriptParser(this.dataSource, builder.script);
         scriptNode = parser.parse();
         Log.i("========解析脚本完成========");
 
@@ -64,6 +70,22 @@ public class FelScriptEngine {
         List<ScriptVar> scriptVars = scriptNode.getVars();
 
         resultSet.setResultSet((Map<String, Field>)engine.getContext().get(Constant.DATA_SET));
+
+        if(index == 0) {
+            scriptVars = scriptVars.stream().map(var -> {
+                List values = (List)var.getValue();
+                var.setValue(values.subList(values.size()-((List)dataSource.get("A").getValue()).size(), values.size()));
+                return var;
+            }).collect(Collectors.toList());
+        }else {
+            scriptVars = scriptVars.stream().map(var -> {
+                List values = (List)var.getValue();
+                if(values.size() >= 200) {
+                    var.setValue(values.subList(200, values.size()));
+                }
+                return var;
+            }).collect(Collectors.toList());
+        }
         return scriptVars;
     }
 
@@ -100,22 +122,41 @@ public class FelScriptEngine {
         //上次运行结果
         Map<String, List<String>> resultListMap = resultSet.getResultListMap();
 
+        if(resultListMap != null && resultListMap.size() > 0) {
+            //获取上次最后执行记录时间
+            List<String> resultTimeList = resultListMap.get("A");
+            resultLastTime = resultTimeList.get(resultTimeList.size()-1);
+
+            String newLastTime = timeColumn.get(timeColumn.size()-1);
+            String newFirstTime = timeColumn.get(0);
+            if(resultLastTime.compareTo(newLastTime) >= 0) {
+                index = timeColumn.size();
+            }else if(resultLastTime.compareTo(newFirstTime) <0){
+                index = 0;
+            }else if(timeColumn.contains(resultLastTime)) {
+                index = timeColumn.lastIndexOf(resultLastTime) +1;
+            }
+        }
         /**
          * 加载历史参数和新增参数
          */
-        Map<String, Field> dataSet = new HashMap<>();
-        this.dataSource.values().forEach(field -> {
+        Map<String, Field> dataSet = new LinkedHashMap<>();
+        for (Field field : this.dataSource.values()) {
             String fieldName = field.getName();
             FieldType fieldType = field.getFieldType();
             List fieldValue;
-            if(resultListMap != null) {
+            if (resultListMap != null) {
                 fieldValue = resultListMap.get(fieldName).stream().map(value -> getFieldValue(value, fieldType)).collect(Collectors.toList());
-                fieldValue.addAll((List)field.getValue());
-            }else {
-                fieldValue = (List)field.getValue();
+
+                //获取新数据
+                List data = (List) field.getValue();
+                List newDataList = data.subList(index, data.size());
+                fieldValue.addAll(newDataList);
+            } else {
+                fieldValue = (List) field.getValue();
             }
             dataSet.put(fieldName, new Field(fieldName, fieldValue, fieldType));
-        });
+        }
 
 
         for(ScriptVar var : Vars) {
@@ -134,7 +175,7 @@ public class FelScriptEngine {
                 if(resultListMap != null) {
                     varValue = resultListMap.get(varName).stream().map(value -> getFieldValue(value, varType)).collect(Collectors.toList());
                 }
-                for(int i = 0; i<((List)dataSource.get("A").getValue()).size(); i++) {
+                for(int i = 0; i<timeColumn.size() - index; i++) {
                     varValue.add(getFieldValue(null, varType));
                 }
                 var.setValue(varValue);

@@ -1,0 +1,112 @@
+Params
+Numeric 	i(120);
+
+Vars
+List<Numeric> 	G;
+List<Numeric>	H;
+List<Numeric>	I;
+List<Numeric> 	J;
+List<Numeric> 	K;
+List<Numeric>	L;
+List<Numeric> 	M;
+List<Numeric> 	N;
+List<Numeric> 	O;
+List<Numeric> 	P;
+List<Numeric> 	Q;
+List<Numeric> 	R;
+List<Numeric> 	S;
+List<Numeric> 	T;
+List<Numeric> 	U;
+List<Numeric> 	V;
+List<Numeric> 	W;
+List<Numeric> 	X;
+List<Numeric> 	Y;
+List<Numeric> 	Z;
+List<Numeric> 	AA;
+List<Numeric> 	AB;
+List<Numeric> 	AC;
+List<Numeric> 	AD;
+List<Numeric> 	AE;
+List<Numeric> 	AF;
+List<Numeric> 	AG;
+List<Numeric> 	AH;
+List<Numeric> 	AI;
+List<Numeric> 	AJ;
+List<Numeric> 	AK;
+List<Numeric> 	AL;
+List<Numeric> 	AM;
+List<Numeric> 	AN;
+List<Numeric> 	AO;
+List<Numeric> 	AP;
+List<Numeric> 	AQ;
+List<Numeric> 	AR;
+List<Numeric> 	AS;
+List<Numeric> 	AT;
+List<Numeric> 	AU;
+List<Numeric> 	AV;
+List<Numeric> 	AW;
+List<Numeric> 	AX;
+List<Numeric> 	AY;
+List<Numeric> 	AZ;
+List<Numeric> 	BA;
+List<Numeric> 	BB;
+List<Numeric> 	BC;
+List<Numeric> 	BD;
+List<Numeric> 	BE;
+List<Numeric> 	BF;
+List<Numeric> 	BG;
+List<Numeric> 	BH;
+List<Numeric> 	BI;
+List<Numeric> 	BJ;
+List<Numeric> 	BK;
+List<Numeric> 	BL;
+List<Numeric> 	BM;
+List<Numeric> 	BN;
+List<Numeric> 	BO;
+List<Numeric> 	BP;
+List<Numeric> 	BQ;
+List<Numeric> 	BR;
+List<Numeric> 	BS;
+List<Numeric> 	BT;
+List<Numeric> 	BU;
+List<Numeric> 	BV;
+List<Numeric> 	BW;
+List<Numeric>	reNum1;
+List<Numeric>	reNum2;
+List<Numeric>	reNum3;
+List<Numeric>	reNum4;
+List<Numeric>	reNum5;
+List<Numeric>	reNum6;
+List<Numeric>	reNum7;
+List<Numeric>	reNum8;
+List<String>	reTxt1;
+List<String>	reTxt2;
+List<String>	reTxt3;
+List<String>	reTxt4;
+
+
+Exec
+#LOOP
+i
+BS(i) = BS(i-1)+1
+
+
+
+reTxt1(i) = IF(AND(AY(i)>0,AT(i)>0),'补多单',IF(AT(i)>0,'挂多单',IF(AU(i)>0,'调止损',IF(AND(AR(i)==0,AT(i)==0,AY(i)>0),'半仓',IF(AND(AR(i)==0,AT(i)==0),'空仓','')))))
+reNum1(i) = IF(AT(i)>0,AT(i),IF(AU(i)>0,AU(i),0))
+reNum2(i) = IF(AT(i)>0,AO(i),IF(AU(i)>0,AS(i),IF(AZ(i)>0,AZ(i),0)))
+reTxt2(i) = IF(AND(AR(i)>0,BA(i)>0),'补多单',IF(BA(i)>0,'挂多单',IF(BB(i)>0,'调止损',IF(AND(AY(i)==0,BA(i)==0,AR(i)>0),'半仓',IF(AND(AY(i)==0,BA(i)==0),'空仓','')))))
+reNum3(i) = IF(BA(i)>0,BA(i),IF(BB(i)>0,BB(i),0))
+reNum4(i) = IF(BA(i)>0,AO(i),IF(BB(i)>0,AZ(i),IF(AS(i)>0,AS(i),0)))
+reTxt3(i) = IF(AND(BP(i)>0,BK(i)>0),'补空单',IF(BK(i)>0,'挂空单',IF(BL(i)>0,'调止损',IF(AND(BH(i)==0,BK(i)==0,BP(i)>0),'半仓',IF(AND(BH(i)==0,BK(i)==0),'空仓','')))))
+reNum5(i) = IF(BK(i)>0,BK(i),IF(BL(i)>0,BL(i),0))
+reNum6(i) = IF(BK(i)>0,AO(i),IF(BL(i)>0,BI(i),IF(BQ(i)>0,BQ(i),0)))
+reTxt4(i) = IF(AND(BH(i)>0,BS(i)>0),'补空单',IF(BS(i)>0,'挂空单',IF(BT(i)>0,'调止损',IF(AND(BP(i)==0,BS(i)==0,BH(i)>0),'半仓',IF(AND(BP(i)==0,BS(i)==0),'空仓','')))))
+reNum7(i) = IF(BS(i)>0,BS(i),0)
+reNum8(i) = IF(BS(i)>0,AO(i),IF(BT(i)>0,BQ(i),IF(BI(i)>0,BI(i),0)))
+
+
+
+
+
+#END

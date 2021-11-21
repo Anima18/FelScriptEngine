@@ -83,35 +83,23 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\code\Idea_workspace\FelScriptEngine" />
-      <recent name="E:\code\Idea_workspace\FelScriptEngine\FelScript" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.chris.fel.function.logical" />
-      <recent name="com.chris.fel.function" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\code\Idea_workspace\FelScriptEngine\lib" />
       <recent name="E:\code\Idea_workspace\FelScriptEngine" />
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/com/chris/fel/util" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.chris.fel.function.logical" />
+      <recent name="com.chris.fel.function" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\GitHub\FelScriptEngine" />
+      <recent name="E:\code\Idea_workspace\FelScriptEngine" />
+      <recent name="E:\code\Idea_workspace\FelScriptEngine\FelScript" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.FelScriptEngineTest">
-    <configuration name="FelScriptEngineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptEngineTest" />
-      <module name="FelScriptEngine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chris.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -121,6 +109,19 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FelScriptEngineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptEngineTest" />
+      <module name="FelScriptEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chris.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,7 +199,19 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -234,55 +247,59 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2448" y="316" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636945147498" />
-    <state width="609" height="727" key="DebuggerActiveHint" timestamp="1636958580450">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="473" height="441" key="DebuggerActiveHint" timestamp="1637495027129">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="433" height="441" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1634047548127" />
+    <state width="473" height="441" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1637495027129" />
     <state width="609" height="727" key="DebuggerActiveHint/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958580450" />
-    <state width="1868" height="455" key="GridCell.Tab.0.bottom" timestamp="1636958637883">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="273" key="GridCell.Tab.0.bottom" timestamp="1637495652349">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="273" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1637495652349" />
     <state width="1868" height="512" key="GridCell.Tab.0.bottom/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
     <state width="1868" height="455" key="GridCell.Tab.0.bottom/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637883" />
-    <state width="1868" height="455" key="GridCell.Tab.0.center" timestamp="1636958637882">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="273" key="GridCell.Tab.0.center" timestamp="1637495652348">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="273" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1637495652348" />
     <state width="1868" height="512" key="GridCell.Tab.0.center/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
     <state width="1868" height="455" key="GridCell.Tab.0.center/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637882" />
-    <state width="1868" height="455" key="GridCell.Tab.0.left" timestamp="1636958637882">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="273" key="GridCell.Tab.0.left" timestamp="1637495652348">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="273" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1637495652348" />
     <state width="1868" height="512" key="GridCell.Tab.0.left/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
     <state width="1868" height="455" key="GridCell.Tab.0.left/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637882" />
-    <state width="1868" height="455" key="GridCell.Tab.0.right" timestamp="1636958637882">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="273" key="GridCell.Tab.0.right" timestamp="1637495652348">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="273" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1637495652348" />
     <state width="1868" height="512" key="GridCell.Tab.0.right/0.27.1920.1173@0.27.1920.1173" timestamp="1633776510946" />
     <state width="1868" height="455" key="GridCell.Tab.0.right/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637882" />
-    <state width="1868" height="455" key="GridCell.Tab.1.bottom" timestamp="1636958637883">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="109" key="GridCell.Tab.1.bottom" timestamp="1637495269921">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="109" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1637495269921" />
     <state width="1868" height="455" key="GridCell.Tab.1.bottom/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637883" />
-    <state width="1868" height="455" key="GridCell.Tab.1.center" timestamp="1636958637883">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="109" key="GridCell.Tab.1.center" timestamp="1637495269921">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="109" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1637495269921" />
     <state width="1868" height="455" key="GridCell.Tab.1.center/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637883" />
-    <state width="1868" height="455" key="GridCell.Tab.1.left" timestamp="1636958637883">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="109" key="GridCell.Tab.1.left" timestamp="1637495269921">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="109" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1637495269921" />
     <state width="1868" height="455" key="GridCell.Tab.1.left/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637883" />
-    <state width="1868" height="455" key="GridCell.Tab.1.right" timestamp="1636958637883">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state width="1322" height="109" key="GridCell.Tab.1.right" timestamp="1637495269921">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="259" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1634047513175" />
+    <state width="1322" height="109" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1637495269921" />
     <state width="1868" height="455" key="GridCell.Tab.1.right/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636958637883" />
+    <state x="456" y="73" key="RollbackChangesDialog" timestamp="1637459680728">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="456" y="73" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1637459680727" />
     <state x="1780" y="126" width="1720" height="974" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1636943437062">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
@@ -291,74 +308,61 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2163" y="209" width="944" height="805" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636949302365" />
-    <state x="2311" y="314" width="657" height="598" key="find.popup" timestamp="1636941299938">
-      <screen x="1680" y="0" width="1920" height="1200" />
+    <state x="238" y="98" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1637493807785">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="238" y="98" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1637493807785" />
+    <state x="449" y="190" width="647" height="534" key="find.popup" timestamp="1637462744791">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="449" y="190" width="647" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1637462744791" />
     <state x="2311" y="314" width="657" height="598" key="find.popup/1680.0.1920.1200/0.119.1680.1050@1680.0.1920.1200" timestamp="1636941299938" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="171" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FelScript/src/fel/util/ResultSetRepository.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/util/ResultSetRepository.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/util/ResultSetRepository.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/function/FunctionRepository.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="125" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
-          <line>144</line>
-          <option name="timeStamp" value="138" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="140" />
+          <line>75</line>
+          <option name="timeStamp" value="172" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo parentTag="fel.script.ScriptVar" memberName="fieldType" />
+        <PinnedItemInfo />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="getDataSetItemValue(refCode)" language="JAVA" />
-        <watch expression="Double.parseDouble(e.toString())" language="JAVA" />
-        <watch expression="scriptVars" language="JAVA" />
-        <watch expression="context.get(Constant.DATA_SET)" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FelScriptEngine$FelScriptEngineTest.ic" NAME="FelScriptEngineTest Coverage Results" MODIFIED="1591616695268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

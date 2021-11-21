@@ -47,6 +47,9 @@ public class ResultSetRepository {
 
         resultListMap = new HashMap<>();
         for(int i = 1; i < contentList.size(); i++) {
+            if(StringUtils.isEmpty(contentList.get(i).trim())) {
+                continue;
+            }
             List<String> content = getResultItem(contentList.get(i));
 
             headerIndexMap.forEach((k, v) -> {
