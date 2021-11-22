@@ -51,6 +51,9 @@ public class ResultSetRepository {
                 continue;
             }
             List<String> content = getResultItem(contentList.get(i));
+            if(content.size() != header.size()) {
+                continue;
+            }
 
             headerIndexMap.forEach((k, v) -> {
                 List<String> resultList;
@@ -85,10 +88,10 @@ public class ResultSetRepository {
             contentList.add(content);
         }
 
-        StringBuilder builder = new StringBuilder();
+        StringBuffer buffer = new StringBuffer();
         String headerString = headerList.stream().collect(Collectors.joining("||"));
-        builder.append(headerString);
-        builder.append("\n");
+        buffer.append(headerString);
+        buffer.append("\n");
 
         int contentSize = contentList.size();
         if(contentSize > 200) {
@@ -97,12 +100,12 @@ public class ResultSetRepository {
 
         for(Map<String, String> content : contentList) {
             String contentString = headerList.stream().map(header -> StringUtils.isEmpty(content.get(header)) ? " " : content.get(header)).collect(Collectors.joining("||"));
-            builder.append(contentString);
-            builder.append("\n");
+            buffer.append(contentString);
+            buffer.append("\n");
         }
 
         String resultFilePath = getResultDataFilePath();
-        FileUtil.writeText(resultFilePath, builder.toString());
+        FileUtil.writeText(resultFilePath, buffer.toString());
         long endTime=System.currentTimeMillis();
         System.out.println("保存历史数据时间： "+(endTime-startTime)+"ms");
     }

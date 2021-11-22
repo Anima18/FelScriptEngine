@@ -43,7 +43,7 @@ public class FileUtil {
                 e.printStackTrace();
             }
         }
-        //追加写模式
+        //写模式
         try (BufferedWriter writer =
                      Files.newBufferedWriter(path,
                              StandardCharsets.UTF_8,
