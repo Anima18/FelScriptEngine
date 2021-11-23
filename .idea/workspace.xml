@@ -6,43 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/chris/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ETH_usdt_okex_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ETH_usdt_okex_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ETH_usdt_okex_run_data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/FelScriptEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FelScript/src/fel/util/ResultSetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FelScript/src/fel/util/ResultSetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/FelScript_jar/FelScript.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/FelCollector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/FelScriptEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/ScriptParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/ScriptParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/AverageFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/AverageFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ReflFuction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ReflFuction$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ReflFuction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/ReflFuction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/SetFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/SetFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/StdevFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/StdevFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/SumFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/arithmetic/SumFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MaxColFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MaxColFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MinColFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/collection/MinColFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/function/conditional/LoopFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/function/conditional/LoopFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/FieldType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/FieldType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec$ExecType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec$ExecType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptExec.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptVar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/script/ScriptVar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/util/FileUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScript/fel/util/ResultSetRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScript/fel/util/ResultSetRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptEngineTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptFuncTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelScriptFuncTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FelScriptEngine/com/chris/test/FelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptEngineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelScriptFuncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelScriptFuncTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/chris/test/FelTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="b8e37727-305b-44e8-bbed-c81a0aa58b62" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,19 +64,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.FelScriptEngineTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FelScriptEngineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chris.test.FelScriptEngineTest" />
       <module name="FelScriptEngine" />
@@ -122,6 +73,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,19 +163,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -372,6 +324,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo />
+        <PinnedItemInfo parentTag="fel.script.ScriptVar" memberName="fieldType" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
