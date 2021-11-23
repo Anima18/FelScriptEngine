@@ -3,10 +3,7 @@ package fel.util;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.output.StringBuilderWriter;
 
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,8 +19,16 @@ public class FileUtil {
 
     public static void main(String[] args) {
         //FileUtil.writeText("E:/code/Idea_workspace/FelScriptEngine/scriptTest_run_data.txt", "hello\nworld");
-        List<String> value = FileUtil.readText("/home/jianjianhong/work/code/IdeaProjects/FelScriptEngine/scriptTest_run_data.txt");
-        System.out.println(value);
+
+        String sourcePath = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/scriptTest_run_data.txt";
+        String targetPath = "/home/jianjianhong/work/code/github_workspace/FelScriptEngine/scriptTest_run_data_ddddddd.txt";
+        List<String> value = FileUtil.readText(sourcePath);
+        StringBuffer buffer = new StringBuffer();
+        value.forEach(v -> {
+            buffer.append(v);
+            buffer.append("\n");
+        });
+        FileUtil.writeText(targetPath, buffer.toString());
     }
 
     private static final int DEFAULT_BUFFER_SIZE = 1024 * 4;
@@ -52,6 +57,38 @@ public class FileUtil {
         }catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void writeTextList(String filePath, List<String> contentList ) {
+
+        Path path = Paths.get(filePath);
+        if(!Files.exists(path)) {
+            try {
+                Files.createFile(path);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), "UTF-8"));
+            for (int i=0; i<contentList.size(); i++) {
+                String s = contentList.get(i);
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+                System.out.println("--------------------------第"+i+"记录--------------------------------");
+                System.out.println(s);
+                System.out.println("----------------------------------------------------------");
+            }
+            bufferedWriter.close();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static List<String> readText(String filePath) {
