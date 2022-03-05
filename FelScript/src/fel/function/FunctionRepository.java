@@ -41,6 +41,7 @@ public class FunctionRepository {
         engine.addFun(new AbsFuction(context));
         engine.addFun(new SetFunction(context));
         engine.addFun(new LoopFunction(context, engine));
+        engine.addFun(new CeilingFunction(context));
     }
 
     public void initData(Map<String, Field> dataSet) {

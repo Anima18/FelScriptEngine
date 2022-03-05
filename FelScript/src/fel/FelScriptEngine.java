@@ -192,6 +192,7 @@ public class FelScriptEngine {
         for(ScriptExec exec : execs) {
             String expression = exec.getExpression();
             try {
+                System.out.println(expression);
                 Object value = engine.eval(expression);
                 if(exec.getType() == ScriptExec.ExecType.assign) {
                     //context.set(exec.getVar().getName(), value);

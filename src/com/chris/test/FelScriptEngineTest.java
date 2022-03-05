@@ -9,18 +9,21 @@ import fel.script.ScriptVar;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
-
-import static com.chris.test.FelTest.SCRIPT_FILE;
-import static com.chris.test.FelTest.SCRIPT_FILE2;
-
 public class FelScriptEngineTest {
     public static void main(String[] args) {
-        Map<String, Field> datas = FelTest.loadDataFromExcel();
-
         try {
+            File directory = new File("");//参数为空
+            String courseFile = directory.getCanonicalPath() ;
+            String dataFilePath = courseFile+File.separator+"data.xlsx";
+            String scriptFilePath = courseFile+File.separator+"scriptTest.txt";
+
+            System.out.println(dataFilePath);
+            System.out.println(scriptFilePath);
             long startTime = System.currentTimeMillis();
+            Map<String, Field> datas = FelTest.loadDataFromExcel(dataFilePath);
+
             List<ScriptVar> varList = new FelScriptEngine.Builder()
-                    .setScript(new File(SCRIPT_FILE))
+                    .setScript(new File(scriptFilePath))
                     .setDataSource(datas)
                     .eval();
             long endTime=System.currentTimeMillis();

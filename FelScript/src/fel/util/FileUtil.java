@@ -76,10 +76,10 @@ public class FileUtil {
                 bufferedWriter.write(s);
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
-                System.out.println("--------------------------第"+i+"记录--------------------------------");
+                /*System.out.println("--------------------------第"+i+"记录--------------------------------");
                 System.out.println(s);
                 System.out.println("----------------------------------------------------------");
-            }
+            */}
             bufferedWriter.close();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

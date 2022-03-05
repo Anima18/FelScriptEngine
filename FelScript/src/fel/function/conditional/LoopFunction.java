@@ -2,6 +2,7 @@ package fel.function.conditional;
 
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.context.FelContext;
+import fel.Log;
 import fel.function.BaseFunction;
 
 import java.io.UnsupportedEncodingException;
@@ -28,6 +29,8 @@ public class LoopFunction extends BaseFunction {
         for(int i = startIndex; i < endIndex; i++) {
             for(int j = 1; j < objects.length; j++) {
                 String expression = objects[j].toString();
+                System.out.println(expression);
+                Log.i(expression);
                 engine.eval(expression);
             }
             context.set(indexCode, i+1);

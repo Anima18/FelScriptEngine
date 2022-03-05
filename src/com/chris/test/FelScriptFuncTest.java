@@ -1,26 +1,32 @@
 package com.chris.test;
 
+
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
 import fel.function.FunctionRepository;
-import org.junit.*;
-
-import static com.chris.test.FelTest.initData;
-import static com.chris.test.FelTest.loadDataFromExcel;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Assert.*;
+import org.junit.Test;
 
 public class FelScriptFuncTest {
 
-   /* private static FelEngine engine;
+   private static FelEngine engine;
 
     @BeforeClass
     public static void beforeClass(){
         engine = new FelEngineImpl();
         FunctionRepository repository = new FunctionRepository(engine);
         repository.initFunction();
-        repository.initData(loadDataFromExcel());
+        //repository.initData(loadDataFromExcel());
     }
 
     @Test
+    public void testCEILING(){
+        Object eval = engine.eval("CEILING(10, 1)");
+        Assert.assertEquals(eval, 10.0);
+    }
+    /*@Test
     public void testSum(){
         Object eval = engine.eval("SUM(A, 10)");
         Assert.assertEquals(eval, 450.0);
@@ -94,4 +100,6 @@ public class FelScriptFuncTest {
         Object eval = engine.eval("ABS(-1)");
         Assert.assertEquals(eval, 1.0);
     }*/
+
+
 }
