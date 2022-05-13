@@ -3,11 +3,59 @@ Numeric 	i(120);
 
 Vars
 List<Numeric> 	G;
-
+List<Numeric> 	H;
+List<Numeric> 	I;
+List<Numeric> 	J;
+List<Numeric> 	K;
+List<Numeric> 	L;
+List<Numeric> 	M;
+List<Numeric> 	N;
+List<Numeric> 	O;
+List<Numeric> 	P;
+List<Numeric> 	Q;
+List<Numeric> 	R;
+List<Numeric> 	S;
+List<Numeric> 	T;
+List<Numeric> 	U;
+List<Numeric> 	V;
+List<Numeric> 	W;
+List<Numeric> 	X;
+List<Numeric> 	Y;
+List<Numeric> 	Z;
+List<Numeric> 	AA;
+List<Numeric> 	AB;
+List<Numeric> 	AC;
+List<Numeric> 	AD;
+List<Numeric> 	AE;
+List<Numeric> 	AF;
 
 Exec
 #LOOP
 i
-G(i) = CEILING(B(i), 3)
-
+G(i) = IF(C(i)>MAXCOL(C,i-1,3),C(i),0)
+H(i) = IF(D(i)<MINCOL(D,i-1,3),D(i),0)
+I(i) = IF(AND(MAXCOL(G,i,3)==0,G(i-4)>0),G(i-4),IF(AND(I(i-1)>0,G(i)==0),I(i-1),0))
+J(i) = IF(AND(MAXCOL(H,i,3)==0,H(i-4)>0),H(i-4),IF(AND(J(i-1)>0,H(i)==0),J(i-1),0))
+K(i) = IF(I(i)>0,I(i),K(i-1))
+L(i) = IF(J(i)>0,J(i),L(i-1))
+M(i) = IF(AND(J(i-1)==0,J(i)>0,I(i)==0,MAXCOL(I,i-1,3)>0),(MAXCOL(I,i-1,3)-J(i))/MAXCOL(I,i-1,3),0)
+N(i) = IF(AND(I(i-1)==0,I(i)>0,J(i)==0,MAXCOL(J,i-1,3)>0),(I(i)-MAXCOL(J,i-1,3))/MAXCOL(J,i-1,3),0)
+O(i) = IF(AND(O(i-1)<5,N(i)>0),O(i-1)+1,IF(AND(O(i-1)>-5,M(i)>0),O(i-1)-1,O(i-1)))
+P(i) = IF(AND(P(i-1)<=0,O(i)>O(i-1)),1,IF(AND(P(i-1)>=0,O(i)<O(i-1)),-1,IF(AND(P(i-1)>=0,O(i)>O(i-1)),P(i-1)+1,IF(AND(P(i-1)<=0,O(i)<O(i-1)),P(i-1)-1,P(i-1)))))
+Q(i) = IF(AND(O(i)<O(i-1),O(i)>1,Q(i-1)>0),(Q(i-1)*O(i-1)-M(i))/O(i),IF(AND(O(i)<O(i-1),O(i)==1),Q(i-1)-M(i),IF(AND(N(i)>0,O(i)>1),(Q(i-1)*O(i)+N(i))/(O(i)+1),IF(AND(N(i)>0,O(i)<2),N(i),Q(i-1)))))
+R(i) = IF(AND(O(i)>O(i-1),O(i)<-1,R(i-1)>0),(R(i-1)*O(i-1)*-1-N(i))/O(i),IF(AND(O(i)>O(i-1),O(i)==-1),R(i-1)-N(i),IF(AND(M(i)>0,O(i)<-1),(R(i-1)*O(i)*-1+N(i))/(O(i)*-1+1),IF(AND(M(i)>0,O(i)>-2),M(i),R(i-1)))))
+S(i) = IF(AND(S(i-1)>0,M(i)>0),(S(i-1)*29+M(i))/30,IF(AND(S(i-1)==0,M(i)>0),M(i),S(i-1)))
+T(i) = IF(AND(T(i-1)>0,N(i)>0),(T(i-1)*29+N(i))/30,IF(AND(T(i-1)==0,N(i)>0),N(i),T(i-1)))
+U(i) = IF(K(i)>0,K(i)*(1-S(i)),0)
+V(i) = IF(L(i)>0,L(i)*(1+T(i)),0)
+W(i) = T(i)-S(i)
+X(i) = IF(W(i)!=W(i-1),W(i-1),X(i-1))
+Y(i) = IF(X(i)!=X(i-1),X(i-1),Y(i-1))
+Z(i) = IF(AND(W(i)!=0,W(i-1)==0,Z(i-1)==0),W(i),IF(AND(W(i)!=0,W(i-1)!=W(i)),(W(i)*7+Z(i-1)*2)/9,Z(i-1)))
+AA(i) = IF(Z(i)!=Z(i-1),Z(i-1),AA(i-1))
+AB(i) = IF(AA(i)!=AA(i-1),AA(i-1),AB(i-1))
+AC(i) = W(i)-Z(i)
+AD(i) = IF(AC(i)!=AC(i-1),AC(i-1),AD(i-1))
+AE(i) = IF(AD(i)!=AD(i-1),AD(i-1),AE(i-1))
+AF(i) = IF(AND(W(i)>Z(i),X(i)>AA(i),Z(i)<0,AC(i)<AD(i)),10,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)>0,AC(i)>AD(i)),9,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)-W(i)<AA(i)-X(i),Z(i)<0),5,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)-W(i)>AA(i)-X(i),Z(i)<0),6,IF(AND(W(i)>Z(i),X(i)>AA(i),W(i)-Z(i)>X(i)-AA(i),Z(i)>0),8,IF(AND(W(i)>Z(i),X(i)>AA(i),W(i)-Z(i)<X(i)-AA(i),Z(i)>0),7,IF(AND(W(i)>Z(i),X(i)>AA(i),Z(i)<0),12,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)>0),11,IF(AND(W(i)<Z(i),X(i)>AA(i),Z(i)>0),2,IF(AND(W(i)>Z(i),X(i)<AA(i),Z(i)>0),12,IF(AND(W(i)<Z(i),X(i)>AA(i),Z(i)<0),4,IF(AND(W(i)>Z(i),X(i)<AA(i),Z(i)<0),3,0))))))))))))
 #END

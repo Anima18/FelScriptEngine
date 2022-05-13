@@ -9,6 +9,7 @@ import fel.function.FunctionRepository;
 import fel.script.*;
 import fel.util.Constant;
 import fel.util.ResultSetRepository;
+import fel.util.ScriptModel;
 
 import java.io.File;
 import java.util.*;
@@ -25,6 +26,8 @@ public class FelScriptEngine {
 
     private String resultLastTime;
 
+    private ScriptModel model;
+
     /**
      * 根据历史最后结果在新参数的下标
      */
@@ -32,10 +35,13 @@ public class FelScriptEngine {
 
     private FelScriptEngine(Builder builder) {
         this.dataSource = builder.dataSource;
+        this.model = builder.model;
         this.timeColumn = (List<String>)dataSource.get("A").getValue();
         resultSet = new ResultSetRepository(builder.script);
-        //加载历史数据
-        resultSet.initResultSet();
+        //增量计算，加载历史数据
+        if(model == ScriptModel.Incremental) {
+            resultSet.initResultSet();
+        }
 
         Log.clear();
         Log.i("========开始解析脚本========");
@@ -48,6 +54,10 @@ public class FelScriptEngine {
         repository.initFunction();
         Log.i("【√】初始化函数成功");
 
+    }
+
+    public FelEngine getEngine() {
+        return engine;
     }
 
     public List<ScriptVar> eval() {
@@ -212,6 +222,8 @@ public class FelScriptEngine {
         private File script;
         private Map<String, Field> dataSource;
 
+        private ScriptModel model = ScriptModel.Incremental;
+
         public Builder setScript(File script) {
             this.script = script;
             return this;
@@ -222,13 +234,13 @@ public class FelScriptEngine {
             return this;
         }
 
-        public FelScriptEngine build() {
-            return new FelScriptEngine(this);
+        public Builder setModel(ScriptModel model) {
+            this.model = model;
+            return this;
         }
 
-        public List<ScriptVar> eval() {
-            FelScriptEngine engine = build();
-            return engine.eval();
+        public FelScriptEngine build() {
+            return new FelScriptEngine(this);
         }
     }
 }

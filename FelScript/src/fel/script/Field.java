@@ -1,8 +1,8 @@
 package fel.script;
 
-import com.sun.istack.internal.NotNull;
 import fel.FelScriptException;
 import fel.util.Constant;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
