@@ -3,6 +3,8 @@ package fel.script;
 import fel.FelScriptException;
 import fel.util.TextUtil;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 

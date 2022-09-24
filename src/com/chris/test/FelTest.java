@@ -37,7 +37,11 @@ public class FelTest {
             }
 
             for(int r = 1; r < sheet.getRowCount(); r++) {
+                System.out.println("========"+r+"=========");
                 List<String> rowDataList = sheet.getRowDataList(r, columnCount);
+                if(rowDataList.get(0) == null) {
+                    break;
+                }
                 ((List)datas.get("A").getValue()).add(rowDataList.get(0));
                 ((List)datas.get("B").getValue()).add(Double.parseDouble(rowDataList.get(1)));
                 ((List)datas.get("C").getValue()).add(Double.parseDouble(rowDataList.get(2)));
@@ -140,8 +144,15 @@ public class FelTest {
                         compareCell.setCellValue(((List<Object>)resultSet.get(keyList.get(m)).getValue()).get(i).toString());
                         compareCell.setCellStyle(cellStyle);
                     }else {
-                        Object result = ((List<Object>)resultSet.get(keyList.get(m)).getValue()).get(i);
-                        Object data = ((List<Object>)dataSet.get(keyList.get(m)).getValue()).get(i);
+                        List<Object> resultList = (List<Object>)resultSet.get(keyList.get(m)).getValue();
+                        Object result = resultList.get(i);
+                        Field dateSetField = dataSet.get(keyList.get(m));
+                        if(dateSetField == null) {
+                            break;
+                        }
+
+                        List<Object> datasetList = (List<Object>)dateSetField.getValue();
+                        Object data = datasetList.get(i);
 
                         if(data == null || data.toString().equals(result.toString())) {
                             compareCell.setCellValue(0);

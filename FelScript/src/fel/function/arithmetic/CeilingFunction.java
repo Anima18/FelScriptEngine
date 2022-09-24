@@ -7,6 +7,8 @@ import fel.util.TextUtil;
 
 import java.math.BigDecimal;
 
+import static java.lang.Double.NaN;
+
 /**
  * CEILING 函数将数字向上舍入（沿绝对值增大的方向）到最近的指定基数的倍数。
  */
@@ -27,6 +29,9 @@ public class CeilingFunction extends BaseFunction {
         validateParam(objects);
 
         double number = Double.parseDouble(objects[0].toString());
+        if(Double.isNaN(number) || Double.isInfinite(number)) {
+            number = 0;
+        }
         double significance = Double.parseDouble(objects[1].toString());
 
         BigDecimal value1 = new BigDecimal(Double.toString(Math.ceil(number / significance)));

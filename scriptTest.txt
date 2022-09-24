@@ -1,33 +1,75 @@
 Params
-Numeric 	i(120);
+Numeric   i(119);
 
 Vars
-List<Numeric> 	G;
-List<Numeric> 	H;
-List<Numeric> 	I;
-List<Numeric> 	J;
-List<Numeric> 	K;
-List<Numeric> 	L;
-List<Numeric> 	M;
-List<Numeric> 	N;
-List<Numeric> 	O;
-List<Numeric> 	P;
-List<Numeric> 	Q;
-List<Numeric> 	R;
-List<Numeric> 	S;
-List<Numeric> 	T;
-List<Numeric> 	U;
-List<Numeric> 	V;
-List<Numeric> 	W;
-List<Numeric> 	X;
-List<Numeric> 	Y;
-List<Numeric> 	Z;
-List<Numeric> 	AA;
-List<Numeric> 	AB;
-List<Numeric> 	AC;
-List<Numeric> 	AD;
-List<Numeric> 	AE;
-List<Numeric> 	AF;
+List<Numeric>   G;
+List<Numeric>   H;
+List<Numeric>   I;
+List<Numeric>   J;
+List<Numeric>   K;
+List<Numeric>   L;
+List<Numeric>   M;
+List<Numeric>   N;
+List<Numeric>   O;
+List<Numeric>   P;
+List<Numeric>   Q;
+List<Numeric>   R;
+List<Numeric>   S;
+List<Numeric>   T;
+List<Numeric>   U;
+List<Numeric>   V;
+List<Numeric>   W;
+List<Numeric>   X;
+List<Numeric>   Y;
+List<Numeric>   Z;
+List<Numeric>   AA;
+List<Numeric>   AB;
+List<Numeric>   AC;
+List<Numeric>   AD;
+List<Numeric>   AE;
+List<Numeric>   AF;
+List<Numeric>   AG;
+List<Numeric>   AH;
+List<Numeric>   AI;
+List<Numeric>   AJ;
+List<Numeric>   AK;
+List<Numeric>   AL;
+List<Numeric>   AM;
+List<Numeric>   AN;
+List<Numeric>   AO;
+List<Numeric>   AP;
+List<Numeric>   AQ;
+List<Numeric>   AR;
+List<Numeric>   AS;
+List<Numeric>   AT;
+List<Numeric>   AU;
+List<Numeric>   AV;
+List<Numeric>   AW;
+List<Numeric>   AX;
+List<Numeric>   AY;
+List<Numeric>   AZ;
+List<Numeric>   BA;
+List<Numeric>   BB;
+List<Numeric>   BC;
+List<Numeric>   BD;
+List<Numeric>   BE;
+List<Numeric>   BF;
+List<Numeric>   BG;
+List<Numeric>   BH;
+List<Numeric>   BI;
+List<Numeric>   BJ;
+List<Numeric>   BK;
+List<Numeric>   BL;
+List<Numeric>   BM;
+List<Numeric>   BN;
+List<Numeric>   BO;
+List<Numeric>   BP;
+List<Numeric>   BQ;
+List<Numeric>   BR;
+List<Numeric>   BS;
+List<Numeric>   BT;
+List<Numeric>   BU;
+List<Numeric>   BV;
 
 Exec
 #LOOP
@@ -38,24 +80,66 @@ I(i) = IF(AND(MAXCOL(G,i,3)==0,G(i-4)>0),G(i-4),IF(AND(I(i-1)>0,G(i)==0),I(i-1),
 J(i) = IF(AND(MAXCOL(H,i,3)==0,H(i-4)>0),H(i-4),IF(AND(J(i-1)>0,H(i)==0),J(i-1),0))
 K(i) = IF(I(i)>0,I(i),K(i-1))
 L(i) = IF(J(i)>0,J(i),L(i-1))
-M(i) = IF(AND(J(i-1)==0,J(i)>0,I(i)==0,MAXCOL(I,i-1,3)>0),(MAXCOL(I,i-1,3)-J(i))/MAXCOL(I,i-1,3),0)
-N(i) = IF(AND(I(i-1)==0,I(i)>0,J(i)==0,MAXCOL(J,i-1,3)>0),(I(i)-MAXCOL(J,i-1,3))/MAXCOL(J,i-1,3),0)
+M(i) = IF(AND(J(i-1)==0,J(i)>0,I(i)==0,MAXCOL(I,i-1,3)>0),CEILING((MAXCOL(I,i-1,3)-J(i))/MAXCOL(I,i-1,3),0.0001),0)
+N(i) = IF(AND(I(i-1)==0,I(i)>0,J(i)==0,MAXCOL(J,i-1,3)>0),CEILING((I(i)-MAXCOL(J,i-1,3))/MAXCOL(J,i-1,3),0.0001),0)
 O(i) = IF(AND(O(i-1)<5,N(i)>0),O(i-1)+1,IF(AND(O(i-1)>-5,M(i)>0),O(i-1)-1,O(i-1)))
 P(i) = IF(AND(P(i-1)<=0,O(i)>O(i-1)),1,IF(AND(P(i-1)>=0,O(i)<O(i-1)),-1,IF(AND(P(i-1)>=0,O(i)>O(i-1)),P(i-1)+1,IF(AND(P(i-1)<=0,O(i)<O(i-1)),P(i-1)-1,P(i-1)))))
 Q(i) = IF(AND(O(i)<O(i-1),O(i)>1,Q(i-1)>0),(Q(i-1)*O(i-1)-M(i))/O(i),IF(AND(O(i)<O(i-1),O(i)==1),Q(i-1)-M(i),IF(AND(N(i)>0,O(i)>1),(Q(i-1)*O(i)+N(i))/(O(i)+1),IF(AND(N(i)>0,O(i)<2),N(i),Q(i-1)))))
 R(i) = IF(AND(O(i)>O(i-1),O(i)<-1,R(i-1)>0),(R(i-1)*O(i-1)*-1-N(i))/O(i),IF(AND(O(i)>O(i-1),O(i)==-1),R(i-1)-N(i),IF(AND(M(i)>0,O(i)<-1),(R(i-1)*O(i)*-1+N(i))/(O(i)*-1+1),IF(AND(M(i)>0,O(i)>-2),M(i),R(i-1)))))
-S(i) = IF(AND(S(i-1)>0,M(i)>0),(S(i-1)*29+M(i))/30,IF(AND(S(i-1)==0,M(i)>0),M(i),S(i-1)))
-T(i) = IF(AND(T(i-1)>0,N(i)>0),(T(i-1)*29+N(i))/30,IF(AND(T(i-1)==0,N(i)>0),N(i),T(i-1)))
-U(i) = IF(K(i)>0,K(i)*(1-S(i)),0)
-V(i) = IF(L(i)>0,L(i)*(1+T(i)),0)
+S(i) = IF(AND(S(i-1)>0,M(i)>0),(S(i-1)*28+M(i)*2)/30,IF(AND(S(i-1)==0,M(i)>0),M(i),S(i-1)))
+T(i) = IF(AND(T(i-1)>0,N(i)>0),(T(i-1)*28+N(i)*2)/30,IF(AND(T(i-1)==0,N(i)>0),N(i),T(i-1)))
+U(i) = IF(K(i)>0,CEILING(K(i)*(1-S(i)),0.0001),0)
+V(i) = IF(L(i)>0,CEILING(L(i)*(1+T(i)),0.001),0)
 W(i) = T(i)-S(i)
 X(i) = IF(W(i)!=W(i-1),W(i-1),X(i-1))
 Y(i) = IF(X(i)!=X(i-1),X(i-1),Y(i-1))
-Z(i) = IF(AND(W(i)!=0,W(i-1)==0,Z(i-1)==0),W(i),IF(AND(W(i)!=0,W(i-1)!=W(i)),(W(i)*7+Z(i-1)*2)/9,Z(i-1)))
+Z(i) = IF(AND(W(i)!=0,W(i-1)==0,Z(i-1)==0),W(i),IF(AND(W(i)!=0,W(i-1)!=W(i)),CEILING((W(i)*7+Z(i-1)*2)/9,0.0001),Z(i-1)))
 AA(i) = IF(Z(i)!=Z(i-1),Z(i-1),AA(i-1))
 AB(i) = IF(AA(i)!=AA(i-1),AA(i-1),AB(i-1))
 AC(i) = W(i)-Z(i)
 AD(i) = IF(AC(i)!=AC(i-1),AC(i-1),AD(i-1))
 AE(i) = IF(AD(i)!=AD(i-1),AD(i-1),AE(i-1))
-AF(i) = IF(AND(W(i)>Z(i),X(i)>AA(i),Z(i)<0,AC(i)<AD(i)),10,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)>0,AC(i)>AD(i)),9,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)-W(i)<AA(i)-X(i),Z(i)<0),5,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)-W(i)>AA(i)-X(i),Z(i)<0),6,IF(AND(W(i)>Z(i),X(i)>AA(i),W(i)-Z(i)>X(i)-AA(i),Z(i)>0),8,IF(AND(W(i)>Z(i),X(i)>AA(i),W(i)-Z(i)<X(i)-AA(i),Z(i)>0),7,IF(AND(W(i)>Z(i),X(i)>AA(i),Z(i)<0),12,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)>0),11,IF(AND(W(i)<Z(i),X(i)>AA(i),Z(i)>0),2,IF(AND(W(i)>Z(i),X(i)<AA(i),Z(i)>0),12,IF(AND(W(i)<Z(i),X(i)>AA(i),Z(i)<0),4,IF(AND(W(i)>Z(i),X(i)<AA(i),Z(i)<0),3,0))))))))))))
+AF(i) = IF(AND(W(i)>Z(i),X(i)>AA(i),Z(i)<0,AC(i)<AD(i)),6,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)>0,AC(i)>AD(i)),5,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)-W(i)<AA(i)-X(i),Z(i)<0),8,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)-W(i)>AA(i)-X(i),Z(i)<0),7,IF(AND(W(i)>Z(i),X(i)>AA(i),W(i)-Z(i)>X(i)-AA(i),Z(i)>0),9,IF(AND(W(i)>Z(i),X(i)>AA(i),W(i)-Z(i)<X(i)-AA(i),Z(i)>0),10,IF(AND(W(i)>Z(i),X(i)>AA(i),Z(i)<0),12,IF(AND(W(i)<Z(i),X(i)<AA(i),Z(i)>0),11,IF(AND(W(i)<Z(i),X(i)>AA(i),Z(i)>0),2,IF(AND(W(i)>Z(i),X(i)<AA(i),Z(i)>0),1,IF(AND(W(i)<Z(i),X(i)>AA(i),Z(i)<0),4,IF(AND(W(i)>Z(i),X(i)<AA(i),Z(i)<0),3,0))))))))))))
+AG(i) = IF(AND(AF(i)!=AF(i-1),OR(AF(i-1)==1,AF(i-1)==3,AF(i-1)==2,AF(i-1)==4)),AF(i-1),AG(i-1))
+AH(i) = IF(AF(i)!=AF(i-1),AF(i-1),AH(i-1))
+AI(i) = CEILING(MAXCOL(E,i-4,28),0.0001)
+AJ(i) = CEILING(MINCOL(E,i-4,28),0.0001)
+AK(i) = CEILING((AI(i)+AJ(i))/2,0.0001)
+AL(i) = CEILING((AI(i)-AJ(i))/AI(i),0.0001)
+AM(i) = IF(E(i)>AI(i),E(i),0)
+AN(i) = IF(AND(AM(i-1)==0,AN(i-1)==0,AM(i)>0),2,IF(AND(AM(i-1)>0,AN(i-1)>0,AM(i)>0),AN(i-1)+1,IF(AND(AM(i-1)==0,AN(i-1)>0,AM(i)>0),AN(i-1)+1,IF(AND(AN(i-1)>0,AM(i)==0),AN(i-1)-1,0))))
+AO(i) = IF(AND(MAXCOL(AM,i-7,3)==0,MAXCOL(AM,i-2,4)>0,MAXCOL(AN,i-1,6)<=4,AN(i)==0),1,IF(MAXCOL(AN,i-1,6)>=5,2,IF(AND(AO(i-1)==2,AR(i-1)>=5),0,AO(i-1))))
+AP(i) = AN(i)-AN(i-1)
+AQ(i) = IF(E(i)<AJ(i),E(i),0)
+AR(i) = IF(AND(AQ(i-1)==0,AR(i-1)==0,AQ(i)>0),2,IF(AND(AQ(i-1)>0,AR(i-1)>0,AQ(i)>0),AR(i-1)+1,IF(AND(AQ(i-1)==0,AR(i-1)>0,AQ(i)>0),AR(i-1)+1,IF(AND(AR(i-1)>0,AQ(i)==0),AR(i-1)-1,0))))
+AS(i) = IF(AND(MAXCOL(AQ,i-7,3)==0,MAXCOL(AQ,i-2,4)>0,MAXCOL(AR,i-1,6)>=5),2,IF(AND(MAXCOL(AR,i-1,6)<=4,AR(i)==0,AR(i-1)>0),1,IF(AND(AS(i-1)==2,AN(i-1)>=5),0,AS(i-1))))
+AT(i) = AR(i)-AR(i-1)
+AU(i) = IF(AND(C(i)<C(i-1),C(i-1)>C(i-2)),C(i-1),AU(i-1))
+AV(i) = IF(AND(D(i)>D(i-1),D(i-1)<D(i-2)),D(i-1),AV(i-1))
+AW(i) = CEILING((AVG(AU,i,29)+AVG(AV,i,29))/2,0.0001)
+AX(i) = IF(AW(i-1)>0,CEILING(STDEV(AW,i,29),0.0001),0)
+AY(i) = CEILING(STDEV(C,i,29),0.0001)
+AZ(i) = CEILING(STDEV(D,i,29),0.0001)
+BA(i) = IF(BA(i-1)!=0,CEILING(BA(i-1)*29/31+E(i)*2/31,0.0001),E(i))
+BB(i) = CEILING(AVG(E,i,29),0.0001)
+BC(i) = BA(i)-BB(i)
+BD(i) = IF(BD(i-1)!=0,CEILING(BD(i-1)*8/10+BC(i)*2/10,0.0001),BC(i))
+BE(i) = IF(AND(BC(i)<BD(i),BC(i-1)<BD(i-1),BD(i)-BC(i)<BD(i-1)-BC(i-1),BD(i)<0),8,IF(AND(BC(i)<BD(i),BC(i-1)<BD(i-1),BD(i)-BC(i)>BD(i-1)-BC(i-1),BD(i)<0),7,IF(AND(BC(i)>BD(i),BC(i-1)>BD(i-1),BC(i)-BD(i)>BC(i-1)-BD(i-1),BD(i)>0),9,IF(AND(BC(i)>BD(i),BC(i-1)>BD(i-1),BC(i)-BD(i)<BC(i-1)-BD(i-1),BD(i)>0),10,IF(AND(BC(i)>BD(i),BC(i-1)>BD(i-1),BD(i)<0),12,IF(AND(BC(i)<BD(i),BC(i-1)<BD(i-1),BD(i)>0),11,IF(AND(BC(i)<BD(i),BC(i-1)>BD(i-1),BD(i)>0),2,IF(AND(BC(i)>BD(i),BC(i-1)<BD(i-1),BD(i)>0),1,IF(AND(BC(i)<BD(i),BC(i-1)>BD(i-1),BD(i)<0),4,IF(AND(BC(i)>BD(i),BC(i-1)<BD(i-1),BD(i)<0),3,0))))))))))
+BF(i) = IF(AND(BE(i)!=BE(i-1),OR(BE(i-1)==1,BE(i-1)==3,BE(i-1)==2,BE(i-1)==4)),BE(i-1),BF(i-1))
+BG(i) = IF(AND(BE(i)!=BE(i-1),OR(BE(i-1)==1,BE(i-1)==3,BE(i-1)==2,BE(i-1)==4)),1,IF(BE(i)!=BE(i-1),BG(i-1)+1,BG(i-1)))
+BH(i) = IF(BE(i)!=BE(i-1),BE(i-1),BH(i-1))
+BI(i) = IF(OR(P(i)>2,AND(BE(i)==10,AP(i)==0,AG(i)==4),AND(BE(i)==10,BH(i)==12,P(i)==1,O(i)>-1),AND(BE(i)==11,AF(i)==2,AH(i)==1,AT(i)==0),AND(BE(i)==11,AP(i)==0,AO(i)==1,OR(AH(i)==4,AH(i)==9,AH(i)==10,AH(i)==8)),AND(BE(i)==12,OR(AF(i)==3,AF(i)==11,AT(i)==1)),AND(BE(i)==4,AS(i)==2),AND(BE(i)==12,P(i)==-1,O(i)<0,O(i)>-4),AND(AF(i)==2,BE(i)==9),AND(AF(i)==2,BE(i)==8,BF(i)==4),AND(P(i)==-2,O(i)<-1),AND(AF(i)==3,AH(i)==7,OR(AO(i)!=2,AP(i)!=0)),AND(AF(i)==4,AG(i)==3,BE(i)!=7,BF(i)==2),AND(AF(i)==7,AH(i)==4,BF(i)!=2),AND(AF(i)==8,AO(i)==1),AND(BE(i)==12,OR(AS(i)==2,AS(i)==0),AO(i)==1,OR(AG(i)==4,AG(i)==1)),AND(BE(i)==10,BF(i)==1,AP(i)==-1),AND(BE(i)==9,BH(i)==12),AND(BE(i)==8,BF(i)==2,BH(i)==7,AT(i)<1),AND(P(i)==-1,AF(i)==5,AH(i)==2,BF(i)!=3,BF(i)!=4),AND(AF(i)==6,AH(i)==3,AP(i)==0,BF(i)!=4),AND(AF(i)==9,AG(i)==3,AH(i)!=6,AH(i)!=12),AND(P(i)==1,O(i)>2,AS(i)==2,AT(i)>-1),AND(P(i)==-1,O(i)>0,OR(AND(AH(i)!=4,AH(i)!=12,AH(i)!=6,AH(i)!=9),AF(i)==8)),AND(P(i)==1,O(i)>2,AS(i)<2),AND(AO(i)!=0,AS(i)!=0,P(i)==1,O(i)<-2),AND(P(i)==-1,O(i)<-3,AH(i)!=2,AH(i)!=1,AH(i)!=11),AND(AF(i)!=5,P(i)==2,ABS(O(i))>1),AND(AF(i)==12,AO(i)!=0)),1,0)
+BJ(i) = IF(AND(Q(i)<0,O(i)>2),1,0)
+BK(i) = IF(BI(i)==0,AV(i)-AX(i),0)
+BL(i) = IF(AND(BL(i-1)==0,BT(i-1)>0,C(i)>BT(i-1),D(i)<BT(i-1)),BT(i-1),IF(AND(BL(i-1)>0,BV(i-1)==0,OR(C(i)<BQ(i-1),BQ(i-1)==0)),BL(i-1),IF(AND(BL(i-1)>0,BV(i-1)>0,C(i)<BV(i-1),OR(C(i)<BQ(i-1),BQ(i-1)==0)),BL(i-1),IF(AND(BL(i-1)==0,BT(i-1)>0,D(i)<BV(i-1)),BT(i-1),0))))
+BM(i) = IF(BL(i)>0,BM(i-1)+1,0)
+BN(i) = IF(AND(BL(i)>0,MAXCOL(E,i,11)>L(i)*(1+S(i))),CEILING(MAXCOL(E,i,11),0.0001),IF(AND(BL(i)>0,MAXCOL(E,i,11)<=L(i)*(1+S(i))),CEILING(L(i)*(1+S(i)),0.0001),0))
+BO(i) = IF(AND(BJ(i)==0,BL(i)>0),CEILING(MAXCOL(C,i,11),0.0001),0)
+BP(i) = IF(AND(BL(i-1)==0,BL(i)>0),1,IF(AND(BL(i-1)>0,BL(i)>0),BP(i-1)+1,0))
+BQ(i) = IF(AND(BL(i)>0,BN(i)>0,BP(i)>3,BN(i)>V(i)),BN(i),IF(AND(BL(i)>0,BN(i)>0,BP(i)>3,BN(i)<V(i)),V(i),0))
+BR(i) = IF(AND(BL(i)>0,BL(i-1)==0),CEILING(MINCOL(D,i,4),0.0001),IF(AND(BL(i)>0,BL(i-1)>0,D(i)>BR(i-1)),D(i),IF(AND(BL(i)>0,BL(i-1)>0,D(i)<=BR(i-1)),BR(i-1),0)))
+BS(i) = IF(AND(BR(i)>0,BR(i-1)==0),0.01,IF(AND(BR(i)>0,BR(i)>BR(i-1),BS(i-1)<0.2),BS(i-1)+0.005,IF(BR(i)>0,BS(i-1),0)))
+BT(i) = IF(AND(BL(i)==0,E(i)>BK(i),BK(i)>0),BK(i),0)
+BU(i) = IF(AND(BL(i-1)==0,BL(i)>0),CEILING(D(i)-STDEV(D,i,29),0.0001),IF(BL(i)>0,CEILING(BU(i-1)+(D(i)-BU(i-1))*BS(i),0.0001),0))
+BV(i) = IF(AND(E(i)<BU(i),BU(i)>0),E(i),0)
 #END

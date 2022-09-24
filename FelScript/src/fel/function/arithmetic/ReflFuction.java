@@ -38,9 +38,9 @@ public class ReflFuction extends BaseFunction {
                     throw new FelScriptException(String.format("%s运算出错，参数%s不存在！", getName(), refCode));
                 } else if (!TextUtil.isInt(count.toString())) {
                     throw new FelScriptException(String.format("%s运算出错，参数%s不是数值！", getName(), count));
-                }else if(getDataSetItemValueSize(refCode) <= Integer.parseInt(count.toString())) {
+                }/*else if(getDataSetItemValueSize(refCode) <= Integer.parseInt(count.toString())) {
                     throw new FelScriptException(String.format("%s运算出错，%s超出了数组长度！", getName(), count.toString()));
-                }
+                }*/
             }
         } else {
             throw new FelScriptException(String.format("%s运算出错，参数不正确！", getName()));
@@ -85,7 +85,13 @@ public class ReflFuction extends BaseFunction {
         if(objects.length == 2) {
             index = Integer.parseInt(objects[1].toString());
         }
-        Object value = valueList.get(index);
+        Object value;
+        if(getDataSetItemValueSize(reflCode) <= index) {
+            value = 0;
+        }else {
+            value = valueList.get(index);
+        }
+
         return value;
     }
 

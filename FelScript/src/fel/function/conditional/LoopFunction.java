@@ -28,8 +28,11 @@ public class LoopFunction extends BaseFunction {
         int endIndex = Integer.parseInt(context.get(DATA_SIZE).toString());
         for(int i = startIndex; i < endIndex; i++) {
             for(int j = 1; j < objects.length; j++) {
+                if(i == 126) {
+                    System.out.println("===========");
+                }
                 String expression = objects[j].toString();
-                System.out.println(expression);
+                System.out.println(i+":"+expression);
                 Log.i(expression);
                 engine.eval(expression);
             }

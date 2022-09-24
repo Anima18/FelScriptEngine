@@ -131,7 +131,7 @@ public class FileUtil {
     }
 
     public static String readUTF8Text(final String filePath) {
-        return readText(filePath, "GBK");
+        return readText(filePath, "UTF-8");
     }
 
     public static String getFileSuffix(String filePath) {

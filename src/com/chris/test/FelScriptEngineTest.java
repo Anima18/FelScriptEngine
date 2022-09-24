@@ -20,9 +20,9 @@ public class FelScriptEngineTest {
             File directory = new File("");//参数为空
             String courseFile = directory.getCanonicalPath();
             String dataFilePath = courseFile + File.separator + "data.xlsx";
-            String resultFilePath = courseFile + File.separator + "data_result.xlsx";
             String scriptFilePath = courseFile + File.separator + "scriptTest.txt";
 
+            String resultFilePath = courseFile + File.separator + "data_result.xlsx";
             System.out.println(dataFilePath);
             System.out.println(scriptFilePath);
             long startTime = System.currentTimeMillis();
